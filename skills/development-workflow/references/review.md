@@ -72,14 +72,30 @@ root verifies them and sends supported corrections to the same eligible builder
 via orchestration, then checks the changed snapshot within the remaining rounds of that review kind.
 Closing/hiding presentation does not cancel a run or prove completion.
 
-After infrastructure failure, another review invocation requires a causal
-diagnosis, a changed condition and bounded no-generation evidence from the actual
-launcher/child route that the failed prerequisite now works. Package/config checks
+After infrastructure failure, the default prerequisite for another review is a
+causal diagnosis, a changed condition and bounded no-generation evidence from the
+actual launcher/child route that the failed prerequisite now works. Package/config checks
 alone do not qualify that route. Use existing logs and supported free probes;
 missing proof remains UNVERIFIED and withholds the affected review. Do not use a
 paid smoke call by default, switch providers automatically or reset rounds.
 Reconcile the same request/job IDs and original archive before any repeat;
 remaining rounds are accounting, not retry authorization.
+
+If no supported free/no-generation probe can demonstrate recovery, keep recovery
+qualification UNVERIFIED, name the diagnosed cause and unavailable proof, and ask
+for one concrete user decision. Where applicable, offer waiting until a known
+provider retry/reset time (no invented ETA or automatic retry after waiting), or
+explicit authorization for one specific retry despite missing recovery proof and
+the stated risk of another paid failure. Such authorization covers only that
+retry: reconcile original job/archive/accounting, preserve profile and route,
+and launch only with remaining review allowance. Exhausted allowance additionally
+requires an explicit limit increase; unknown allowance requires reconciliation
+and, if exhausted, an explicit increase. Generic continue, elapsed time and
+approval of this documentation change provide neither retry permission nor budget.
+Waiting or authorization is not recovery evidence: keep recovery qualification
+UNVERIFIED until observed and judge any actual review outcome separately. This
+exception permits no blind retries, default paid smoke, provider switch, count
+reset or disabling unrelated gates.
 
 ## Completed presentation
 

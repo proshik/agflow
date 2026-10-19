@@ -30,7 +30,8 @@ the affected review; report the gap and obtain an explicit limit change if more
 rounds are needed. Changing tools, task IDs or profiles never resets the counts.
 Continue independent authorized work despite an accounting gap. After infrastructure
 failure apply the diagnosis, changed-condition and bounded no-generation actual
-launcher/child proof requirements in [review execution](review.md). Missing proof
+launcher/child proof default and narrowly scoped user-authorized exception in
+[review execution](review.md). Missing proof
 is UNVERIFIED; no default paid smoke, automatic provider switch or round reset.
 Configuration alone authorizes no provider calls.
 

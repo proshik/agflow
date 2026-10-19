@@ -52,9 +52,11 @@ explicit user/task/provider limits still apply. Exhausted rounds require an
 explicit limit change before another review of that kind. Model evaluations
 need separate authorization; installing skills starts none. Keep the configured
 provider/profile selection and completed-view auto-close preference. After
-infrastructure failure, retry requires cause, a changed condition and bounded
+infrastructure failure, retry normally requires cause, a changed condition and bounded
 no-generation proof from the actual launcher/child route; missing proof remains
-UNVERIFIED. No default paid smoke, automatic provider switch or count reset.
+UNVERIFIED. For the narrowly scoped user-authorized exception when free recovery
+proof is unavailable, follow the installed review-routing policy; allowance must
+still be reconciled and available. No default paid smoke, provider switch or reset.
 Unknown accounting withholds only the affected review; continue independent
 authorized work. Classify failing tests as introduced/pre-existing/unknown with
 practical targeted/base evidence; unrelated repairs do not expand scope.
