@@ -103,6 +103,17 @@ a confirmed pre-start refusal does not, and ambiguous starts need reconciliation
 Never reset existing task histories/limits or transfer rounds between kinds.
 There is no default aggregate process cap. Preserve configured review profiles;
 exhausted required review stays UNVERIFIED pending an explicit user change.
+Verify execution entrypoints retain causal diagnosis, a changed condition and
+bounded no-generation actual launcher/child proof before infrastructure retries;
+missing proof is UNVERIFIED, with no default paid smoke or automatic provider switch.
+Accounting alone does not authorize retry. Unknown accounting blocks the affected
+review only. Check actual worker checkout/atomic-report writes, required checks
+and task-required network qualification under existing authority, without blanket
+full access or repeated approvals. Current receipts stay separate from history,
+are updated on dispatch/review/report/limits and before turn end, and reconcile
+original IDs/archives with live state. Parents consume reports and record the next
+checkpoint/action/owner. Retain evidence-based introduced/pre-existing/unknown test
+failure classification without automatic unrelated repairs.
 
 Check that setup retains the five self-contained skills and their guidance for
 early real interaction before broad review, concrete UI target/working preview,

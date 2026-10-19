@@ -23,7 +23,13 @@ managed session with requirements/facts/approved decisions, excluding
 exploratory preferred answers. Implementation uses managed separate worktrees;
 Guild sessions are visible, and another host must qualify human question,
 approval and resume channels. The parent actively supervises assigned sessions,
-performs checkpoints and continues corrections in the same eligible session.
+consumes completed reports, performs the next authorized checkpoint and records
+its outcome, next action and owner before continuing the same eligible session.
+Qualify worker checkout/atomic-report writes, required checks and task-required
+network with bounded harmless evidence under existing authority, not configuration
+alone; no mandatory full access or repeated phase approval. Current receipts are
+separate from history, updated on dispatch/review/report/limit transitions and
+before turn end, and reconciled with original IDs, archives and live state.
 
 Use Superpowers as optional task-specific methods, not a required sequence or
 installation prerequisite. Small clear tasks need no full brainstorming ceremony
@@ -45,7 +51,13 @@ IDs or tools. There is no default aggregate process-count ceiling; separately
 explicit user/task/provider limits still apply. Exhausted rounds require an
 explicit limit change before another review of that kind. Model evaluations
 need separate authorization; installing skills starts none. Keep the configured
-provider/profile selection and completed-view auto-close preference.
+provider/profile selection and completed-view auto-close preference. After
+infrastructure failure, retry requires cause, a changed condition and bounded
+no-generation proof from the actual launcher/child route; missing proof remains
+UNVERIFIED. No default paid smoke, automatic provider switch or count reset.
+Unknown accounting withholds only the affected review; continue independent
+authorized work. Classify failing tests as introduced/pre-existing/unknown with
+practical targeted/base evidence; unrelated repairs do not expand scope.
 
 Prepare local branches and concrete MR/PR text. Push, publication, main merge,
 cleanup and deployment still require their applicable explicit authorization.

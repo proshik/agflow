@@ -6,6 +6,20 @@ fixing it; distinguish the missing behavior from a broken fixture or typo. Test
 public outcomes/invariants rather than source text, copied implementation or
 mock behavior. Avoid duplicating existing coverage and low-value assertions.
 
+Classify each failing required check as introduced, pre-existing or unknown.
+Retain the exact command, revision, environment and failure signature. Use a
+practical targeted reproduction and, where feasible, the same check on the base
+or prerequisite revision in an isolated temporary checkout under comparable
+conditions; do not disturb user work. A matching base failure supports pre-existing;
+a base pass plus a causally linked changed-path failure supports introduced.
+A permission/fixture/network failure needs its own diagnosis: an unchanged-tree
+rerun after the identified condition changes can distinguish an environment gap.
+If comparison is unavailable or inconclusive, keep unknown with the missing
+evidence, owner and next action; affected acceptance remains FAIL or UNVERIFIED
+as observed, never silently PASS. Fix introduced failures within scope. Report
+pre-existing failures and their acceptance impact to the parent; unrelated repairs
+do not expand scope automatically. No blanket reruns or paid model probes follow.
+
 A minimal complete fix follows the existing pattern and covers the whole same
 scenario. For a changed shared helper/client/constructor, enumerate **all actual
 callers** with full search/LSP results; group their argument/context variations

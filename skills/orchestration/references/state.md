@@ -7,6 +7,35 @@ an outside-checkout path needs explicit write scope. Otherwise retain it in the
 checkout and state the durability limit. Publish through a temporary sibling
 and atomic rename; leave call/source archives unchanged and omit secrets/reasoning.
 
+## Current receipt and historical evidence
+
+The root receipt describes current state, not an append-only event log. Keep
+historical events, superseded receipts and immutable review archives separately;
+reference them without treating an old success as the current checkpoint.
+Include receipt revision/update time, current phase/resume phase, exact live
+worker/request/job IDs, checkout/HEAD/dirty digests, contract identity, latest
+consumed report identity, checkpoint status, next action and explicit owner.
+Keep separate plan/code used/remaining limits, original archive references and
+accounting certainty; an unresolved count is unknown, never zero.
+
+Atomically update after dispatch acknowledgement or ambiguous start, review
+start/result, report consumption, limit changes and before ending the parent
+turn. Record an in-flight action before starting it, then reconcile its returned
+identity/result; a crash between these writes leaves a pending action to recover,
+not permission to replay. A report arriving alone does not advance acceptance.
+The parent reads it, checks actual artifacts/revision and consumes the next
+already-authorized checkpoint, recording outcome and next owner/action. If the
+checkpoint is blocked, retain its cause and resume phase and continue independent
+authorized work; do not wait for an unsolicited worker turn or user reminder.
+
+Before repeating a dispatch/review or resuming after interruption, compare current
+receipt with the same session/request/job IDs, live checkout/process/conversation,
+latest report and original review archive. Resolve contradictions explicitly;
+retain superseded facts as history. Unknown accounting withholds only the affected
+review, not independent authorized work. Missing required evidence is UNVERIFIED.
+Workers atomically update only their assigned reports with exact snapshot/checks,
+limitations, checkpoint and next action/owner; the parent alone owns root state.
+
 A complete handoff can use this compact outline:
 
 ```text

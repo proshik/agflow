@@ -23,6 +23,11 @@ Record exact source/build/environment identities, inputs/gestures, expected and
 actual results and retained evidence. A command acknowledgement or model judgment
 about prose is not live behavior; fixture output qualifies only its fixture.
 
+Retain introduced/pre-existing/unknown failure classification and its targeted or
+base evidence; unavailable attribution stays unknown, and missing required checks
+remain UNVERIFIED. A pre-existing failure is not automatically accepted or in scope
+for repair. Parent decides its effect against the agreed acceptance contract.
+
 The builder reports its own assigned checks and remains available. Parent alone
 owns independent review, checks the exact combined revisions across branches and
 accepts final behavior. An edit invalidates affected earlier evidence; retain it

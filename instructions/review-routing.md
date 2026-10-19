@@ -58,6 +58,15 @@ ambiguous start recover the same request/job/artifacts before starting anything
 else. Hide/close only hides the view; Cancel stops work. Missing/degraded/unverified
 results are not PASS. Retain reviewed snapshot, findings, call count and limits.
 
+After infrastructure failure, another review invocation requires a causal
+diagnosis, a changed condition and bounded no-generation evidence from the actual
+launcher/child route that the failed prerequisite now works. Package/config checks
+alone do not qualify that route. Use existing logs and supported free probes;
+missing proof remains UNVERIFIED and withholds the affected review. Do not use a
+paid smoke call by default, switch providers automatically or reset rounds.
+Reconcile the same request/job IDs and original archive before any repeat;
+remaining rounds are accounting, not retry authorization.
+
 ## Completed review presentation
 
 Pass `--auto-exit=1s` to the installed launcher by default so the completed

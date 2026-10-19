@@ -20,6 +20,14 @@ non-visible sessions require independently qualified human channels. Unknown
 required capabilities withhold dependent dispatch. Do not substitute root
 implementation for a required unavailable worker.
 
+Qualify actual worker checkout writes, atomic writes to the assigned report path,
+required check execution and task-required network access before dependent work.
+Use harmless bounded probes under existing authorization; record evidence and
+supported/unsupported/unknown capabilities. Configuration or permission labels
+alone are not proof. Missing required evidence is UNVERIFIED and blocks only
+dependent work. No mandatory full access, configuration change or repeated phase
+approval follows; request only a genuinely missing scoped permission.
+
 For Guild, read [the public adapter](references/guild.md); for another host,
 map its public tools to those same capabilities and record observed support.
 No private Guild settings, Rust inspection or bootstrap patch is required.
@@ -45,7 +53,9 @@ A timeout is pending; it neither cancels nor completes anything. A `done`
 status means the turn ended. Read that exact session's result and durable report,
 check actual artifacts/revision, then perform the parent-owned review/evaluation,
 integration or acceptance checkpoint. A checkpoint report is work for the
-parent; do not wait for an unsolicited child turn or a user reminder.
+parent; do not wait for an unsolicited child turn or a user reminder. Record
+report consumption, checkpoint outcome, next action and owner in the current
+receipt before continuing or ending the turn; retain the report as evidence.
 
 After the checkpoint, continue the same idle/done session only after confirming
 current eligibility and checkout/conversation identity. Keep the builder for
@@ -77,6 +87,9 @@ state; timeout/crash alone never transfers a grant. Reconcile live consumers
 before release. Coordination does not grant tool permission or destructive
 cleanup; independent resources need no artificial queue.
 
+Maintain the current root receipt using [durable state](references/state.md):
+update on dispatch, review, report consumption, limit changes and before turn end;
+keep history separately and reconcile original IDs/archives with live state.
 Use a root-owned atomic receipt and explicitly assigned worker reports, separate
 from contracts and engine archives. Retain identities, contract/code digests,
 phase/resume phase, question IDs/types/actual answer provenance, dependencies,
@@ -90,7 +103,11 @@ a round; reconcile ambiguous starts. Share each count across coordinated branche
 without transferring rounds between kinds. Record actual starts without a default
 process-count ceiling. Honor separately explicit user/task/provider limits.
 Unknown history or exhausted rounds withholds that review; more rounds require
-an explicit limit change. Evaluations use a separately authorized ledger.
+an explicit limit change. Continue independent authorized work. After infrastructure
+failure, retry requires cause, a changed condition and bounded no-generation proof
+from the actual launcher/child route. Missing proof is UNVERIFIED; no default paid
+smoke, automatic provider switch or round reset. Reconcile original IDs/archives
+before repeating. Evaluations use a separately authorized ledger.
 Changing identity/profile/engine never resets counts. Missing review or live
 evidence is UNVERIFIED, not accepted.
 

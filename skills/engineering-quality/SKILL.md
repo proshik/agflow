@@ -14,7 +14,10 @@ Pin each regression to an acceptance scenario and observe its failure for the
 right reason before fixing code. Verify the entire same scenario and affected
 callers; avoid a nearby refactor that does not serve it. Inspect the resulting
 files/diff, run the target project's required checks and retain exact evidence.
-A green branch alone does not establish combined or live acceptance.
+Classify failing checks as introduced, pre-existing or unknown using the targeted
+and base-comparison guidance in [common quality](references/common.md); preserve
+evidence and report acceptance impact without automatically repairing unrelated
+failures. A green branch alone does not establish combined or live acceptance.
 
 For changed UI, implement the accepted visual and interaction target from the
 contract. Inspect the real changed surface early, including relevant constrained

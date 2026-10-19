@@ -24,7 +24,12 @@ design. This instruction contract is not host runtime enforcement.
    observation/recovery and real human question/tool-approval channels through
    orchestration. Record supported/unsupported/unknown with evidence; withhold
    dependent dispatch on a required gap rather than silently replace a required
-   builder with root implementation. Continue independent authorized work.
+   builder with root implementation. Qualify actual worker checkout writes, atomic
+   assigned-report writes, required checks and task-required network access using
+   bounded harmless probes under existing authority, not configuration alone.
+   Record capability evidence through [effective policy](references/policy.md);
+   missing evidence is UNVERIFIED. No mandatory full access or new phase approval.
+   Continue independent authorized work.
 2. Prepare the contract first with spec-design, proportional to the task.
    Resolve material open questions and record the agreed UI target where affected
    before implementation; reuse settled decisions rather than adding phase
@@ -54,8 +59,10 @@ design. This instruction contract is not host runtime enforcement.
 4. Stay active and supervise each assigned ID fairly through bounded host
    waits/events and durable results. A completed turn needs result inspection
    and its next authorized parent checkpoint, not a final response leaving
-   workers running. Follow orchestration's supervision/recovery protocol and
-   continue the same eligible idle/done session through corrections.
+   workers running. Consume the report, reconcile its exact artifacts and record
+   the checkpoint outcome, next action and owner in the current root receipt
+   before continuation or turn end. Follow orchestration's supervision/recovery
+   protocol and continue the same eligible idle/done session through corrections.
 5. Inspect engineering-quality checks and acceptance-testing observations;
    parent alone reviews the exact implementation snapshot with revust within
    separate remaining plan/code round limits. Verify supported findings, continue corrections
@@ -76,6 +83,10 @@ design. This instruction contract is not host runtime enforcement.
 Do the accepted tasks in your assigned checkout, preserving unrelated work.
 Designer uses spec-design; builder uses engineering-quality and acceptance-testing.
 Verify the supplied contract/revision, ownership, dependencies and report path.
+Before dependent work, qualify actual checkout and atomic assigned-report writes,
+required checks and task-required network using bounded harmless probes under
+existing authority. Report gaps as UNVERIFIED; configuration alone proves nothing,
+and qualification requires neither blanket full access nor repeated phase approval.
 Follow tasks to meaningful checks and required commits; report contradictions to
 root before dependent work. Keep the same session for corrections, including
 parent-owned review/evaluation checkpoints; do not attempt those launches yourself.

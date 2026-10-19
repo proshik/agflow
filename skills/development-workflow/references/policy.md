@@ -28,6 +28,10 @@ observability; there is no default aggregate process-count ceiling. Explicit
 user/task/provider limits still apply. Unknown history or exhaustion withholds
 the affected review; report the gap and obtain an explicit limit change if more
 rounds are needed. Changing tools, task IDs or profiles never resets the counts.
+Continue independent authorized work despite an accounting gap. After infrastructure
+failure apply the diagnosis, changed-condition and bounded no-generation actual
+launcher/child proof requirements in [review execution](review.md). Missing proof
+is UNVERIFIED; no default paid smoke, automatic provider switch or round reset.
 Configuration alone authorizes no provider calls.
 
 Verify host versions/identity, target ref, session visibility, available harnesses,
@@ -41,6 +45,14 @@ approval surfaces before dispatch; no model call to guess. For agterm only when
 actually selected, read its available skill/public CLI and map cwd/program/task
 binding, returned IDs, explicit-target observations and recovery. No agterm
 invocation, new adapter runtime or universal environment scrubbing is implied.
+
+Qualify actual worker checkout writes, atomic writes to the assigned report path,
+required check execution and task-required network access before dependent work.
+Use harmless bounded probes under existing authorization; record evidence and
+supported/unsupported/unknown capabilities. Configuration or permission labels
+alone are not proof. Missing required evidence is UNVERIFIED and blocks only
+dependent work. No mandatory full access, configuration change or repeated phase
+approval follows; request only a genuinely missing scoped permission.
 
 ## Optional legacy preference interpretation
 
