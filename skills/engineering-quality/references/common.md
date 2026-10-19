@@ -1,0 +1,37 @@
+# Common engineering checks
+
+Use the target checkout's instructions, existing components and test commands.
+For a bug, reproduce the user-visible failure with a behavioral regression before
+fixing it; distinguish the missing behavior from a broken fixture or typo. Test
+public outcomes/invariants rather than source text, copied implementation or
+mock behavior. Avoid duplicating existing coverage and low-value assertions.
+
+A minimal complete fix follows the existing pattern and covers the whole same
+scenario. For a changed shared helper/client/constructor, enumerate **all actual
+callers** with full search/LSP results; group their argument/context variations
+and assess each. Check adjacent failure/cancellation paths that share the cause,
+not an unrelated repository-wide cleanup. Read saved files and the entire owned
+diff after edits; preserve other owners' changes and generated-file boundaries.
+
+Assess lifecycle where touched: process groups, threads/tasks, subscriptions,
+readers, sockets and temporary files need clear owners and release on success,
+failure and cancellation. A deadline must stop owned work rather than only stop
+waiting for it. Preserve useful context in actionable errors; keep machine
+output stable and secrets out of diagnostics. Use existing logging/metrics when
+an operational question requires them; do not add a telemetry subsystem or
+service checklist to an unrelated local change.
+
+Prefer established, mature dependencies when they materially solve the problem.
+For a genuinely open choice, compare a suitable library/service with a local
+implementation: behavior, maintenance, license, compatibility, maturity and cost;
+verify current claims from primary sources. Recommend an option and get the
+material decision before code. Do not renegotiate the chosen stack or add a
+framework just to satisfy this reference. Fix dependency problems at their
+appropriate boundary rather than expanding scope silently.
+
+Follow established design-system components/tokens for interfaces; a functional
+example is not permission to copy its appearance or redesign the product.
+Run required repository checks in their prescribed order and stage exact owned
+paths. Include project-required changelog/design updates for visible behavior;
+publication still requires its actual authorization. Report checks, exact
+snapshot, limitations and next step, then retain the builder for corrections.

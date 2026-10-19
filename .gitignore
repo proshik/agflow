@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+!.env.example
+.local/
+!CLAUDE.md
+
+# Local configuration, recovery evidence and generated reports
+.guild/
+.revust/
+node_modules/
+coverage/
+*.log
+*.sarif
+*.pem
+*.key
+*.bak
+backups/
+reports/
+.playwright-mcp/

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Acceptance testing"
+  short_description: "Qualify scenarios on the exact integrated version"
+  default_prompt: "Use $acceptance-testing to collect observable evidence for the accepted scenarios."
+policy:
+  allow_implicit_invocation: true

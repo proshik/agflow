@@ -1,0 +1,6 @@
+interface:
+  display_name: "Spec design"
+  short_description: "Prepare the project-appropriate task contract"
+  default_prompt: "Use $spec-design to prepare the requested change's acceptance contract using existing OpenSpec or a lightweight task note."
+policy:
+  allow_implicit_invocation: true

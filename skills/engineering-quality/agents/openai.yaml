@@ -1,0 +1,6 @@
+interface:
+  display_name: "Engineering quality"
+  short_description: "Complete fixes with meaningful regression evidence"
+  default_prompt: "Use $engineering-quality to implement the accepted task and verify affected callers."
+policy:
+  allow_implicit_invocation: true

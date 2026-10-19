@@ -1,0 +1,41 @@
+---
+name: acceptance-testing
+description: Use when qualifying implemented acceptance scenarios, ongoing live observations or final integrated behavior against an accepted contract. Not proof of behavior from static validation or a request to launch unbudgeted evaluations.
+---
+
+# Acceptance testing
+
+Map each accepted scenario to its regression and relevant real API, browser,
+native-window or CLI observation. Plan the observable outcome and required
+resource/authorization before executing; use [evidence records](references/evidence.md).
+Read the applicable engineering-quality surface reference for domain-specific
+failure modes. Do not invent a surface that the change does not affect.
+
+Observe important behavior throughout implementation to find failures early,
+then repeat affected observations on the final independently reviewed version.
+For UI, compare the running changed surface with the contract's accepted visual
+and interaction target in the relevant states and sizes. Retain the target
+revision and observed result, and list differences with their disposition.
+An unintended mismatch is FAIL; an unobservable required comparison is
+UNVERIFIED. An accepted change to the target must be recorded in the contract.
+Passing tests or independent review do not replace this comparison.
+Record exact source/build/environment identities, inputs/gestures, expected and
+actual results and retained evidence. A command acknowledgement or model judgment
+about prose is not live behavior; fixture output qualifies only its fixture.
+
+The builder reports its own assigned checks and remains available. Parent alone
+owns independent review, checks the exact combined revisions across branches and
+accepts final behavior. An edit invalidates affected earlier evidence; retain it
+as historical and obtain the necessary new checks/review within remaining limits.
+
+Use PASS/FAIL/UNVERIFIED per scenario. Missing credentials, permissions, a working
+API/window/browser, paid-call allowance or prerequisite revision is a named gap
+with owner and next action. Required gaps prevent final accepted/complete status;
+static OpenSpec or skill validation cannot turn them into behavioral PASS.
+Report implementation, verification and acceptance separately. "Ready for user
+inspection" identifies any remaining human check; "accepted/complete" requires
+all mandatory checks and decisions for the agreed scope, including UI conformity,
+and parent inspection of the retained evidence. Do not mark the task complete
+from a builder's done message or turn completion.
+Behavioral model evaluations require their own authorized launch ledger, separate
+from review calls. Publication, deployment and global rollout are separate actions.
