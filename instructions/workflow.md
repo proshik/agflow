@@ -35,8 +35,8 @@ native/CLI acceptance. Required missing evidence remains UNVERIFIED.
 
 New independent review runs only through installed revust in the initiating
 parent; read ~/.local/share/revust/REVIEW-ROUTING.md and its named skill. Preserve
-existing task history with separate limits per task: at most 2 plan-review
-rounds and at most 3 code-review rounds, including each initial review. One
+existing task history with separate limits per task: at most 1 plan-review
+round and at most 2 code-review rounds, including each initial review. One
 invocation includes finders, synthesis, verification and internal retries;
 another invocation consumes another round of the same kind, even after failure
 or stop. A confirmed pre-start refusal consumes no round; reconcile ambiguous
@@ -50,3 +50,24 @@ provider/profile selection and completed-view auto-close preference.
 Prepare local branches and concrete MR/PR text. Push, publication, main merge,
 cleanup and deployment still require their applicable explicit authorization.
 Never answer another session's tool approval or transfer provider secrets.
+
+Separate required scope, necessary compatibility and optional additions. Require
+a demonstrated dependency on requested behavior for agent-added shells/platforms;
+otherwise defer them and preserve affected callers. Assign the concrete accepted
+UI target and first useful working preview. Use small vertical checkpoints in the
+same task/session: working behavior, evidence, next visible outcome and blocker.
+Before broad code review, fill the actual empty input, execute the action, observe
+output and verify persistence where relevant, or exercise the affected API/CLI/native
+equivalent. Prototype/preview is not acceptance or an extra human approval gate.
+Parent stops scope drift; unmet agreement remains unfinished, new requests change scope.
+
+Distinguish managed workers (parent owns review/continuation) from user topic
+handoffs. Before creating a topic session, name the review/continuation owner and
+qualify a usable host-supported route and authority. Do not strip identity, assume
+task promotion, default to a human courier or suggest skipping review. If promotion
+is unsupported keep an eligible parent. Corrections record changed paths/behavior,
+invalidated evidence, retained evidence with rationale, necessary reruns/re-review
+and final reviewed identities. Preserve profiles, scope, histories and limits;
+no blanket reruns for unaffected cosmetic changes and no old clean result for an
+unreviewed snapshot. Defaults permit no plan re-review and one code re-review;
+required exhausted coverage remains UNVERIFIED unless explicitly changed.

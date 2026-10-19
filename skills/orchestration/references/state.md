@@ -62,3 +62,28 @@ worker acknowledges use and reports stopped consumers/actual state before done.
 Timeout/crash keeps the grant pending reconciliation; a file timestamp is not a
 lease expiry or permission for user-data cleanup. Separate ports/resources can
 proceed independently.
+
+## Two handoff modes
+
+Record the mode before creating a session:
+
+- Managed worker: the initiating eligible parent owns independent reviews,
+  supervision and continuation; child reports and receives corrections in the
+  same session through the qualified host route.
+- User topic handoff: record the new topic, accepted decisions and open questions,
+  review owner, continuation owner, supported host authority and the usable route
+  to those owners before creating the topic session. Qualify routing and resume
+  without model calls. A route description alone is not qualification. Do not
+  assume a task caller can be promoted; preserve caller identities. If promotion
+  is unavailable retain an eligible parent and its supported continuation route.
+  Do not default to a human manually carrying messages or suggest skipping reviews.
+
+Both modes retain original task/review identities, profiles, consumed rounds,
+limits, exact scope and evidence. A new topic never resets existing task history.
+Assignments/reports include required scope, necessary compatibility, optional
+additions, accepted UI target and first useful working preview. Checkpoints name
+working behavior/evidence, next visible outcome and actual blocker; intermediate
+progress is not a redundant approval gate. Corrections include changed paths and
+behavior, invalidated evidence, retained evidence and rationale, required reruns
+and independent review scope, and final reviewed identities. Never promote an
+old clean result to an unreviewed snapshot.

@@ -30,3 +30,22 @@ contract (OpenSpec change or lightweight task note) with the root before depende
 or product choice needs the user's decision; preserve already approved choices.
 Report unavailable tests/resources explicitly. Keep corrections in the assigned
 session and hand off the exact snapshot for parent-owned review/acceptance.
+
+Build small observable vertical checkpoints in the same task/session. Reach the
+first useful working preview from the assignment early: before full code review,
+enter a value into the actual initially empty UI input, execute the action,
+observe output and verify persistence where relevant (for example by reopening).
+Use the equivalent affected API, CLI or native surface for non-web work. Record
+actual inputs, outputs and snapshot; missing access is UNVERIFIED. A prototype or
+first preview is not final acceptance and adds no automatic human approval gate.
+Continue authorized work after intermediate checkpoints.
+
+Keep required behavior, necessary compatibility and optional additions distinct.
+An agent-added shell/platform needs a demonstrated dependency on requested behavior;
+otherwise defer it. Preserve affected callers. Report each checkpoint as working
+behavior, evidence, next visible outcome and actual blocker, including the accepted
+UI target and first working preview. An unmet contract is unfinished work; a new
+user request changes scope. Before corrections use the
+correction impact map in acceptance-testing and its bundled evidence guidance
+to identify invalidated and retained evidence and the required checks, without
+blanket reruns.

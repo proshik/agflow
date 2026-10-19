@@ -101,3 +101,29 @@ skip. This workflow owns the selected contract, role/worker routing, persistent
 corrections, parent review, accounting and phase continuity. Competing plans,
 reviewer/subagent dispatch, repeated phase approvals and branch-publication menus
 are superseded; do not edit plugin caches. User/host restrictions remain highest.
+
+## Observable progress and scope control
+
+Assignments and reports identify required scope, necessary compatibility and
+optional additions, plus the concrete accepted UI target and first useful working
+preview. Agent-added shells/platforms require a demonstrated dependency on the
+requested behavior; otherwise defer them. Parent checkpoints stop drift while
+preserving affected callers. An unmet original contract remains unfinished work;
+a new request changes that contract explicitly.
+
+Build and supervise small observable vertical checkpoints in the same task and
+session. Report what works, its evidence, next visible outcome and actual blocker.
+Before full code review require minimal real interaction: fill the actual empty
+input, execute the action, observe output and verify persistence where relevant;
+use the affected API/CLI/native equivalent. Preview/prototype is not acceptance.
+Missing access remains UNVERIFIED; checkpoints add no automatic approval gate
+and do not stop already authorized work. Before corrections, map changed behavior
+and paths to invalidated/retained evidence, required reruns/re-review and final
+reviewed identities using acceptance-testing. Preserve profile, exact scope,
+history and round limits; do not apply prior clean review to an unreviewed snapshot.
+
+Distinguish managed-worker assignments from user topic handoffs through
+orchestration and its bundled handoff/state guidance. Before creating a topic
+session, qualify the review/continuation owner and usable host-supported route.
+If promotion is unsupported retain the eligible parent, without identity stripping,
+manual human courier as default, or suggestions to skip required review.

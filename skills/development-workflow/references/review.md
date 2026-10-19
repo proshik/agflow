@@ -44,7 +44,7 @@ fresh task. Keep provider configuration and root operational records separate
 from builder/native defaults. Never invent a dedicated Guild plan-review command.
 
 The root reconciles the task's original plan and code round histories separately
-before launch: at most 2 plan-review rounds and at most 3 code-review rounds,
+before launch: at most 1 plan-review round and at most 2 code-review rounds,
 including the initial review of each kind. One invocation, with its finders,
 synthesis, verification and internal retries, is one round. A new invocation,
 including after a failed/stopped run, consumes another round of the same kind;

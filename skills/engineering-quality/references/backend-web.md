@@ -28,3 +28,10 @@ coverage and actual API/browser observations complement each other. Record
 versions and exact code; mocked API output or a generated screenshot is not live
 acceptance. Use existing test/browser tools when available; name missing surfaces
 and remaining checks rather than treating static tests as PASS for them.
+
+Before broad code review, exercise the first useful working path. In the actual
+page, fill an initially empty input, execute its action, observe the result and
+verify relevant persistence by reopening/reloading. For API-only work use the
+real affected request/response and relevant read-back. Compare the accepted UI
+target revision and record mismatches. A static preview is not this interaction;
+this checkpoint does not add a human approval gate or replace final acceptance.

@@ -3,7 +3,7 @@
 This portable routing policy is a workflow preference, not permission
 for an unrequested review, additional paid calls, implementation delegation or
 publication. Existing explicit authorization persists. Default task limits are
-2 plan-review rounds and, separately, 3 code-review rounds, including the first
+1 plan-review round and, separately, 2 code-review rounds, including the first
 review of each kind. A round is one dispatched invocation with all internal
 stages and retries; another invocation consumes another round even after failure
 or stop. Confirmed pre-start refusals consume no round; reconcile ambiguous starts.
@@ -71,3 +71,13 @@ archive or cancel a live review just to close its window. A stuck completion
 requires reconciliation of that same job and archived result, not a new review
 or an invented clean host exit. No extra provider call is authorized to test
 this preference.
+
+Defaults permit no plan/specification re-review and one code re-review. Preserve
+explicit existing task histories and limits. Required coverage after exhaustion
+remains UNVERIFIED unless the user explicitly changes limits or acceptance.
+Before code review inspect basic real interaction evidence and the accepted UI
+target/working preview. Before correction review map changed paths/behavior,
+invalidated evidence, justified retained evidence, required reruns/re-review and
+final reviewed identities. Keep the configured profile and exact scope; prior clean
+evidence does not cover an unreviewed snapshot. Cosmetic edits alone do not
+mandate a full suite or new review when no relevant evidence is invalidated.

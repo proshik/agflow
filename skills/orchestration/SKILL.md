@@ -82,7 +82,7 @@ from contracts and engine archives. Retain identities, contract/code digests,
 phase/resume phase, question IDs/types/actual answer provenance, dependencies,
 leases, effective selections, evidence, limitations and next action; no secrets.
 Parent alone owns independent revust checkpoints and separate task-wide round
-counts: at most 2 plan-review rounds and at most 3 code-review rounds, including
+counts: at most 1 plan-review round and at most 2 code-review rounds, including
 the initial review of each kind. Each dispatched invocation includes its finders,
 synthesis, verification and internal retries; another invocation consumes another
 round, even after failure or stop. A confirmed pre-start refusal does not consume
@@ -93,3 +93,23 @@ Unknown history or exhausted rounds withholds that review; more rounds require
 an explicit limit change. Evaluations use a separately authorized ledger.
 Changing identity/profile/engine never resets counts. Missing review or live
 evidence is UNVERIFIED, not accepted.
+
+## Handoff modes and vertical checkpoints
+
+Use [handoff modes](references/state.md) explicitly: a managed worker remains
+under its eligible parent; a user topic handoff needs a named review and
+continuation owner and a qualified usable host-supported route before session
+creation. A task caller cannot become a parent by renaming or stripping identity.
+When promotion is unsupported, retain the eligible parent. Do not default to a
+manual human courier or suggest skipping required review.
+
+Assignments include required scope, necessary compatibility, optional additions,
+the accepted concrete UI target and first useful working preview. Parent stops
+scope drift: agent-added shells/platforms require a demonstrated dependency on
+requested behavior, while affected callers remain supported. Supervise small
+vertical checkpoints in the same contract/session; report working behavior,
+evidence, next visible outcome and blocker. Require basic real interaction before
+broad code review; preview is not acceptance. Continue authorized work without
+redundant approvals. Before corrections inspect the impact map of changed paths,
+invalidated/retained evidence with rationale, required reruns/re-review and final
+reviewed identities; preserve scope, profiles, histories and remaining rounds.

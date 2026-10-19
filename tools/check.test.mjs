@@ -48,7 +48,7 @@ test('reject malformed manifest, skill frontmatter, metadata and JavaScript', t 
   write('skills/spec-design/agents/openai.yaml', 'interface: [broken');
   write('previews/process.html', '<script>const = ;</script>');
   const errors = validate(root, files).join('\n');
-  for (const expected of [/exactly five/, /separate 2\/3/, /frontmatter/, /metadata/, /invalid JavaScript/]) assert.match(errors, expected);
+  for (const expected of [/exactly five/, /separate 1\/2/, /frontmatter/, /metadata/, /invalid JavaScript/]) assert.match(errors, expected);
 });
 
 test('reject candidate drift, absent files and extra skills', t => {

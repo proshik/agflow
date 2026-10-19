@@ -35,3 +35,9 @@ Run required repository checks in their prescribed order and stage exact owned
 paths. Include project-required changelog/design updates for visible behavior;
 publication still requires its actual authorization. Report checks, exact
 snapshot, limitations and next step, then retain the builder for corrections.
+
+At each vertical checkpoint separate required scope, necessary compatibility and
+optional additions. Demonstrate a requested-behavior dependency before adding a
+shell/platform or generalized layer; otherwise defer it. Keep affected callers
+working. Report concrete behavior and evidence, next visible outcome and blocker;
+continue in the same eligible session without redundant checkpoint approvals.

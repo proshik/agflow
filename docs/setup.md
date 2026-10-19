@@ -106,3 +106,20 @@ Installation copies instructions; qualifying the workflow host is separate.
 Qualify tooling and revust process ownership for the destination OS before using
 it for managed implementation or reviews. Do not mix Windows and WSL homes or
 path conventions in one installation.
+
+## Workflow policy consistency
+
+Verify bundle.json and the installed managed rules agree: defaults are one
+specification/plan round and two code rounds, including initial reviews (no plan
+re-review, one code re-review). A new invocation after failure/stop counts;
+a confirmed pre-start refusal does not, and ambiguous starts need reconciliation.
+Never reset existing task histories/limits or transfer rounds between kinds.
+There is no default aggregate process cap. Preserve configured review profiles;
+exhausted required review stays UNVERIFIED pending an explicit user change.
+
+Check that setup retains the five self-contained skills and their guidance for
+early real interaction before broad review, concrete UI target/working preview,
+scope boundaries, small vertical checkpoints, two handoff modes with qualified
+owners/routes before topic creation, and correction impact maps. Installation
+and structural checks do not qualify those future behaviors or authorize models.
+No new runtime scheduler, host promotion or global permission is supplied.

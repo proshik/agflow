@@ -13,7 +13,7 @@ root receipt before dependent actions; settings presence never initiates work.
 | Isolation/visibility | Managed separate worktree; visible in Guild, non-visible elsewhere only with qualified human/resume channels |
 | Worker count | One builder for a bounded task; independent requested work only within the declared configured envelope; sequence coupled changes |
 | New routine review | Initiator-only installed revust, explicit selection or its actual effective configured default/roster/stages |
-| Limits | Portable defaults per task: at most 2 plan-review rounds and, separately, at most 3 code-review rounds, including each initial review; no default cap on actual process starts; explicit applicable limits take precedence |
+| Limits | Portable defaults per task: at most 1 plan-review round and, separately, at most 2 code-review rounds, including each initial review; no default cap on actual process starts; explicit applicable limits take precedence |
 | Delivery | Local branch and concrete proposal; push only by explicit command/manual user action; no standing publication/merge/global mutation |
 
 Count plan and code rounds separately across coordinated branches of the same
@@ -21,8 +21,8 @@ task. A round is one dispatched review invocation, including its finders,
 synthesis, verification and internal retries. The initial review counts; a new
 invocation after corrections, a failed run or a stop consumes another round of
 that kind. A confirmed refusal before any provider starts consumes no round;
-reconcile ambiguous starts before dispatch. Thus the defaults allow one plan
-re-review and two code re-reviews. Unused plan rounds cannot become code rounds
+reconcile ambiguous starts before dispatch. Thus the defaults allow no plan
+re-review and one code re-review. Unused plan rounds cannot become code rounds
 or vice versa. Record original round history and actual process starts for
 observability; there is no default aggregate process-count ceiling. Explicit
 user/task/provider limits still apply. Unknown history or exhaustion withholds
