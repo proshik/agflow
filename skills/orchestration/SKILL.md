@@ -104,10 +104,13 @@ without transferring rounds between kinds. Record actual starts without a defaul
 process-count ceiling. Honor separately explicit user/task/provider limits.
 Unknown history or exhausted rounds withholds that review; more rounds require
 an explicit limit change. Continue independent authorized work. After infrastructure
-failure, retry requires cause, a changed condition and bounded no-generation proof
+failure, retry normally requires cause, a changed condition and bounded no-generation proof
 from the actual launcher/child route. Missing proof is UNVERIFIED; no default paid
 smoke, automatic provider switch or round reset. Reconcile original IDs/archives
-before repeating. Evaluations use a separately authorized ledger.
+before repeating. For a specific user-authorized retry without available free
+recovery proof, follow development-workflow and its bundled review guidance;
+recovery stays UNVERIFIED and allowance must remain available. Evaluations use a
+separately authorized ledger.
 Changing identity/profile/engine never resets counts. Missing review or live
 evidence is UNVERIFIED, not accepted.
 

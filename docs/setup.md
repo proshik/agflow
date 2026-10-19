@@ -121,9 +121,12 @@ Never reset existing task histories/limits or transfer rounds between kinds.
 There is no default aggregate process cap. Preserve configured review profiles;
 exhausted required review stays UNVERIFIED pending an explicit user change.
 Verify execution entrypoints retain causal diagnosis, a changed condition and
-bounded no-generation actual launcher/child proof before infrastructure retries;
+bounded no-generation actual launcher/child proof by default before retries;
 missing proof is UNVERIFIED, with no default paid smoke or automatic provider switch.
-Accounting alone does not authorize retry. Unknown accounting blocks the affected
+For the specific user-authorized exception when free proof is unavailable, follow
+[review routing](../instructions/review-routing.md); recovery remains UNVERIFIED and
+allowance must be reconciled and available. Accounting alone does not authorize
+retry. Unknown accounting blocks the affected
 review only. Check actual worker checkout/atomic-report writes, required checks
 and task-required network qualification under existing authority, without blanket
 full access or repeated approvals. Current receipts stay separate from history,

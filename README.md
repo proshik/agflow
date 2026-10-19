@@ -57,7 +57,8 @@ initial review of each kind. Internal stages and retries belong to one round;
 a new invocation consumes another round. There is no default aggregate cap on
 process starts; separately explicit limits still apply. Accounting does not
 authorize infrastructure retries: apply causal diagnosis, changed conditions and
-bounded no-generation actual launcher/child proof in
+bounded no-generation actual launcher/child proof by default, or the specific
+user-authorized exception when free recovery proof is unavailable, in
 [review execution policy](instructions/review-routing.md); missing proof is
 UNVERIFIED, with no default paid smoke, automatic provider switch or count reset.
 Superpowers methods are optional. Guild is a supported managed-session host; other hosts
