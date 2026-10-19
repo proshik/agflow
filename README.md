@@ -55,8 +55,12 @@ engineering quality and acceptance testing. Review defaults per task are up to
 1 plan-review round and, separately, up to 2 code-review rounds, including the
 initial review of each kind. Internal stages and retries belong to one round;
 a new invocation consumes another round. There is no default aggregate cap on
-process starts; separately explicit limits still apply. Superpowers
-methods are optional. Guild is a supported managed-session host; other hosts
+process starts; separately explicit limits still apply. Accounting does not
+authorize infrastructure retries: apply causal diagnosis, changed conditions and
+bounded no-generation actual launcher/child proof in
+[review execution policy](instructions/review-routing.md); missing proof is
+UNVERIFIED, with no default paid smoke, automatic provider switch or count reset.
+Superpowers methods are optional. Guild is a supported managed-session host; other hosts
 must qualify isolation, observation, human questions, approvals and resume.
 
 ## Update after this repository changes

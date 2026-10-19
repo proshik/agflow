@@ -72,6 +72,14 @@ root verifies them and sends supported corrections to the same eligible builder
 via orchestration, then checks the changed snapshot within the remaining rounds of that review kind.
 Closing/hiding presentation does not cancel a run or prove completion.
 
+After infrastructure failure, another review invocation requires a causal
+diagnosis, a changed condition and bounded no-generation evidence from the actual
+launcher/child route that the failed prerequisite now works. Package/config checks
+alone do not qualify that route. Use existing logs and supported free probes;
+missing proof remains UNVERIFIED and withholds the affected review. Do not use a
+paid smoke call by default, switch providers automatically or reset rounds.
+Reconcile the same request/job IDs and original archive before any repeat;
+remaining rounds are accounting, not retry authorization.
 
 ## Completed presentation
 
