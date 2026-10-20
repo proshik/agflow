@@ -24,7 +24,12 @@ design. This instruction contract is not host runtime enforcement.
    observation/recovery and real human question/tool-approval channels through
    orchestration. Record supported/unsupported/unknown with evidence; withhold
    dependent dispatch on a required gap rather than silently replace a required
-   builder with root implementation. Continue independent authorized work.
+   builder with root implementation. Qualify actual worker checkout writes, atomic
+   assigned-report writes, required checks and task-required network access using
+   bounded harmless probes under existing authority, not configuration alone.
+   Record capability evidence through [effective policy](references/policy.md);
+   missing evidence is UNVERIFIED. No mandatory full access or new phase approval.
+   Continue independent authorized work.
 2. Prepare the contract first with spec-design, proportional to the task.
    Resolve material open questions and record the agreed UI target where affected
    before implementation; reuse settled decisions rather than adding phase
@@ -54,8 +59,10 @@ design. This instruction contract is not host runtime enforcement.
 4. Stay active and supervise each assigned ID fairly through bounded host
    waits/events and durable results. A completed turn needs result inspection
    and its next authorized parent checkpoint, not a final response leaving
-   workers running. Follow orchestration's supervision/recovery protocol and
-   continue the same eligible idle/done session through corrections.
+   workers running. Consume the report, reconcile its exact artifacts and record
+   the checkpoint outcome, next action and owner in the current root receipt
+   before continuation or turn end. Follow orchestration's supervision/recovery
+   protocol and continue the same eligible idle/done session through corrections.
 5. Inspect engineering-quality checks and acceptance-testing observations;
    parent alone reviews the exact implementation snapshot with revust within
    separate remaining plan/code round limits. Verify supported findings, continue corrections
@@ -76,6 +83,10 @@ design. This instruction contract is not host runtime enforcement.
 Do the accepted tasks in your assigned checkout, preserving unrelated work.
 Designer uses spec-design; builder uses engineering-quality and acceptance-testing.
 Verify the supplied contract/revision, ownership, dependencies and report path.
+Before dependent work, qualify actual checkout and atomic assigned-report writes,
+required checks and task-required network using bounded harmless probes under
+existing authority. Report gaps as UNVERIFIED; configuration alone proves nothing,
+and qualification requires neither blanket full access nor repeated phase approval.
 Follow tasks to meaningful checks and required commits; report contradictions to
 root before dependent work. Keep the same session for corrections, including
 parent-owned review/evaluation checkpoints; do not attempt those launches yourself.
@@ -101,3 +112,29 @@ skip. This workflow owns the selected contract, role/worker routing, persistent
 corrections, parent review, accounting and phase continuity. Competing plans,
 reviewer/subagent dispatch, repeated phase approvals and branch-publication menus
 are superseded; do not edit plugin caches. User/host restrictions remain highest.
+
+## Observable progress and scope control
+
+Assignments and reports identify required scope, necessary compatibility and
+optional additions, plus the concrete accepted UI target and first useful working
+preview. Agent-added shells/platforms require a demonstrated dependency on the
+requested behavior; otherwise defer them. Parent checkpoints stop drift while
+preserving affected callers. An unmet original contract remains unfinished work;
+a new request changes that contract explicitly.
+
+Build and supervise small observable vertical checkpoints in the same task and
+session. Report what works, its evidence, next visible outcome and actual blocker.
+Before full code review require minimal real interaction: fill the actual empty
+input, execute the action, observe output and verify persistence where relevant;
+use the affected API/CLI/native equivalent. Preview/prototype is not acceptance.
+Missing access remains UNVERIFIED; checkpoints add no automatic approval gate
+and do not stop already authorized work. Before corrections, map changed behavior
+and paths to invalidated/retained evidence, required reruns/re-review and final
+reviewed identities using acceptance-testing. Preserve profile, exact scope,
+history and round limits; do not apply prior clean review to an unreviewed snapshot.
+
+Distinguish managed-worker assignments from user topic handoffs through
+orchestration and its bundled handoff/state guidance. Before creating a topic
+session, qualify the review/continuation owner and usable host-supported route.
+If promotion is unsupported retain the eligible parent, without identity stripping,
+manual human courier as default, or suggestions to skip required review.

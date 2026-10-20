@@ -42,3 +42,21 @@ A final record distinguishes checked local prototype, accepted task, readiness
 for authorized delivery and observed publication/merge. Do not archive an
 OpenSpec change, mark pilot/global tasks complete or imply rollout from document
 validation alone. Scope-specific deferral needs an explicit accepted decision.
+
+## Correction impact map
+
+Before rechecking a correction, record changed paths and behavior; affected
+scenarios; invalidated evidence and why; retained evidence with a specific
+non-impact rationale; required reruns and independent re-review scope; and final
+contract/code/build/review identities. Preserve old evidence as historical.
+Cosmetic changes do not automatically require the full suite or another review:
+justify which checks remain valid and which changed surface must be observed.
+The parent determines required independent coverage under the original task
+history, configured profile and remaining rounds. Reused evidence covers only
+its stated scope, never an unreviewed snapshot as a whole. Required review after
+exhaustion remains UNVERIFIED until an explicit limit or acceptance change.
+
+For an early working preview record the actual initially empty input, entered
+value, action, output and relevant persistence observation (or affected API/CLI
+sequence), accepted UI target revision and differences. Repeat invalidated
+observations for final acceptance. Do not fabricate UI tests for prose changes.

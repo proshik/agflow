@@ -7,6 +7,35 @@ an outside-checkout path needs explicit write scope. Otherwise retain it in the
 checkout and state the durability limit. Publish through a temporary sibling
 and atomic rename; leave call/source archives unchanged and omit secrets/reasoning.
 
+## Current receipt and historical evidence
+
+The root receipt describes current state, not an append-only event log. Keep
+historical events, superseded receipts and immutable review archives separately;
+reference them without treating an old success as the current checkpoint.
+Include receipt revision/update time, current phase/resume phase, exact live
+worker/request/job IDs, checkout/HEAD/dirty digests, contract identity, latest
+consumed report identity, checkpoint status, next action and explicit owner.
+Keep separate plan/code used/remaining limits, original archive references and
+accounting certainty; an unresolved count is unknown, never zero.
+
+Atomically update after dispatch acknowledgement or ambiguous start, review
+start/result, report consumption, limit changes and before ending the parent
+turn. Record an in-flight action before starting it, then reconcile its returned
+identity/result; a crash between these writes leaves a pending action to recover,
+not permission to replay. A report arriving alone does not advance acceptance.
+The parent reads it, checks actual artifacts/revision and consumes the next
+already-authorized checkpoint, recording outcome and next owner/action. If the
+checkpoint is blocked, retain its cause and resume phase and continue independent
+authorized work; do not wait for an unsolicited worker turn or user reminder.
+
+Before repeating a dispatch/review or resuming after interruption, compare current
+receipt with the same session/request/job IDs, live checkout/process/conversation,
+latest report and original review archive. Resolve contradictions explicitly;
+retain superseded facts as history. Unknown accounting withholds only the affected
+review, not independent authorized work. Missing required evidence is UNVERIFIED.
+Workers atomically update only their assigned reports with exact snapshot/checks,
+limitations, checkpoint and next action/owner; the parent alone owns root state.
+
 A complete handoff can use this compact outline:
 
 ```text
@@ -62,3 +91,28 @@ worker acknowledges use and reports stopped consumers/actual state before done.
 Timeout/crash keeps the grant pending reconciliation; a file timestamp is not a
 lease expiry or permission for user-data cleanup. Separate ports/resources can
 proceed independently.
+
+## Two handoff modes
+
+Record the mode before creating a session:
+
+- Managed worker: the initiating eligible parent owns independent reviews,
+  supervision and continuation; child reports and receives corrections in the
+  same session through the qualified host route.
+- User topic handoff: record the new topic, accepted decisions and open questions,
+  review owner, continuation owner, supported host authority and the usable route
+  to those owners before creating the topic session. Qualify routing and resume
+  without model calls. A route description alone is not qualification. Do not
+  assume a task caller can be promoted; preserve caller identities. If promotion
+  is unavailable retain an eligible parent and its supported continuation route.
+  Do not default to a human manually carrying messages or suggest skipping reviews.
+
+Both modes retain original task/review identities, profiles, consumed rounds,
+limits, exact scope and evidence. A new topic never resets existing task history.
+Assignments/reports include required scope, necessary compatibility, optional
+additions, accepted UI target and first useful working preview. Checkpoints name
+working behavior/evidence, next visible outcome and actual blocker; intermediate
+progress is not a redundant approval gate. Corrections include changed paths and
+behavior, invalidated evidence, retained evidence and rationale, required reruns
+and independent review scope, and final reviewed identities. Never promote an
+old clean result to an unreviewed snapshot.

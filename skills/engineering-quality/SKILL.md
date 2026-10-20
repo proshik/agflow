@@ -14,7 +14,10 @@ Pin each regression to an acceptance scenario and observe its failure for the
 right reason before fixing code. Verify the entire same scenario and affected
 callers; avoid a nearby refactor that does not serve it. Inspect the resulting
 files/diff, run the target project's required checks and retain exact evidence.
-A green branch alone does not establish combined or live acceptance.
+Classify failing checks as introduced, pre-existing or unknown using the targeted
+and base-comparison guidance in [common quality](references/common.md); preserve
+evidence and report acceptance impact without automatically repairing unrelated
+failures. A green branch alone does not establish combined or live acceptance.
 
 For changed UI, implement the accepted visual and interaction target from the
 contract. Inspect the real changed surface early, including relevant constrained
@@ -30,3 +33,22 @@ contract (OpenSpec change or lightweight task note) with the root before depende
 or product choice needs the user's decision; preserve already approved choices.
 Report unavailable tests/resources explicitly. Keep corrections in the assigned
 session and hand off the exact snapshot for parent-owned review/acceptance.
+
+Build small observable vertical checkpoints in the same task/session. Reach the
+first useful working preview from the assignment early: before full code review,
+enter a value into the actual initially empty UI input, execute the action,
+observe output and verify persistence where relevant (for example by reopening).
+Use the equivalent affected API, CLI or native surface for non-web work. Record
+actual inputs, outputs and snapshot; missing access is UNVERIFIED. A prototype or
+first preview is not final acceptance and adds no automatic human approval gate.
+Continue authorized work after intermediate checkpoints.
+
+Keep required behavior, necessary compatibility and optional additions distinct.
+An agent-added shell/platform needs a demonstrated dependency on requested behavior;
+otherwise defer it. Preserve affected callers. Report each checkpoint as working
+behavior, evidence, next visible outcome and actual blocker, including the accepted
+UI target and first working preview. An unmet contract is unfinished work; a new
+user request changes scope. Before corrections use the
+correction impact map in acceptance-testing and its bundled evidence guidance
+to identify invalidated and retained evidence and the required checks, without
+blanket reruns.
