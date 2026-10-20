@@ -50,6 +50,12 @@ preserved. Dependencies such as revust are checked and set up separately.
 6. The result is a local branch and concrete MR/PR text. Push, publication, merge,
    cleanup and deployment require their applicable explicit authorization.
 
+In capable Guild, the initiating harness registers the Process before substantive
+design. The parent remains in its original checkout while the draft evolves;
+final requirements are supplied with the contract checkpoint. Native graph
+commands own subsequent reviews and assignments. Other qualified hosts retain
+the portable route. See the [native entry guide](skills/development-workflow/references/native-entry.md).
+
 The five skills cover development, contract preparation, orchestration,
 engineering quality and acceptance testing. Review defaults per task are up to
 1 plan-review round and, separately, up to 2 code-review rounds, including the

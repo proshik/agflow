@@ -36,6 +36,8 @@
     "skills/acceptance-testing/references/evidence.md",
     "skills/development-workflow/SKILL.md",
     "skills/development-workflow/agents/openai.yaml",
+    "skills/development-workflow/references/native-entry.md",
+    "skills/development-workflow/references/native-entry.py",
     "skills/development-workflow/references/policy.md",
     "skills/development-workflow/references/review.md",
     "skills/engineering-quality/SKILL.md",

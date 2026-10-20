@@ -11,6 +11,9 @@ not authority to patch bootstrap, inspect Rust or erase identity.
 
 | Need | Public command / evidence |
 | --- | --- |
+| Discover ordinary native workflow before design | `guild workflow capabilities --json`, `guild workflow instructions` |
+| Register/show preparation (original parent only) | `guild workflow start --from-file REQUEST --json`, then `guild workflow show RUN --json` |
+| Native graph checkpoint/review/report | Shared development-workflow native-entry guide (`references/native-entry.md`); public `workflow status/checkpoint/review/retry` only, no parallel portable dispatch |
 | Create worktree with visible managed task | `guild worktree create NAME --from PROJECT --base REF --from-file TASK --harness HARNESS --json` |
 | Start in an existing assigned checkout | `guild session new --worktree PATH --from-file TASK --harness HARNESS --json` |
 | Reconcile exact assigned identities/status | `guild agent list --json` and retained create/request receipts |
@@ -23,6 +26,12 @@ Resolve HARNESS explicitly; the CLI's default need not match the assignment.
 Capture returned checkout/session/request IDs and verify actual start through
 observations. Creation success alone does not prove task delivery or execution.
 Do not use a Git worktree fallback or another terminal to bypass Guild's owner.
+
+For an ordinary development request, native capability discovery precedes
+substantive design. The shared development-workflow entry guide owns native mode
+selection. The worktree/session operations above remain the portable mapping;
+do not invoke them as a second dispatcher while a native run owns the task.
+A refused native effect stays on that run; no fallback or identity stripping.
 
 ## Parent monitoring cycle
 
