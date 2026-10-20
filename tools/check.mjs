@@ -44,8 +44,8 @@ export function validate(root, files) {
       typeof manifest.source !== 'string' || !manifest.source.trim()) fail('bundle.json', 'invalid bundle metadata');
   if (!Array.isArray(manifest.skills) || !same(manifest.skills, expectedSkills)) fail('bundle.json', 'expected exactly five skills');
   const defaults = manifest.review_defaults;
-  if (defaults?.plan_review_rounds !== 2 || defaults?.code_review_rounds !== 3 ||
-      defaults?.includes_initial_review !== true || defaults?.actual_processes != null || defaults?.correction_rounds != null) fail('bundle.json', 'review defaults must preserve separate 2/3 rounds without a process cap');
+  if (defaults?.plan_review_rounds !== 1 || defaults?.code_review_rounds !== 2 ||
+      defaults?.includes_initial_review !== true || defaults?.actual_processes != null || defaults?.correction_rounds != null) fail('bundle.json', 'review defaults must preserve separate 1/2 rounds without a process cap');
   const inventory = manifest.publication_files;
   if (!Array.isArray(inventory) || !inventory.length ||
       inventory.some(p => !safePath(p) || privatePath.test(p)) ||

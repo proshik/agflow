@@ -51,3 +51,10 @@ real human/external dependency blocks remaining progress. Closing/hiding a
 surface, wait timeout and turn completion are distinct from cancellation and
 acceptance. No monitoring persists after the parent execution ends. Do not
 stop/remove sessions or worktrees as an implied cleanup step.
+
+A user topic handoff differs from a managed worker assignment. Before creating
+its session, qualify a usable route to named review and continuation owners with
+the actual supported host authority. Session creation does not promote an assigned
+task caller. Preserve Guild identity; when promotion is unsupported, keep the
+eligible parent and supported continuation route. Do not bypass this with identity
+stripping, a manual human courier by default, or skipped review requirements.

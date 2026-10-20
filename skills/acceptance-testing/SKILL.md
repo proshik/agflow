@@ -23,6 +23,11 @@ Record exact source/build/environment identities, inputs/gestures, expected and
 actual results and retained evidence. A command acknowledgement or model judgment
 about prose is not live behavior; fixture output qualifies only its fixture.
 
+Retain introduced/pre-existing/unknown failure classification and its targeted or
+base evidence; unavailable attribution stays unknown, and missing required checks
+remain UNVERIFIED. A pre-existing failure is not automatically accepted or in scope
+for repair. Parent decides its effect against the agreed acceptance contract.
+
 The builder reports its own assigned checks and remains available. Parent alone
 owns independent review, checks the exact combined revisions across branches and
 accepts final behavior. An edit invalidates affected earlier evidence; retain it
@@ -39,3 +44,17 @@ and parent inspection of the retained evidence. Do not mark the task complete
 from a builder's done message or turn completion.
 Behavioral model evaluations require their own authorized launch ledger, separate
 from review calls. Publication, deployment and global rollout are separate actions.
+
+Require a minimal real interaction before broad code review: actual initially
+empty input → entered value → executed action → observed output → persistence
+check where relevant. Use the affected API/CLI/native equivalent. This early
+checkpoint diagnoses basic failures; a prototype/preview is not final acceptance
+or an extra human approval gate. Record the accepted UI target and first useful
+working preview in the assignment and report. Documentation-only work needs
+file/link/inventory checks and affected local controls, not fabricated product
+tests or unauthorized model evaluations.
+
+Before rerunning checks after a correction, record the
+[correction impact map](references/evidence.md). Retain justified unaffected
+evidence and rerun invalidated observations on the final reviewed identities.
+Never call an unreviewed snapshot clean using an earlier review.

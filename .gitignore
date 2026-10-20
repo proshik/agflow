@@ -20,3 +20,4 @@ coverage/
 backups/
 reports/
 .playwright-mcp/
+.agflow-builder-report.md

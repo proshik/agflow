@@ -72,3 +72,10 @@ Architecture-only work stops
 at independently reviewed `design_ready`; no implementation worker is implied.
 A small bounded fix can use the root's concise contract instead of a separate
 designer, while retaining the required implementation worktree and review route.
+
+Separate required scope, necessary compatibility and optional additions in the
+contract. For every agent-added shell, platform or generalization, demonstrate
+which requested behavior depends on it; otherwise defer it. Preserve affected
+callers and agreed contracts. Name the first useful working preview: concrete
+input/action/output, target path/revision and relevant states. A prototype settles
+a target; it is not acceptance of the implementation.

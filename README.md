@@ -52,11 +52,16 @@ preserved. Dependencies such as revust are checked and set up separately.
 
 The five skills cover development, contract preparation, orchestration,
 engineering quality and acceptance testing. Review defaults per task are up to
-2 plan-review rounds and, separately, up to 3 code-review rounds, including the
+1 plan-review round and, separately, up to 2 code-review rounds, including the
 initial review of each kind. Internal stages and retries belong to one round;
 a new invocation consumes another round. There is no default aggregate cap on
-process starts; separately explicit limits still apply. Superpowers
-methods are optional. Guild is a supported managed-session host; other hosts
+process starts; separately explicit limits still apply. Accounting does not
+authorize infrastructure retries: apply causal diagnosis, changed conditions and
+bounded no-generation actual launcher/child proof by default, or the specific
+user-authorized exception when free recovery proof is unavailable, in
+[review execution policy](instructions/review-routing.md); missing proof is
+UNVERIFIED, with no default paid smoke, automatic provider switch or count reset.
+Superpowers methods are optional. Guild is a supported managed-session host; other hosts
 must qualify isolation, observation, human questions, approvals and resume.
 
 ## Update after this repository changes
@@ -103,3 +108,25 @@ node --test tools/check.test.mjs
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for clean-snapshot release checks and
 CI limits, and [SECURITY.md](SECURITY.md) for reporting sensitive issues.
+
+## Working checkpoints and handoffs
+
+The contract separates required behavior, necessary compatibility and optional
+additions. Extra shells/platforms need a demonstrated dependency on the request.
+Assignments identify the concrete UI target and first useful working preview.
+Small vertical checkpoints report working behavior, evidence, next visible outcome
+and blocker in the same session. Before full code review, exercise the real empty
+input/action/output and relevant persistence, or the affected API/CLI/native
+surface. A prototype/preview is not acceptance or an extra approval gate.
+
+Managed workers retain their parent as review/continuation owner. User topic
+handoffs require named owners and qualified usable host routes before session
+creation; unsupported promotion keeps an eligible parent, without identity
+stripping, default manual couriers or skipped reviews. Corrections map changed
+paths/behavior to invalidated and justified retained evidence, necessary reruns
+and final reviewed identities. Unmet requirements remain unfinished; new requests
+change scope. Structural checks cannot prove future model behavior.
+
+The defaults allow no plan re-review and one code re-review. Existing explicit
+task histories/limits remain authoritative. Required review after exhaustion is
+UNVERIFIED until the user explicitly changes the limit or acceptance requirement.

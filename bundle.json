@@ -10,8 +10,8 @@
   ],
   "source": "Portable skill-based development workflow",
   "review_defaults": {
-    "plan_review_rounds": 2,
-    "code_review_rounds": 3,
+    "plan_review_rounds": 1,
+    "code_review_rounds": 2,
     "includes_initial_review": true
   },
   "license": "MIT",

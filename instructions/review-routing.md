@@ -3,7 +3,7 @@
 This portable routing policy is a workflow preference, not permission
 for an unrequested review, additional paid calls, implementation delegation or
 publication. Existing explicit authorization persists. Default task limits are
-2 plan-review rounds and, separately, 3 code-review rounds, including the first
+1 plan-review round and, separately, 2 code-review rounds, including the first
 review of each kind. A round is one dispatched invocation with all internal
 stages and retries; another invocation consumes another round even after failure
 or stop. Confirmed pre-start refusals consume no round; reconcile ambiguous starts.
@@ -58,6 +58,31 @@ ambiguous start recover the same request/job/artifacts before starting anything
 else. Hide/close only hides the view; Cancel stops work. Missing/degraded/unverified
 results are not PASS. Retain reviewed snapshot, findings, call count and limits.
 
+After infrastructure failure, the default prerequisite for another review is a
+causal diagnosis, a changed condition and bounded no-generation evidence from the
+actual launcher/child route that the failed prerequisite now works. Package/config checks
+alone do not qualify that route. Use existing logs and supported free probes;
+missing proof remains UNVERIFIED and withholds the affected review. Do not use a
+paid smoke call by default, switch providers automatically or reset rounds.
+Reconcile the same request/job IDs and original archive before any repeat;
+remaining rounds are accounting, not retry authorization.
+
+If no supported free/no-generation probe can demonstrate recovery, keep recovery
+qualification UNVERIFIED, name the diagnosed cause and unavailable proof, and ask
+for one concrete user decision. Where applicable, offer waiting until a known
+provider retry/reset time (no invented ETA or automatic retry after waiting), or
+explicit authorization for one specific retry despite missing recovery proof and
+the stated risk of another paid failure. Such authorization covers only that
+retry: reconcile original job/archive/accounting, preserve profile and route,
+and launch only with remaining review allowance. Exhausted allowance additionally
+requires an explicit limit increase; unknown allowance requires reconciliation
+and, if exhausted, an explicit increase. Generic continue, elapsed time and
+approval of this documentation change provide neither retry permission nor budget.
+Waiting or authorization is not recovery evidence: keep recovery qualification
+UNVERIFIED until observed and judge any actual review outcome separately. This
+exception permits no blind retries, default paid smoke, provider switch, count
+reset or disabling unrelated gates.
+
 ## Completed review presentation
 
 Pass `--auto-exit=1s` to the installed launcher by default so the completed
@@ -71,3 +96,13 @@ archive or cancel a live review just to close its window. A stuck completion
 requires reconciliation of that same job and archived result, not a new review
 or an invented clean host exit. No extra provider call is authorized to test
 this preference.
+
+Defaults permit no plan/specification re-review and one code re-review. Preserve
+explicit existing task histories and limits. Required coverage after exhaustion
+remains UNVERIFIED unless the user explicitly changes limits or acceptance.
+Before code review inspect basic real interaction evidence and the accepted UI
+target/working preview. Before correction review map changed paths/behavior,
+invalidated evidence, justified retained evidence, required reruns/re-review and
+final reviewed identities. Keep the configured profile and exact scope; prior clean
+evidence does not cover an unreviewed snapshot. Cosmetic edits alone do not
+mandate a full suite or new review when no relevant evidence is invalidated.
