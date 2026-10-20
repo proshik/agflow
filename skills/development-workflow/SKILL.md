@@ -30,7 +30,20 @@ design. This instruction contract is not host runtime enforcement.
    Record capability evidence through [effective policy](references/policy.md);
    missing evidence is UNVERIFIED. No mandatory full access or new phase approval.
    Continue independent authorized work.
-2. Prepare the contract first with spec-design, proportional to the task.
+2. Before substantive design, discover the public host once through the
+   Guild adapter bundled with orchestration. For an eligible original
+   parent in capable Guild, use [native entry](references/native-entry.md): create
+   only the nonempty draft note/matching OpenSpec skeleton needed for selection,
+   register/show Process, then prepare the evolving contract in the original
+   checkout. Start is not contract acceptance or worker/review permission. Native
+   mode owns checkpoint/review/report/dispatch for this task; use that reference
+   instead of the portable steps2-6 below; do not launch external review/manual workers. Preserve
+   actual initiating identity and stable request/run receipts across retries.
+   For capability absence select portable mode before Start; after native
+   registration a gap never authorizes a second controller. Assigned sessions
+   follow their existing assignment rather than register a nested run.
+   On the portable route, prepare the contract first with spec-design, proportional
+   to the task.
    Resolve material open questions and record the agreed UI target where affected
    before implementation; reuse settled decisions rather than adding phase
    approvals. Distinguish contract review acceptance from user product decisions.
@@ -55,7 +68,8 @@ design. This instruction contract is not host runtime enforcement.
    effective selections, resources, checks and authorized report path. Guild
    workers are visible; qualified non-Guild workers may be non-visible. Verify
    actual start/identities. Only the root dispatches; builders never delegate,
-   independently review or steer sessions. No native registration is required.
+   independently review or steer sessions. The portable route needs no native registration; selected native mode
+   retains its existing run instead of manual dispatch.
 4. Stay active and supervise each assigned ID fairly through bounded host
    waits/events and durable results. A completed turn needs result inspection
    and its next authorized parent checkpoint, not a final response leaving
