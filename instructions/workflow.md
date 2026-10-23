@@ -9,11 +9,24 @@ Questions and advice alone launch no workers, reviews or models.
 Always create or reuse a separate task branch/worktree before writing any code,
 tests, specification, plan, note or generated task evidence. Keep the main
 checkout free of task changes and preserve pre-existing user work. Read-only
-investigation may use it. Worktree isolation does not require another session.
+investigation may use it.
 
-For small settled local changes and minor bugs, use the short route: worktree →
+Every task change requires both a separate task worktree and a separate working
+session, including minor bugs, documentation and preparation. The initiating
+parent owns scope, supervision, acceptance and continuation; it must not implement
+through paths into an empty worktree. In Guild the worker is a visible managed
+session. Outside Guild a harness-native child qualifies only with a real separate
+conversation, explicit worktree binding, supervision/continuation and required
+human question/approval channels. A helper sharing parent cwd/state does not
+qualify. Missing required session capability blocks implementation; report the
+scoped gap without a root fallback. The parent may assign the full request;
+preparation/design writes belong to the task session. Existing assigned workers
+reuse their own session and tree without nesting.
+
+For small settled local changes and minor bugs, use the short route: worktree +
+separate working session →
 inspect/reproduce → implement → targeted checks → local commit under applicable
-authority. No separate specification, designer, managed session, process graph,
+authority. No separate specification, designer, process graph,
 plan review, independent code review or durable receipt framework is mandatory.
 Project-specific documentation/check requirements still apply. Classify by
 uncertainty and consequences, not file count or installed tools.
@@ -51,9 +64,9 @@ and checks when they reduce total work. Check checkout binding, filesystem
 sharing, permissions, concurrency, results and needed human channels. Read-only
 helpers need no additional worktree. Writers use assigned task worktrees;
 concurrent writers use separate trees, otherwise sequence explicit ownership.
-Without suitable delegation, execute directly in the task worktree. Managed
-sessions are useful for independent long work or human interaction, not a
-prerequisite. In Guild use public host APIs for selected managed sessions.
+Native helpers do not replace the mandatory task session. In Guild use public
+host APIs for the visible managed worker. Without required session capability,
+report a scoped gap and withhold implementation; do not fall back to root writes.
 A native process graph is optional and must support the selected lighter route
 before registration. Existing runs keep their owner/history; no second controller.
 

@@ -2,10 +2,14 @@
 
 Select this route only when the task benefits from a managed process. Before
 Start, verify that its graph supports the chosen optional review stages, execution
-mode and preparation worktree. If it forces full plan/code review or a managed
-builder for a direct fix, keep the direct route before registration. Do not edit
-host settings to force compatibility. Create the task worktree before any draft
-or receipt writes; target it, never the main checkout.
+mode and preparation worktree. If it forces full plan/code review for a small fix, keep the simpler
+task-session route before registration. The separate task session remains mandatory. Do not edit
+host settings to force compatibility. Create the task worktree and separate working session before any draft
+or receipt writes; target it, never the main checkout. Parent-owned control
+requests and receipts may use an authorized retained location without task
+preparation writes in main. This optional graph must support preparation by the
+assigned task session; otherwise report the scoped adapter gap, preserving any
+existing registration. Do not use parent preparation as an implementation fallback.
 
 This route overrides the portable manual review/worker dispatch while a native
 run owns this task. It applies to every initiating harness. Do not change caller
@@ -18,7 +22,7 @@ designers/builders keep the existing run and their limited report authority.
    before registration. Dead owned socket, malformed reply, authority gap or
    incomplete identity stays a gap. Retained intent never selects portable. Never interpret a failed native
    mutation as permission to fall back or start a replacement run.
-2. Inside the task worktree, before substantive design, write a nonempty note with request/scope/design
+2. In the separate task session and its worktree, before substantive design, write a nonempty note with request/scope/design
    pending if OpenSpec is absent; when present reuse the matching change with
    nonempty proposal/design/tasks/acceptance/specs skeleton. This is a draft, not
    a final accepted contract. Do not initialize a second contract.
@@ -31,10 +35,11 @@ designers/builders keep the existing run and their limited report authority.
    Start checks:[] allows design to choose CLI/web/native/API after Process appears.
 4. Run `python3 PATH/TO/THIS/native-entry.py start REQUEST.json --receipt
    TARGET/.guild/workflow-runs/entry-TASK`. Retain the exact request and run.
-   Start creates Process with parent preparation Active; Show selects it.
+   Start creates Process with preparation Active; Show selects it.
+   The assigned task session owns preparation writes; the parent owns control.
    Neither action accepts draft or launches review/builder. If Show fails, reuse
    the retained run; never create another request key.
-5. Finish design in the same task worktree/selection. Inspect every artifact
+5. Have the assigned task session finish design in the same task worktree/selection. Inspect every artifact
    and relevant baseline; record known decisions, checks and remaining gaps.
    Then use `python3 PATH/TO/THIS/native-entry.py contract RUN --receipt
    TARGET/.guild/workflow-runs/entry-TASK --checks FINAL-CHECKS.json [--step CONFIGURED_ID]`. The helper gets

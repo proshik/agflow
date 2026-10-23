@@ -5,7 +5,7 @@ description: Use when qualifying implemented acceptance scenarios, ongoing live 
 
 # Acceptance testing
 
-For small direct work, the request and expected outcome are the acceptance
+For small task-session work, the request and expected outcome are the acceptance
 contract. A concise check result is sufficient; separate report files, live model
 calls and independent review are not implied. Use the task worktree for writes.
 A skipped unnecessary review is not missing evidence.

@@ -86,7 +86,8 @@ ask for the same authorization again. Tool approvals still belong to the user.
 13. Report installed and preserved paths, source revision, backup/record paths,
     conflicts and remaining prerequisite or discovery gaps. Missing required
     selected-route prerequisites mean that route is incomplete; absent optional
-    adapters do not block direct work. File comparison is not workflow acceptance.
+    adapters do not block work in a qualified task session. Missing required
+    task-session capability blocks implementation without a root fallback. File comparison is not workflow acceptance.
     No push, remote creation, publication, deployment or paid pilot is implied.
 
 If interrupted, reconcile actual destinations with the recovery record and
@@ -98,9 +99,15 @@ preserve their original bytes and do not require the retired installer to resume
 ## Workflow policy consistency
 
 Verify bundle.json, skills, managed rules and docs/setup.md agree: all task writes
-start in a separate worktree, including plans/specs; small settled fixes use direct
-implementation and targeted checks. Worktree isolation does not require another
-session. Design, native processes and managed sessions are selected by need.
+start in both a separate task worktree and a separate working session, including
+plans/specs, documentation and minor bugs. In Guild use a visible managed worker;
+outside Guild a native child qualifies only with a separate conversation, explicit
+worktree binding, supervision/continuation and required human channels. Shared-cwd
+helpers do not qualify. The parent may assign the full request; preparation writes
+belong to the worker, which reuses its own session/tree without nesting. Missing
+required session capability blocks implementation without a root fallback. Small
+settled fixes need only implementation and targeted checks in that session.
+Design and native process graphs are selected by need.
 Harness-native subagents may perform bounded work with actual checkout/permission
 and result-channel support; concurrent writers need separate trees.
 
@@ -114,5 +121,5 @@ No installation, structural validation or configuration authorizes model calls.
 Check resource links, inventory and local diagram controls. Preserve backed-up
 configuration, existing providers, user-owned routes and publication boundaries.
 Missing required evidence remains UNVERIFIED; an unnecessary skipped stage is
-not a gap. Do not expand direct tasks into managed receipt/report systems or
+not a gap. Do not expand small tasks into managed receipt/report systems or
 paid evaluations to validate installation.
