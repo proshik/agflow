@@ -131,6 +131,14 @@ it to available tools and preserve explicit local routes. Default 1/2 plan/code
 round ceilings apply only to selected reviews and never reset existing histories.
 No installation, structural validation or configuration authorizes model calls.
 
+Selected code review uses the full effective configured profile: original
+reviewer roster/lenses, enabled stages, provider/model/effort, verification policy
+and budgets. Specification-only single-pass limits do not apply; do not reduce
+to one bugs/impl lens, one call or disabled synthesis/verify for convenience.
+Reduced/diff-focused correction scope requires an explicit request.
+`find` is a stage; `codex-only` and `comprehensive` are profiles. Preserve
+user/project profile choices, normal engine skips, histories and round limits.
+
 Check resource links, inventory and local diagram controls. Preserve backed-up
 configuration, existing providers, user-owned routes and publication boundaries.
 Missing required evidence remains UNVERIFIED; an unnecessary skipped stage is

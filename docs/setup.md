@@ -150,6 +150,14 @@ runs. Preserve existing histories, explicit limits and adapter/provider selectio
 Generic skills do not pin an engine. A selected adapter must express the exact
 intent; a conflicting existing route requires an explicit reconciliation proposal.
 
+Selected code review uses the full effective configured profile: original
+reviewer roster/lenses, enabled stages, provider/model/effort, verification policy
+and budgets. Specification-only single-pass limits do not apply; do not reduce
+to one bugs/impl lens, one call or disabled synthesis/verify for convenience.
+Reduced/diff-focused correction scope requires an explicit request.
+`find` is a stage; `codex-only` and `comprehensive` are profiles. Preserve
+user/project profile choices, normal engine skips, histories and round limits.
+
 Keep the five skills self-contained. Validate resources, setup/instruction
 agreement and local diagram controls. Qualification of model behavior or a live
 workflow requires separately authorized observations; structural checks provide

@@ -77,8 +77,21 @@ General skills specify review intent, not a mandatory review engine. Honor the
 applicable explicit user/project route; otherwise use an available suitable
 native reviewer or external adapter. A reviewer must be independent of the
 implementation context. External adapters must express the selected scope,
-stage shape and call limit; never silently expand to a comprehensive pipeline.
-Preserve configured models/profiles and existing task histories.
+stage shape and applicable limits. The one-reviewer/pass/attempt restriction and
+omitted synthesis/verification apply only to specification review.
+Selected implementation/code review uses the full effective configured review
+profile: its original reviewer roster/lenses, enabled stages, provider/model/effort,
+verification policy and applicable budgets. The specification-only single-pass
+limits do not apply. Do not substitute one bugs/impl lens, impose a one-call cap,
+or disable synthesis/verification to simplify the review or save time.
+Choosing whether a low-risk task needs review is separate from executing it;
+selection does not imply a lightweight/find-only mode. A specifically requested
+reduced or diff-focused correction review follows its explicit scope and preserved
+limits; do not infer that permission. `find` is a stage; `codex-only` and
+`comprehensive` are profiles. A codex-only profile can run its full configured
+pipeline; do not hardcode comprehensive or change user/project provider choices.
+Normal engine conditions may skip work, such as verification with no findings;
+do not force artificial calls. Preserve existing task histories and round limits.
 Default ceilings, only for selected reviews, are 1 plan round and 2 code rounds,
 including initial invocations. Failed/stopped invocations count unless confirmed
 pre-provider refusals; reconcile ambiguous starts. New invocations need remaining
