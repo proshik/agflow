@@ -5,6 +5,11 @@ description: Use when qualifying implemented acceptance scenarios, ongoing live 
 
 # Acceptance testing
 
+For small direct work, the request and expected outcome are the acceptance
+contract. A concise check result is sufficient; separate report files, live model
+calls and independent review are not implied. Use the task worktree for writes.
+A skipped unnecessary review is not missing evidence.
+
 Map each accepted scenario to its regression and relevant real API, browser,
 native-window or CLI observation. Plan the observable outcome and required
 resource/authorization before executing; use [evidence records](references/evidence.md).
@@ -12,7 +17,8 @@ Read the applicable engineering-quality surface reference for domain-specific
 failure modes. Do not invent a surface that the change does not affect.
 
 Observe important behavior throughout implementation to find failures early,
-then repeat affected observations on the final independently reviewed version.
+then repeat affected observations on the final version, matching any required
+review.
 For UI, compare the running changed surface with the contract's accepted visual
 and interaction target in the relevant states and sizes. Retain the target
 revision and observed result, and list differences with their disposition.
@@ -28,9 +34,9 @@ base evidence; unavailable attribution stays unknown, and missing required check
 remain UNVERIFIED. A pre-existing failure is not automatically accepted or in scope
 for repair. Parent decides its effect against the agreed acceptance contract.
 
-The builder reports its own assigned checks and remains available. Parent alone
-owns independent review, checks the exact combined revisions across branches and
-accepts final behavior. An edit invalidates affected earlier evidence; retain it
+A delegated builder reports its checks and remains available. The initiating
+session selects and owns any required independent review, checks combined
+revisions across branches and accepts final behavior. An edit invalidates affected earlier evidence; retain it
 as historical and obtain the necessary new checks/review within remaining limits.
 
 Use PASS/FAIL/UNVERIFIED per scenario. Missing credentials, permissions, a working
@@ -56,5 +62,6 @@ tests or unauthorized model evaluations.
 
 Before rerunning checks after a correction, record the
 [correction impact map](references/evidence.md). Retain justified unaffected
-evidence and rerun invalidated observations on the final reviewed identities.
+evidence and rerun invalidated observations on the final checked identities,
+matching review identities when required.
 Never call an unreviewed snapshot clean using an earlier review.

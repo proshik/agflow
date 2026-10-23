@@ -1,5 +1,12 @@
 # Handoff and durable state
 
+Use this reference for long-lived managed sessions, shared resources or recovery
+that needs durable state. Direct work and bounded native helpers need only their
+assignment, IDs/results and checked snapshot, not this full receipt scheme.
+Store task records in the task worktree or an authorized retained location; never
+dirty the main checkout. Optional reviews may be skipped explicitly; the phase
+sequence below includes only stages actually selected for this task.
+
 These are readable operational records, not another development plan, native
 manifest or scheduler. Root allocates stable workflow/attempt IDs and writes a
 root-owned atomic receipt. A worker writes only its explicitly assigned report;

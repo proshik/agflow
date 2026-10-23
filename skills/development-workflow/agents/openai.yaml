@@ -1,6 +1,6 @@
 interface:
   display_name: "Development workflow"
-  short_description: "Carry requested development through one contract"
+  short_description: "Scale task work in an isolated worktree"
   default_prompt: "Use $development-workflow to carry this development request through its authorized checks."
 policy:
   allow_implicit_invocation: true

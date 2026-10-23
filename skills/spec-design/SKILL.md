@@ -1,81 +1,62 @@
 ---
 name: spec-design
-description: Use when preparing or revising the acceptance contract for software changes or architecture-only work with existing OpenSpec or a lightweight task note. Not implementation dispatch or a duplicate plan.
+description: Use when preparing or revising a useful acceptance contract for substantial software changes or architecture-only work. Not required for settled local fixes, implementation dispatch or a duplicate plan.
 ---
 
 # Spec design
 
-Read target checkout instructions and decision evidence. Follow the explicit
-user-selected contract format; otherwise detect `openspec/` in the actual target
-project. When present, read relevant baselines/changes and use
-[OpenSpec preparation](references/openspec.md), reusing a matching change.
-When absent, use one lightweight acceptance contract in an existing suitable
-project document or one task note. Skip OpenSpec setup, CLI, schema, spec deltas
-and archive. Do not create `openspec/` without an explicit request to adopt it.
-Record the selected format and detection evidence for all assigned sessions.
+Prepare only the design needed to resolve material scope or architecture choices.
+A small fix with settled behavior normally needs the request, expected outcome
+and relevant checks, not a separate specification. Respect explicit project
+requirements. All preparation writes belong in the task worktree, never the
+main checkout; do not dispatch a separate designer merely to write a note.
 
-For a small clear fix, keep the note to scope, expected behavior, relevant edge
-cases, checks and a short task list. Add architecture, alternatives and detailed
-planning only where complexity or an open decision calls for them. Superpowers
-brainstorming/writing-plans can help there; they are not mandatory ceremonies.
-Keep one authoritative artifact rather than duplicate plans.
+When a persisted contract is needed, honor the user's chosen format. Otherwise
+existing target-project `openspec/` uses one matching change with
+[OpenSpec preparation](references/openspec.md); without it use one existing
+suitable document or one lightweight task note. Do not initialize OpenSpec
+without a request or keep parallel plans. Validate only applicable tooling.
 
-Before accepting the contract, resolve uncertainties that could change scope,
-interaction or acceptance. Use existing context first; ask the user only for
-material unresolved choices, with a recommendation where useful. Record approved
-decisions, bounded assumptions and blocking questions in that same contract.
-A blocking product choice remains pending until answered; question counts and
-another round of approval for settled decisions add no readiness.
+Record required behavior, scope boundaries, necessary compatibility, meaningful
+edge cases and observable checks. Add architecture, alternatives, dependencies
+and ordered tasks only where useful. Investigate actual callers before choosing
+boundaries. For an open material choice compare a mature existing option with a
+local implementation and recommend one; do not reopen an approved stack.
+Ask only for material unresolved product choices. Record agreed decisions and
+bounded assumptions, keeping exploratory proposals distinct from facts.
 
-For a substantial UI change, agree an inspectable prototype and relevant states
-before implementation; a small clear change can use an annotated screenshot or
-precise description. Record the target revision/path, layout and behavior to
-match, and any explicitly illustrative parts. Clarify whether a reference
-specifies behavior, appearance or both. Cover interactions and changed states
-at the scale of the task, including constrained layouts where relevant.
+For substantial UI work agree a concrete visual/interaction target and relevant
+states. A precise description suffices for a small clear change. A prototype
+settles the target; it is not implementation acceptance or a new phase gate.
 
-A design assignment receives requirements, repository facts, approved decisions
-and open questions. Separate these sources from assumptions and proposed
-solutions; do not pass exploratory preferred answers to an independent designer
-as facts. Investigate actual behavior and callers before choosing boundaries.
-For an open material choice, compare a mature existing option with a local
-implementation, explain tradeoffs and recommend one for the user's decision.
-Do not reopen an approved stack or feature merely to perform that comparison.
+## Optional architectural review
 
-The contract records scope/non-goals, affected behavior, compatibility and
-failure/recovery scenarios, architecture decisions, dependencies/resources,
-observable acceptance evidence and tasks in dependency order. Keep unaudited
-baseline behavior explicit. Trace tasks to scenarios and checks rather than
-writing a second plan. In OpenSpec mode, use schema instructions and validation.
-In lightweight mode, inspect the note for concrete scope, acceptance checks and
-task dependencies; no schema validation result is implied. In both modes persist
-the selected contract and inspect its accessible files.
-Provider/worker restrictions do not block independently permitted local contract
-setup/validation; stop the dependent operation at its actual permission/tool gap.
+Review is useful for consequential component boundaries, shared contracts,
+migrations, recovery semantics or uncertain integration. It is unnecessary for
+obvious changes following an established pattern. Record a short reason for
+selection or omission where a contract is being prepared.
 
-Contract handoff requires format, change ID only in OpenSpec mode, persisted
-artifact paths, revision/digests, preparation evidence and readiness (`preparing`,
-`persisted_validated` or `review_accepted`). For a lightweight note,
-`persisted_validated` records a content check, not OpenSpec validation. Before a plan-review request, verify the persisted files;
-route instructions or inline requirements are not that prerequisite. Missing
-CLI/setup in selected OpenSpec mode produces an exact gap and a request for
-preparation, not review readiness. No OpenSpec executable is needed in lightweight mode.
+When selected, ask one independent architectural reviewer for one pass on the
+persisted design and relevant repository facts. Focus on feasibility, boundaries,
+compatibility, major omissions and needless complexity. Do not request general
+implementation review, multiple lenses, synthesis or separate verification
+stages. The initiating session checks findings and updates the same contract;
+there is no automatic review loop. Preserve explicit project rules and existing
+review limits. The invoking workflow owns the actual tool/host adapter.
 
-Designer reports this contract handoff, assumptions/questions and next checkpoint,
-then stays available. Parent alone owns independent design review.
-Resolve supported findings in this same contract. Classify later corrections
-against it: unmet agreed behavior is unfinished work; a material choice omitted
-during preparation is a preparation gap requiring resolution; a new user request
-changes scope. Record the distinction and affected acceptance checks in the same
-contract, preserving decisions, session history and remaining review allowance.
-Architecture-only work stops
-at independently reviewed `design_ready`; no implementation worker is implied.
-A small bounded fix can use the root's concise contract instead of a separate
-designer, while retaining the required implementation worktree and review route.
+Use a harness subagent or a managed designer only when independent exploration
+or bounded research helps. Give requirements, facts, approved decisions and open
+questions; do not present the parent's preferred answer as a fact. The parent
+owns decisions and continued work; assigned designers do not launch review.
 
-Separate required scope, necessary compatibility and optional additions in the
-contract. For every agent-added shell, platform or generalization, demonstrate
-which requested behavior depends on it; otherwise defer it. Preserve affected
-callers and agreed contracts. Name the first useful working preview: concrete
-input/action/output, target path/revision and relevant states. A prototype settles
-a target; it is not acceptance of the implementation.
+A simple handoff names the worktree, contract path/revision, expected behavior,
+selected checks, decisions and remaining questions. Include digests and durable
+receipts only when an actual downstream process requires them. A selected review
+requires accessible persisted artifacts, not just a route description.
+Architecture-only work ends at design_ready after the chosen checks; omission
+of unnecessary independent review is not UNVERIFIED. Missing required evidence is.
+
+Later corrections distinguish unfinished agreed behavior from a new request.
+Keep agent-added platforms, recovery mechanisms and generalizations out unless
+requested behavior demonstrably depends on them. Identify invalidated checks
+without blanket reruns or another design/approval ceremony.

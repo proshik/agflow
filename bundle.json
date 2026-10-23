@@ -12,7 +12,12 @@
   "review_defaults": {
     "plan_review_rounds": 1,
     "code_review_rounds": 2,
-    "includes_initial_review": true
+    "includes_initial_review": true,
+    "plan_review_required": false,
+    "code_review_required": false,
+    "plan_review_reviewers": 1,
+    "plan_review_stages": 1,
+    "plan_review_max_calls": 1
   },
   "license": "MIT",
   "publication_files": [
@@ -40,6 +45,7 @@
     "skills/development-workflow/references/native-entry.py",
     "skills/development-workflow/references/policy.md",
     "skills/development-workflow/references/review.md",
+    "skills/development-workflow/references/revust.md",
     "skills/engineering-quality/SKILL.md",
     "skills/engineering-quality/agents/openai.yaml",
     "skills/engineering-quality/references/backend-web.md",

@@ -1,6 +1,6 @@
 interface:
   display_name: "Orchestration"
-  short_description: "Supervise managed workers and parent checkpoints"
+  short_description: "Coordinate native helpers or managed sessions"
   default_prompt: "Use $orchestration to supervise the assigned workers through their authorized checkpoints."
 policy:
   allow_implicit_invocation: true

@@ -1,4 +1,11 @@
-# Native entry before design
+# Optional native managed process
+
+Select this route only when the task benefits from a managed process. Before
+Start, verify that its graph supports the chosen optional review stages, execution
+mode and preparation worktree. If it forces full plan/code review or a managed
+builder for a direct fix, keep the direct route before registration. Do not edit
+host settings to force compatibility. Create the task worktree before any draft
+or receipt writes; target it, never the main checkout.
 
 This route overrides the portable manual review/worker dispatch while a native
 run owns this task. It applies to every initiating harness. Do not change caller
@@ -11,7 +18,7 @@ designers/builders keep the existing run and their limited report authority.
    before registration. Dead owned socket, malformed reply, authority gap or
    incomplete identity stays a gap. Retained intent never selects portable. Never interpret a failed native
    mutation as permission to fall back or start a replacement run.
-2. Before substantive design, write a nonempty note with request/scope/design
+2. Inside the task worktree, before substantive design, write a nonempty note with request/scope/design
    pending if OpenSpec is absent; when present reuse the matching change with
    nonempty proposal/design/tasks/acceptance/specs skeleton. This is a draft, not
    a final accepted contract. Do not initialize a second contract.
@@ -27,7 +34,7 @@ designers/builders keep the existing run and their limited report authority.
    Start creates Process with parent preparation Active; Show selects it.
    Neither action accepts draft or launches review/builder. If Show fails, reuse
    the retained run; never create another request key.
-5. Finish design in the same original checkout/selection. Inspect every artifact
+5. Finish design in the same task worktree/selection. Inspect every artifact
    and relevant baseline; record known decisions, checks and remaining gaps.
    Then use `python3 PATH/TO/THIS/native-entry.py contract RUN --receipt
    TARGET/.guild/workflow-runs/entry-TASK --checks FINAL-CHECKS.json [--step CONFIGURED_ID]`. The helper gets
@@ -35,10 +42,11 @@ designers/builders keep the existing run and their limited report authority.
    retains output and supplies existing checkpoint. No local source JSON/hash
    reconstruction. A failed check sends no checkpoint. A stale/refused request
    remains inspectable; only a new deliberate evidence attempt uses --key NEW_KEY.
-6. Inspect actual graph Status; native public Review is the sole parent review
-   route, using the installed revust package/profile and original prior usage.
+6. Inspect actual graph Status; native public Review is the sole route for selected reviews, using
+   the configured adapter and original prior usage. A selected specification
+   review must remain one architectural pass, not a full pipeline.
    Parent authorizes each ready review within remaining allowance. Do not run
-   the portable revust launcher separately. Review acceptance unlocks the native
+   an external adapter launcher separately. A selected review acceptance unlocks the native
    assigned checkout/session; inspect its actual report and accept it through
    checkpoint. Do not manually create a parallel worker. Child remains same
    session for qualified corrections; use existing Retry/Review/checkpoint paths.

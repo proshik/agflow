@@ -77,15 +77,16 @@ ask for the same authorization again. Tool approvals still belong to the user.
     check of current source files alone is insufficient. Reload/restart selected
     harnesses as needed and inspect read-only skill discovery if available. Do
     not launch a model to test discovery; unavailable discovery stays UNVERIFIED.
-12. Follow docs/setup.md for the complete revust package and host prerequisites.
+12. Follow docs/setup.md for prerequisites of the selected optional adapters.
     Inspect project-local policy that shadows global skills and report conflicts;
     do not modify unrelated projects. Preserve provider profiles and credentials.
     Superpowers is optional; OpenSpec is needed only where already adopted or
     explicitly requested. Setup does not authorize paid calls or dependency
     upgrades merely to obtain a green check.
 13. Report installed and preserved paths, source revision, backup/record paths,
-    conflicts and remaining prerequisite or discovery gaps. Missing prerequisites
-    mean setup is incomplete. File comparison is not full workflow acceptance.
+    conflicts and remaining prerequisite or discovery gaps. Missing required
+    selected-route prerequisites mean that route is incomplete; absent optional
+    adapters do not block direct work. File comparison is not workflow acceptance.
     No push, remote creation, publication, deployment or paid pilot is implied.
 
 If interrupted, reconcile actual destinations with the recovery record and
@@ -96,31 +97,22 @@ preserve their original bytes and do not require the retired installer to resume
 
 ## Workflow policy consistency
 
-Verify bundle.json and the installed managed rules agree: defaults are one
-specification/plan round and two code rounds, including initial reviews (no plan
-re-review, one code re-review). A new invocation after failure/stop counts;
-a confirmed pre-start refusal does not, and ambiguous starts need reconciliation.
-Never reset existing task histories/limits or transfer rounds between kinds.
-There is no default aggregate process cap. Preserve configured review profiles;
-exhausted required review stays UNVERIFIED pending an explicit user change.
-Verify execution entrypoints retain causal diagnosis, a changed condition and
-bounded no-generation actual launcher/child proof by default before retries;
-missing proof is UNVERIFIED, with no default paid smoke or automatic provider switch.
-For the specific user-authorized exception when free proof is unavailable, follow
-[review routing](instructions/review-routing.md); recovery remains UNVERIFIED and
-allowance must be reconciled and available. Accounting alone does not authorize
-retry. Unknown accounting blocks the affected
-review only. Check actual worker checkout/atomic-report writes, required checks
-and task-required network qualification under existing authority, without blanket
-full access or repeated approvals. Current receipts stay separate from history,
-are updated on dispatch/review/report/limits and before turn end, and reconcile
-original IDs/archives with live state. Parents consume reports and record the next
-checkpoint/action/owner. Retain evidence-based introduced/pre-existing/unknown test
-failure classification without automatic unrelated repairs.
+Verify bundle.json, skills, managed rules and docs/setup.md agree: all task writes
+start in a separate worktree, including plans/specs; small settled fixes use direct
+implementation and targeted checks. Worktree isolation does not require another
+session. Design, native processes and managed sessions are selected by need.
+Harness-native subagents may perform bounded work with actual checkout/permission
+and result-channel support; concurrent writers need separate trees.
 
-Check that setup retains the five self-contained skills and their guidance for
-early real interaction before broad review, concrete UI target/working preview,
-scope boundaries, small vertical checkpoints, two handoff modes with qualified
-owners/routes before topic creation, and correction impact maps. Installation
-and structural checks do not qualify those future behaviors or authorize models.
-No new runtime scheduler, host promotion or global permission is supplied.
+Specification review is conditional and uses one architectural reviewer/pass,
+without synthesis, verification or automatic retry. Independent code review is
+selected by risk or explicit rules. Generic skills specify intent; adapters map
+it to available tools and preserve explicit local routes. Default 1/2 plan/code
+round ceilings apply only to selected reviews and never reset existing histories.
+No installation, structural validation or configuration authorizes model calls.
+
+Check resource links, inventory and local diagram controls. Preserve backed-up
+configuration, existing providers, user-owned routes and publication boundaries.
+Missing required evidence remains UNVERIFIED; an unnecessary skipped stage is
+not a gap. Do not expand direct tasks into managed receipt/report systems or
+paid evaluations to validate installation.

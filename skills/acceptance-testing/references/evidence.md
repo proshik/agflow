@@ -28,8 +28,8 @@ live observations. An unavailable live surface remains UNVERIFIED even when
 static checks pass. Do not substitute synthetic screenshots or narrated actions.
 
 After a correction, identify which scenarios/snapshots became stale and rerun
-only necessary checks. Final acceptance matches the reviewed snapshot; if review
-finds another change, retain the old evidence and qualify the new revision. A
+only necessary checks. Final acceptance matches the checked snapshot and any
+required review; if review finds another change, retain the old evidence and qualify the new revision. A
 review source marked degraded/missing/UNVERIFIED cannot establish clean acceptance.
 
 The root records integration order and exact prerequisite/consumer revisions,

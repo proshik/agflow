@@ -1,108 +1,77 @@
-# Local review execution policy
+# Review execution policy
 
-This portable routing policy is a workflow preference, not permission
-for an unrequested review, additional paid calls, implementation delegation or
-publication. Existing explicit authorization persists. Default task limits are
-1 plan-review round and, separately, 2 code-review rounds, including the first
-review of each kind. A round is one dispatched invocation with all internal
-stages and retries; another invocation consumes another round even after failure
-or stop. Confirmed pre-start refusals consume no round; reconcile ambiguous starts.
-Unused rounds do not transfer between kinds. No default aggregate process-count
-ceiling applies; separately explicit user/task/provider limits still apply.
-Record round history and actual starts; further rounds after exhaustion require
-an explicit limit change. Installing or updating this policy starts no review.
+This policy describes selected reviews; it does not require review for every
+change or authorize provider calls from configuration alone. Explicit user/project
+routes and existing registered task histories take precedence. Installation,
+read-only investigation and routine checks start no review or model evaluation.
 
-For a new ordinary independent review (code, plan, or skill), use revust through
-its launcher in the initiating session. Do not substitute a Codex/Claude/Agent
-reviewer subagent, a new Guild agent tab, or the builder's self-review. This route
-overrides generic Superpowers review-dispatch examples and the historical
-claude-only/no-tui defaults. Preparation stays in the initiating session unless
-the user explicitly requests delegation. Revust's own supervised provider
-processes are the selected review engine; they are not extra builder sessions.
+## Intent before engine
 
-Honor an explicit alternative requested by the user. Already registered native
-Guild tasks retain their pinned history/configuration/budget for independent
-review; never move a task or create an identity to escape an exhausted ceiling.
-A self-check is not independent acceptance. Questions, read-only investigation
-and routine free checks do not automatically require a paid review.
+A small settled low-risk fix normally uses targeted verification and final diff
+inspection in its task worktree. Select independent code review for substantial
+changes, material integration risk or explicit requirements.
 
-Package selection on the destination host:
-- Resolve the installed revust skill through its real registered path.
-- A complete package contains bin/revust, scripts/launch-revust.sh, docs/ and
-  integrations/skills/revust/SKILL.md. A stable user-selected package path may
-  be registered during setup; never pin a versioned Cellar/cache path.
-- Global configuration is ~/.config/revust; project configuration is .revust.
-- Installation of workflow instructions supplies no provider configuration,
-  authentication, review allowance or qualification for a new terminal host.
+Specification review is optional. Select it for consequential architecture,
+shared-contract changes, migrations, recovery semantics or uncertain integration.
+When selected, request one independent architectural reviewer, one pass, at most
+one provider attempt. No general code-review roster, synthesis, separate
+verification stage, automatic retry or re-review. The parent validates findings
+against the design and repository facts. A profile's name does not prove its
+execution shape; inspect effective stages, retries and call limits before launch.
 
-Read the actual skill and the relevant packaged CLI/archive documentation. Preserve
-existing revust profiles/configuration unchanged unless the user requests a change.
-Respect an explicit profile; otherwise use the destination's effective configured
-default and inspect its roster and stages. Profiles are not supplied by this
-bundle; missing configuration is a named setup gap. Preserve user-authored profile content unchanged.
-Never infer executors from the initiating harness. No fixed claude-only rule.
-Check remaining rounds for the review kind and any separately explicit
-user/task/provider limits before dispatch. Record actual calls/retries/verification
-as evidence; native Guild maxCalls does not enforce revust limits.
+## Adapter choice
 
-Inside Guild, retain GUILD_SESSION and GUILD_SOCKET, probe terminal capabilities
-version 1, and use the launcher for both initial and correction rounds. Do not
-launch native begin/ready alongside an external run. Unsupported Guild is an
-explicit setup failure: never silently use --no-tui, another terminal, a different
-caller identity, or self-review. Outside Guild, keep revust's supported host
-selection. An explicitly requested headless run remains possible before start.
+Honor an explicit user/project engine first. Otherwise a harness-native reviewer
+subagent or external adapter can implement the intent. Review context must be
+independent of the builder's reasoning; a builder's self-check is not independent
+review. A pinned route cannot be bypassed by choosing another tool or identity.
+Native helpers are permitted for useful non-review work under actual authority.
 
-Keep stdout JSON and stderr separate. Codes 0/1/2 mean no findings/findings/tool
-error; launcher code 3 means host failure. Never retry merely on 1. For an
-ambiguous start recover the same request/job/artifacts before starting anything
-else. Hide/close only hides the view; Cancel stops work. Missing/degraded/unverified
-results are not PASS. Retain reviewed snapshot, findings, call count and limits.
+Revust is an optional external adapter. If selected, resolve its installed skill
+and complete package through supported registration, retain its launcher/host
+identity, and follow its docs. Its single-reviewer composition, disabled
+synthesis/verify, zero finder retries and one-call ceiling must be confirmed for
+architectural review. Do not overwrite personal profiles or modify the engine as
+an incidental fallback. If this intent is unsupported, name the exact limitation
+rather than running a larger pipeline. Setup supplies no provider credentials.
+Generic workflow skills do not require a particular engine or model.
 
-After infrastructure failure, the default prerequisite for another review is a
-causal diagnosis, a changed condition and bounded no-generation evidence from the
-actual launcher/child route that the failed prerequisite now works. Package/config checks
-alone do not qualify that route. Use existing logs and supported free probes;
-missing proof remains UNVERIFIED and withholds the affected review. Do not use a
-paid smoke call by default, switch providers automatically or reset rounds.
-Reconcile the same request/job IDs and original archive before any repeat;
-remaining rounds are accounting, not retry authorization.
+Keep archives and preparation writes in the task worktree or an explicitly
+selected retained location; never dirty the main checkout. Preserve authored
+configuration, models and effort. Do not infer reviewers from the initiating
+harness. Existing native managed runs retain their owning controller, pinned
+configuration/history and total budget; do not launch a competing external run.
 
-If no supported free/no-generation probe can demonstrate recovery, keep recovery
-qualification UNVERIFIED, name the diagnosed cause and unavailable proof, and ask
-for one concrete user decision. Where applicable, offer waiting until a known
-provider retry/reset time (no invented ETA or automatic retry after waiting), or
-explicit authorization for one specific retry despite missing recovery proof and
-the stated risk of another paid failure. Such authorization covers only that
-retry: reconcile original job/archive/accounting, preserve profile and route,
-and launch only with remaining review allowance. Exhausted allowance additionally
-requires an explicit limit increase; unknown allowance requires reconciliation
-and, if exhausted, an explicit increase. Generic continue, elapsed time and
-approval of this documentation change provide neither retry permission nor budget.
-Waiting or authorization is not recovery evidence: keep recovery qualification
-UNVERIFIED until observed and judge any actual review outcome separately. This
-exception permits no blind retries, default paid smoke, provider switch, count
-reset or disabling unrelated gates.
+## Accounting and evidence
 
-## Completed review presentation
+Default ceilings are one plan-review round and two code-review rounds, including
+initial invocations, only when selected. Architectural review remains one
+reviewer/attempt within its round. A new invocation after a failed/stopped run
+uses another round; a confirmed refusal before provider start does not. Reconcile
+ambiguous starts and preserve counts across tools, IDs and branches. Unused
+rounds cannot transfer. No default aggregate process cap applies; explicit call,
+task or provider limits still apply. Exhausted required coverage stays UNVERIFIED
+until an explicit limit or acceptance change. An unnecessary skipped stage is
+not an exhausted or missing review.
 
-Pass `--auto-exit=1s` to the installed launcher by default so the completed
-review exits and its terminal overlay closes promptly. This flag also
-avoids the launcher's longer fallback delay overriding the user config. Honor
-an explicit request to keep a particular result open. Wait for the same run's
-terminal state, retain the result/archive and close its presentation with the
-supported host command if the launcher leaves a completed view behind. In Guild,
-`guild terminal close JOB --json` changes presentation only; never delete the
-archive or cancel a live review just to close its window. A stuck completion
-requires reconciliation of that same job and archived result, not a new review
-or an invented clean host exit. No extra provider call is authorized to test
-this preference.
+Retain exact scope/snapshot, selected route, findings, incomplete outcomes and
+actual calls at the scale of the task. Recover original job/request/archive IDs
+before repeating an ambiguous launch. Closing a view does not cancel a live run.
+Do not claim an earlier clean review covers new changes. After corrections repeat
+only affected checks and required review, without an automatic loop for minor
+polish. Model evaluations require separate authority and accounting.
 
-Defaults permit no plan/specification re-review and one code re-review. Preserve
-explicit existing task histories and limits. Required coverage after exhaustion
-remains UNVERIFIED unless the user explicitly changes limits or acceptance.
-Before code review inspect basic real interaction evidence and the accepted UI
-target/working preview. Before correction review map changed paths/behavior,
-invalidated evidence, justified retained evidence, required reruns/re-review and
-final reviewed identities. Keep the configured profile and exact scope; prior clean
-evidence does not cover an unreviewed snapshot. Cosmetic edits alone do not
-mandate a full suite or new review when no relevant evidence is invalidated.
+## Failure and presentation
+
+Before retrying infrastructure failure establish cause, a changed condition and
+bounded no-generation proof from the actual failed route where available. No
+default paid smoke, provider switch or identity/budget reset. If free proof is
+unavailable, name the uncertainty and ask for one specific retry decision with
+sufficient remaining allowance. Waiting or permission is not recovery evidence;
+keep the missing qualification UNVERIFIED and assess any actual result separately.
+
+For revust, follow documented exit/report semantics; findings are not a retry
+reason. Use `--auto-exit=1s` for completed review presentation unless explicitly
+requested otherwise. Preserve results and reconcile the same job if presentation
+fails; do not rerun a review just to close its window. Other adapters use their
+supported result channels without creating an extra terminal or report pipeline.
