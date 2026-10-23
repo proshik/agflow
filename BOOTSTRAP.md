@@ -98,6 +98,19 @@ preserve their original bytes and do not require the retired installer to resume
 
 ## Workflow policy consistency
 
+Start from the actual request, investigate/discuss uncertainties with relevant
+Superpowers engineering methods (or the same methods directly if unavailable),
+then persist agreed behavior only when useful or explicitly required. OpenSpec
+stores behavior, scenarios, significant accepted choices and one implementation
+plan; it is not another design process. Existing openspec/ alone does not force
+minor-fix artifacts. Do not initialize it or rewrite baselines automatically.
+Spec-design bridges methods to storage; reconcile drafts without a competing
+Superpowers Plan.md/spec. Proposals, validation and review are not user approval.
+Optional visible capabilities require an actual decision unless already
+explicitly authorized; necessary internal helpers/refactoring do not. Keep this
+lightweight and preserve settled choices. agflow is the distribution repository,
+not an executable tool, runtime or service.
+
 Verify bundle.json, skills, managed rules and docs/setup.md agree: all task writes
 start in both a separate task worktree and a separate working session, including
 plans/specs, documentation and minor bugs. In Guild use a visible managed worker;
@@ -111,7 +124,7 @@ Design and native process graphs are selected by need.
 Harness-native subagents may perform bounded work with actual checkout/permission
 and result-channel support; concurrent writers need separate trees.
 
-Specification review is conditional and uses one architectural reviewer/pass,
+Specification review is conditional and uses one architectural reviewer/pass/attempt,
 without synthesis, verification or automatic retry. Independent code review is
 selected by risk or explicit rules. Generic skills specify intent; adapters map
 it to available tools and preserve explicit local routes. Default 1/2 plan/code

@@ -34,7 +34,9 @@ base evidence; unavailable attribution stays unknown, and missing required check
 remain UNVERIFIED. A pre-existing failure is not automatically accepted or in scope
 for repair. Parent decides its effect against the agreed acceptance contract.
 
-A delegated builder reports its checks and remains available. The initiating
+The builder runs relevant checks before handoff/review, reports evidence and
+remains available. The parent checks results and necessary final behavior without
+a duplicate full suite absent a changed concern. The initiating
 session selects and owns any required independent review, checks combined
 revisions across branches and accepts final behavior. An edit invalidates affected earlier evidence; retain it
 as historical and obtain the necessary new checks/review within remaining limits.

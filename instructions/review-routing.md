@@ -16,7 +16,10 @@ shared-contract changes, migrations, recovery semantics or uncertain integration
 When selected, request one independent architectural reviewer, one pass, at most
 one provider attempt. No general code-review roster, synthesis, separate
 verification stage, automatic retry or re-review. The parent validates findings
-against the design and repository facts. A profile's name does not prove its
+first against the actual request/approved decisions for scope inflation, then
+against feasibility, boundaries, compatibility and repository facts. Findings
+cannot independently authorize new product behavior, and review is not user
+approval of a proposal. A profile's name does not prove its
 execution shape; inspect effective stages, retries and call limits before launch.
 
 ## Adapter choice

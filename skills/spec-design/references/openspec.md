@@ -1,11 +1,21 @@
-# OpenSpec preparation
+# OpenSpec storage and preparation
+
+OpenSpec stores the agreed change after investigation/discussion: behavior,
+scenarios, significant accepted choices and one implementation task plan. Use
+Superpowers engineering methods where relevant, or apply them directly when
+unavailable; OpenSpec is not a feature generator or second planning process.
+Reconcile relevant drafts into this authoritative plan; do not retain a competing
+Superpowers Plan.md/spec. Mark unresolved proposals as proposals. Saving text,
+validation or review cannot substitute for user approval of new product behavior.
 
 Read this reference when a selected persisted contract uses existing `openspec/`
 or the user explicitly requests adopting OpenSpec. A directory alone does not
-require specification work for a local fix. Write artifacts in the task worktree. Without either condition, use the
+require specification work for a local fix. Respect real project rules. Write
+artifacts in the assigned task session/worktree. Without either condition, use the
 lightweight contract in spec-design and skip all commands here. Inspect actual
 installed CLI version/help and target instructions/configuration. Reuse matching
-changes and relevant baseline specs. Invalid existing artifacts or missing CLI
+changes and read relevant baseline specs; do not rewrite baselines automatically.
+Invalid existing artifacts or missing CLI
 in selected OpenSpec mode are setup gaps, not a silent fallback or installation.
 
 Only for explicitly requested adoption when absent, qualify a narrowly scoped
@@ -40,17 +50,22 @@ competing artifact sequence. Preserve project naming/rules and task semantics.
 Artifact `done`/planning `isComplete` means documents exist, not implemented or
 accepted behavior. Inspect task evidence before marking execution complete.
 
-When architectural review is selected, before requesting or launching it, persist/reuse the narrow change,
+When architectural review is selected, before requesting or launching it,
+persist/reuse the narrow change,
 validate it and record actual accessible artifact paths/digests and source revision
-in the contract handoff or a managed workflow receipt when needed. Continue permitted CLI/setup investigation,
+in the contract handoff or a managed workflow receipt when needed. Continue
+permitted CLI/setup investigation,
 local initialization and artifact preparation while provider/worker dispatch is
 prohibited; pause at the first actual prohibited/unavailable operation. If CLI is
 unavailable, record its exact lookup/version failure and request that preparation
 prerequisite. An inline action descriptor does not make a contract review-ready.
 
-Verify the same files are accessible in the builder base. The initiating session inspects the pinned
+Verify the same files are accessible in the builder base. The initiating session
+inspects the pinned
 artifacts and completes any selected architectural review before implementation;
-reused review evidence requires matching digests; a route request alone cannot mark the contract accepted. If discovery
+reused review evidence requires matching digests; a route request or successful
+review cannot supply user approval for new
+product behavior. If discovery
 changes scope or architecture, update this change explicitly before dependent work
 rather than silently diverge.
 

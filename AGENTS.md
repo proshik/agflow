@@ -2,7 +2,8 @@
 
 This repository distributes the current skill-based development workflow,
 portable user instruction blocks, harness-driven setup instructions and an interactive HTML
-diagram of the current process.
+diagram of the current process. agflow is this distribution repository, not an
+executable tool, runtime or service.
 
 ## Working here
 

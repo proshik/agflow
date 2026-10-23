@@ -31,18 +31,45 @@ plan review, independent code review or durable receipt framework is mandatory.
 Project-specific documentation/check requirements still apply. Classify by
 uncertainty and consequences, not file count or installed tools.
 
-For substantial or uncertain work, add only justified design, delegation and
-review. When a persisted contract helps, explicit format wins; otherwise use one
-matching change in existing openspec/ or one lightweight note if absent. Never
-initialize OpenSpec automatically. Its presence alone does not require design
-ceremony for a small fix. Resolve material choices and preserve settled decisions.
-Keep requested scope distinct from optional recovery, platforms or generalization.
+Start from the actual user request: request → investigation/discussion → agreed
+behavior → persisted change when useful or explicitly required → implementation
+and relevant checks. For bugs use diagnosis; for ambiguous substantial work use
+relevant Superpowers brainstorming/planning methods before freezing the design.
+Use the same engineering methods directly if the plugin is unavailable; neither
+installation nor every Superpowers skill is a mandatory sequence. Small clear
+tasks need no ceremony.
+
+Superpowers supplies engineering methods, including comparing solutions and
+verification. OpenSpec stores agreed behavior, scenarios, significant accepted
+choices and one implementation task plan; it does not invent features or add a
+second design/planning process. Spec-design bridges those methods to the chosen
+persisted format. With OpenSpec selected, keep the authoritative implementation
+plan there, reconcile relevant existing drafts before implementation and avoid a
+competing Superpowers Plan.md/spec. Do not initialize OpenSpec or rewrite baseline
+specifications automatically. Existing openspec/ alone does not force a change
+for a minor fix; real project rules and explicit requirements still apply.
+
+When persistence is selected, explicit format wins; otherwise use one matching
+change in existing openspec/ or one lightweight note if absent.
+
+Distinguish requested/approved product behavior, demonstrably necessary
+compatibility or technical constraints, and optional agent suggestions. Keep this
+lightweight; no provenance table is required for a small fix. Strictly necessary
+internal helpers/refactoring are ordinary implementation choices. Added visible
+capabilities such as Retry, session recovery, screens, settings, modes or
+automation need an actual user decision before becoming requirements or code,
+unless already explicitly authorized. Do not ask again about settled choices.
+A clearer error does not silently become session recovery. Draft proposals stay
+explicitly proposals; saving them or passing validation/review is not user
+approval. Do not hand speculative recommendations to a builder as accepted facts.
 
 Specification review is conditional on consequential architectural choices,
 shared contracts, migrations or integration uncertainty. When selected, use one
 independent architectural reviewer, one pass, no synthesis, separate verification
-pipeline, automatic retry or re-review. The parent checks findings and updates
-the same contract. Independent code review is selected for material risk,
+pipeline, automatic retry or re-review, with at most one provider attempt. First
+inspect scope inflation against the actual request/approved decisions, then
+feasibility, boundaries and compatibility. Findings cannot authorize new product
+behavior. The parent checks findings and updates the same contract. Independent code review is selected for material risk,
 substantial integration or explicit project/user requirements. An omitted
 unnecessary stage is skipped; missing required evidence remains UNVERIFIED.
 
@@ -78,6 +105,8 @@ and atomic reports are for managed recovery/shared resources that need them.
 Qualify only capabilities required by the actual assignment, using harmless
 bounded evidence under existing authority, without blanket access requests.
 
+The worker tests before handoff/review; the parent checks results and necessary
+final behavior, without a full duplicate suite absent a changed concern.
 Apply engineering-quality and acceptance-testing proportionally. Check real
 changed behavior early; docs-only work uses file/link/inventory and affected local
 controls. Tests/static validation do not prove live UI/API/model behavior.
