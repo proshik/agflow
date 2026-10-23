@@ -61,5 +61,10 @@
     "skills/spec-design/references/openspec.md",
     "tools/check.mjs",
     "tools/check.test.mjs"
-  ]
+  ],
+  "execution_defaults": {
+    "task_worktree_required": true,
+    "separate_task_session_required": true,
+    "guild_visible_managed_session_required": true
+  }
 }

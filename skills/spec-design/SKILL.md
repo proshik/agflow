@@ -8,7 +8,8 @@ description: Use when preparing or revising a useful acceptance contract for sub
 Prepare only the design needed to resolve material scope or architecture choices.
 A small fix with settled behavior normally needs the request, expected outcome
 and relevant checks, not a separate specification. Respect explicit project
-requirements. All preparation writes belong in the task worktree, never the
+requirements. All preparation writes belong in the separate task session and its
+worktree, never the
 main checkout; do not dispatch a separate designer merely to write a note.
 
 When a persisted contract is needed, honor the user's chosen format. Otherwise

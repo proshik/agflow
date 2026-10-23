@@ -38,13 +38,23 @@ preserved. Optional adapters such as revust are checked separately when selected
 Always isolate task changes in a separate branch/worktree before writing code,
 tests, plans, specifications or notes. Keep the main checkout free of task edits
 so another task can start from it at any time. Preserve pre-existing user changes.
-A separate worktree does not require a separate agent session.
+Every task change requires both a separate task worktree and a separate working
+session, including minor bugs, documentation and preparation. The initiating
+parent owns scope, supervision, acceptance and continuation; it must not implement
+through paths into an empty worktree. In Guild the worker is a visible managed
+session. Outside Guild a harness-native child qualifies only with a real separate
+conversation, explicit worktree binding, supervision/continuation and required
+human question/approval channels. A helper sharing parent cwd/state does not
+qualify. Missing required session capability blocks implementation; report the
+scoped gap without a root fallback. The parent may assign the full request;
+preparation/design writes belong to the task session. Existing assigned workers
+reuse their own session and tree without nesting.
 
 For a small settled change or minor bug:
 
-> Task worktree → inspect/reproduce → implement → targeted checks → local commit
+> Separate task worktree + working session → inspect/reproduce → implement → targeted checks → local commit
 
-No separate specification, designer, managed session, process registration or
+No separate specification, designer, process registration or
 independent review is mandatory unless project/user rules require it. For
 substantial or uncertain changes, add only useful design, delegation and review.
 When persisted design is needed, use an existing matching OpenSpec change or a
@@ -58,10 +68,10 @@ Independent code review is selected by material risk or explicit requirements.
 General skills describe intent; applicable user/project policy and a suitable
 adapter choose the tool. Revust is an optional adapter, not a universal dependency.
 
-Use the current harness directly or useful native subagents in the task worktree.
-Check actual file sharing, permissions and result channels. Concurrent writers
-use separate trees; read-only helpers need no new tree. Managed visible sessions
-are useful for independent long work or human interaction, not every local fix.
+Use native subagents for bounded investigation, checks or delegated parts inside
+the task. Check actual file sharing, permissions and result channels. Concurrent
+writers use separate trees; read-only helpers need no new tree. Helpers do not
+replace the mandatory task session.
 The parent owns continued work, integration and acceptance. An optional native
 Process must support the selected lighter route before registration; existing
 registered tasks retain their owner/history. See the
@@ -127,7 +137,8 @@ CI limits, and [SECURITY.md](SECURITY.md) for reporting sensitive issues.
 
 ## Working checkpoints and handoffs
 
-Use the request and expected outcome for small direct work; use one persisted
+Use the request and expected outcome for small tasks in their assigned session;
+use one persisted
 contract when substantive design helps. State required scope, necessary
 compatibility and optional additions. Reach useful working behavior early and
 check the affected API/UI/native/CLI surface, or local documentation controls.

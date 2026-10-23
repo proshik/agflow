@@ -7,12 +7,26 @@ Select the installed harnesses; install a missing harness through
 its current official instructions only when authorized. Do not install every
 harness merely because all three are supported by the instruction format.
 
-Git worktree support is required for task changes. The initiating harness may
-work directly in a task worktree; a separate managed-session host is optional.
+Git worktree support and a distinct working session are required for every task
+change, including minor fixes, documentation and preparation.
+
+Every task change requires both a separate task worktree and a separate working
+session, including minor bugs, documentation and preparation. The initiating
+parent owns scope, supervision, acceptance and continuation; it must not implement
+through paths into an empty worktree. In Guild the worker is a visible managed
+session. Outside Guild a harness-native child qualifies only with a real separate
+conversation, explicit worktree binding, supervision/continuation and required
+human question/approval channels. A helper sharing parent cwd/state does not
+qualify. Missing required session capability blocks implementation; report the
+scoped gap without a root fallback. The parent may assign the full request;
+preparation/design writes belong to the task session. Existing assigned workers
+reuse their own session and tree without nesting.
 Use actual native subagent capabilities when useful, qualifying checkout binding,
 file sharing, permissions and result/human channels relevant to the assignment.
-For selected managed sessions qualify isolation, observation, human questions,
-approvals and resume. Missing an optional adapter does not block direct work.
+For required task sessions qualify isolation, observation, human questions,
+approvals and resume. Missing an optional adapter does not block a qualified task
+session; missing
+required session capability blocks implementation without a root fallback.
 Keep preparation, task notes and generated evidence out of the main checkout.
 
 ## Installation destinations
@@ -111,9 +125,10 @@ WSL homes or path conventions in one installation.
 ## Workflow policy consistency
 
 Verify bundle.json, shared rules and skills agree on mandatory task worktrees
-before any preparation writes, a direct route for local fixes and optional design,
-delegation and review. Separate worktree isolation from session choice; do not
-require a managed host merely because native subagents are unavailable.
+AND separate working sessions before any preparation writes, a small task-session
+route for local fixes and optional design, helpers and review. Missing required
+session capability blocks implementation even when helpers are
+available; optional Process registration remains unnecessary for small fixes.
 
 Specification review, when needed, is one architectural reviewer/pass with no
 synthesis, verification or automatic retry. Review limits are ceilings for selected
@@ -128,4 +143,4 @@ workflow requires separately authorized observations; structural checks provide
 neither that evidence nor permission for calls. Preserve meaningful acceptance,
 source-qualified checks, limited reruns, scope control, parent continuation and
 existing publication/cleanup boundaries without a mandatory report framework for
-simple direct work. Global setup changes remain previewable and backed up.
+simple task-session work. Global setup changes remain previewable and backed up.

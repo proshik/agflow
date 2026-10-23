@@ -22,8 +22,11 @@ diagram of the current process.
 - Select review by task risk and explicit user rules; specification review, when
   needed, is one architectural pass. Use the applicable review adapter and preserve
   existing histories, explicit limits and publication rules.
-- Make all task changes, including preparation, in a separate worktree. Small
-  fixes may run directly there; native subagents and managed sessions are optional.
+- Make all task changes, including preparation, in a separate worktree. A separate
+  working session is also mandatory, including for minor fixes and preparation.
+  In Guild use a visible managed worker; assigned workers reuse their session/tree.
+  Native helpers do not replace that session; unavailable session capability blocks
+  implementation rather than allowing a root fallback.
 - Keep the HTML process diagram local and explanatory; its controls must not
   launch models, Git mutations or live reviews.
 - Push, remote creation, publication and deployment require explicit permission.

@@ -1,14 +1,23 @@
 ---
 name: orchestration
-description: Use when delegating development to harness subagents or managed sessions, coordinating dependencies or shared resources. Not required for direct work in one task worktree or independent review alone.
+description: Use when delegating development to harness subagents or managed sessions, coordinating dependencies or shared resources. Assigned workers reuse their task session; not for independent review alone.
 ---
 
 # Orchestration
 
-Delegate when it reduces total work or supplies useful independent exploration.
+Establish the mandatory separate task session; add helpers only when useful.
 The initiating session owns scope, integration, acceptance and continuation.
-A separate worktree is required for task changes, but a separate session is not.
-For a small task, direct execution in the task worktree is often simplest.
+Every task change requires both a separate task worktree and a separate working
+session, including minor bugs, documentation and preparation. The initiating
+parent owns scope, supervision, acceptance and continuation; it must not implement
+through paths into an empty worktree. In Guild the worker is a visible managed
+session. Outside Guild a harness-native child qualifies only with a real separate
+conversation, explicit worktree binding, supervision/continuation and required
+human question/approval channels. A helper sharing parent cwd/state does not
+qualify. Missing required session capability blocks implementation; report the
+scoped gap without a root fallback. The parent may assign the full request;
+preparation/design writes belong to the task session. Existing assigned workers
+reuse their own session and tree without nesting.
 
 ## Choose from actual harness capabilities
 
@@ -24,13 +33,11 @@ requires; do not perform a full host qualification for a read-only helper.
   the parent's filesystem and cwd: pass exact paths and set cwd on commands.
   Give concurrent writers separate worktrees; otherwise sequence them and
   assign explicit file ownership. Do not assume spawn supplies isolation.
-- A managed session is useful for independent long-running work, separate
-  resource ownership, or direct human interaction. In Guild use the public
-  [host adapter](references/guild.md). On other hosts qualify the actual
-  observation, continuation and human channels before relying on them.
-- Without suitable delegation, execute directly in the task worktree unless an
-  explicit task requirement needs a separate worker. Only that dependent
-  assignment is blocked by a missing mandatory capability.
+- In Guild use the public [host adapter](references/guild.md) for a visible
+  managed worker, including for small fixes. Outside Guild a native child must
+  satisfy the distinct-session requirements above, not merely share cwd/state.
+- Missing required task-session capability blocks implementation. Report that
+  scoped gap; continue read-only investigation without a root-write fallback.
 
 Assignments include the goal, worktree/branch, owned and excluded paths, relevant
 contract or request, checks and action limits. Add model/effort selections only
@@ -84,5 +91,5 @@ Before repeating a failed external operation inspect the cause, changed conditio
 and available bounded no-generation recovery evidence. Do not spend paid smoke
 calls or switch providers to guess. Retain a missing required qualification as
 UNVERIFIED; an explicit scoped retry still needs available allowance. Recover
-existing IDs before starting duplicates. Ordinary direct work requires no
+existing IDs before starting duplicates. Ordinary task-session work requires no
 external-engine recovery ceremony when no engine is involved.

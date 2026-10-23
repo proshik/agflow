@@ -9,7 +9,17 @@ Keep the main checkout free of task changes. Before writing code, tests,
 contracts, plans or task notes, create or reuse a task branch in a separate
 worktree. Read-only investigation may start in the main checkout. Preserve
 pre-existing user changes; never clean, stash or commit them to obtain isolation.
-An assigned worker already in its task worktree reuses it.
+Every task change requires both a separate task worktree and a separate working
+session, including minor bugs, documentation and preparation. The initiating
+parent owns scope, supervision, acceptance and continuation; it must not implement
+through paths into an empty worktree. In Guild the worker is a visible managed
+session. Outside Guild a harness-native child qualifies only with a real separate
+conversation, explicit worktree binding, supervision/continuation and required
+human question/approval channels. A helper sharing parent cwd/state does not
+qualify. Missing required session capability blocks implementation; report the
+scoped gap without a root fallback. The parent may assign the full request;
+preparation/design writes belong to the task session. Existing assigned workers
+reuse their own session and tree without nesting.
 
 ## Choose the amount of process
 
@@ -18,9 +28,9 @@ based on uncertainty, affected contracts and consequences of failure, not file
 count or the mere presence of OpenSpec, Guild or subagent tools.
 
 - A small local change or minor bug with settled behavior uses the short route:
-  task worktree → reproduce/inspect → change → targeted verification → local
+  task worktree + separate working session → reproduce/inspect → change → targeted verification → local
   commit when authorized. The request and a concise expected outcome suffice;
-  do not require a separate specification, designer, worker session, process
+  do not require a separate specification, designer, process
   registration, plan review, independent code review or durable receipt system.
   Project-required documentation and checks still apply.
 - Substantial or uncertain work adds the artifacts, delegation and independent
@@ -29,7 +39,7 @@ count or the mere presence of OpenSpec, Guild or subagent tools.
   add a stage merely because a tool is available.
 
 For this workflow, an ordinary development request authorizes task worktree
-creation and relevant local implementation/checks, subject to explicit action
+creation, a separate working session and relevant local implementation/checks, subject to explicit action
 limits and host permissions. Local commits follow applicable project/user rules;
 push, merge, publication, cleanup, deployment and global installation retain
 their separate authorization requirements. Questions alone launch no workers.
@@ -52,12 +62,12 @@ their separate authorization requirements. Questions alone launch no workers.
    roster, synthesis, verification pipeline or automatic re-review. See
    [review intent and routing](references/review.md). Architecture-only work
    ends at design_ready after its selected checks, without a builder launch.
-4. Implement directly in the worktree or use orchestration if delegation will
-   reduce total work. Prefer available harness-native subagents for bounded
-   tasks when their actual isolation, permissions and result channels fit.
-   A worktree does not imply a separate session. Independent long-running work
-   or human interaction may justify a managed session. No subagents is a normal
-   direct-execution route, not a setup failure. Do not delegate mechanically.
+4. The parent uses orchestration to assign the full request to a separate task
+   session before preparation or implementation writes. The assigned worker
+   implements in its own worktree/session and reuses both for corrections.
+   Native subagents may help with bounded investigation, checks and delegated
+   parts; they do not replace the required session. If that session cannot be
+   provided, report the scoped capability gap and withhold implementation.
 5. Apply engineering-quality and acceptance-testing to the changed surface.
    Reach a useful working behavior early. For a bug, retain its reproduction and
    relevant regression evidence. For docs-only changes use file/link/inventory
@@ -73,7 +83,8 @@ their separate authorization requirements. Questions alone launch no workers.
 
 ## Delegation and optional host automation
 
-Use orchestration only when assigning work or coordinating shared resources.
+Use orchestration to establish the required task session and when coordinating
+helpers or shared resources. Assigned workers do not create nested task sessions.
 Keep the initiating session responsible for results, integration and continuation.
 Assignments specify the task worktree, owned files, expected outcome, checks and
 limits. Supply further state only when recovery or dependencies actually need it.
@@ -89,7 +100,7 @@ that forces omitted reviews or writes preparation in the main checkout. Existing
 registered runs retain their actual identities, history and limits; never start
 a second controller or strip caller identity to bypass an incompatible run.
 
-Use a concise progress/check result for direct work. Maintain durable coordination
+Use a concise progress/check result for small task-session work. Maintain durable coordination
 records only for dispatched sessions, shared resources or recovery that needs
 them. After corrections rerun affected checks and retain justified unaffected
 evidence; do not repeat all stages for a cosmetic edit. Required missing evidence

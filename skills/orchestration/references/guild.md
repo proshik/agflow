@@ -14,7 +14,7 @@ not authority to patch bootstrap, inspect Rust or erase identity.
 | Discover native workflow when managed Process is selected | `guild workflow capabilities --json`, `guild workflow instructions` |
 | Register/show preparation (original parent only) | `guild workflow start --from-file REQUEST --json`, then `guild workflow show RUN --json` |
 | Native graph checkpoint/review/report | Shared development-workflow native-entry guide (`references/native-entry.md`); public `workflow status/checkpoint/review/retry` only, no parallel portable dispatch |
-| Create isolation for current session or native helper | `guild worktree create NAME --from PROJECT --base REF --json` |
+| Create isolation only; not a complete task-session assignment | `guild worktree create NAME --from PROJECT --base REF --json` |
 | Create worktree with visible managed task | `guild worktree create NAME --from PROJECT --base REF --from-file TASK --harness HARNESS --json` |
 | Start in an existing assigned checkout | `guild session new --worktree PATH --from-file TASK --harness HARNESS --json` |
 | Reconcile exact assigned identities/status | `guild agent list --json` and retained create/request receipts |
@@ -28,10 +28,13 @@ Capture returned checkout/session/request IDs and verify actual start through
 observations. Creation success alone does not prove task delivery or execution.
 Do not use a Git worktree fallback or another terminal to bypass Guild's owner.
 
-Use these managed-session APIs only when that mode is selected. Task worktrees
-are mandatory even for direct work; `guild worktree create` without a task can
-supply isolation for the current session or a native subagent. A new visible tab
-is not mandatory. Native Process registration is optional: the chosen graph must
+Use these APIs for the mandatory visible managed task session, including minor
+fixes and preparation. Worktree creation without a task supplies isolation only;
+the parent must start a visible worker there before task writes. The parent may
+route the full request, with preparation/design writes performed by the worker.
+Assigned workers reuse their own session/tree without nesting. Native helpers
+do not replace the task session. Missing session capability blocks implementation,
+without a root-write fallback. Native Process registration is optional: the chosen graph must
 represent skipped specification review, one-pass architectural review when
 selected, and task-worktree preparation before Start. Existing native runs retain
 their owner/history; do not create a second dispatcher after registration.
