@@ -97,7 +97,14 @@ their separate authorization requirements. Questions alone launch no workers.
 6. Select independent code review for material risk, substantial cross-component
    changes or explicit project/user requirements. A small low-risk fix needs
    targeted checks and self-inspection; no automatic paid review. Use the chosen
-   review scope and actual local route, preserve existing budgets and inspect
+   review scope and actual local route. Once selected, use the full effective
+   configured code-review profile: original roster/lenses, enabled stages,
+   provider/model/effort, verification policy and budgets. Specification-only
+   single-pass limits do not apply; do not reduce to one bugs/impl lens, a one-call
+   cap or disabled synthesis/verify for convenience. A reduced/diff-focused
+   correction review needs explicit scope; preserve histories and round limits.
+   Honor normal engine skips, without forcing calls. See the profile/stage
+   distinction in [review routing](references/review.md), and inspect
    supported findings. Do not turn every minor suggestion into a broader design.
 7. Inspect the final diff and behavior, record meaningful checks and limitations,
    and leave a concrete local branch/commit. Prepare MR/PR text when requested

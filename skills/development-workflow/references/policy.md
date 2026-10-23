@@ -13,7 +13,7 @@ needs no settings service, role manifest or operational receipt framework.
 | Executor | Separate task working session; visible managed worker in Guild. Outside Guild, a native child must have separate conversation, explicit worktree binding, supervision/continuation and required human channels. Shared-cwd helpers do not qualify |
 | Model/effort | Explicit role selection, otherwise harness defaults; respect supported project choices |
 | Specification review | Conditional; one independent architectural reviewer/pass/attempt; scope inflation first, then feasibility/boundaries/compatibility; no synthesis, verification or automatic retry |
-| Code review | Selected for material risk/substantial integration or explicit requirements; local low-risk fixes do not require it |
+| Code review | Selected for material risk/substantial integration or explicit requirements; local low-risk fixes do not require it. Once selected, use the full effective configured profile (original roster/lenses, enabled stages, provider/model/effort, verification policy and budgets); specification-only caps do not apply. Reduced correction scope requires an explicit request; preserve histories/limits and normal engine skips |
 | Review tool | Applicable explicit user/project route, otherwise an available suitable adapter; no engine required merely to implement |
 | Limits | At most 1 selected plan-review round and 2 selected code-review rounds, including initial reviews; ceilings, not required calls |
 | Delivery | Concrete local branch/commit under applicable authority; push, merge, cleanup, publication, deployment and installation are separate |

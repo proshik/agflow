@@ -37,6 +37,20 @@ pinned engine. If the selected external adapter is revust, follow the
 [revust adapter](revust.md); generic workflow skills do not require that engine.
 Preserve configured provider/model choices and existing round history.
 
+Selected implementation/code review uses the full effective configured review
+profile: its original reviewer roster/lenses, enabled stages, provider/model/effort,
+verification policy and applicable budgets. The specification-only single-pass
+limits do not apply. Do not substitute one bugs/impl lens, impose a one-call cap,
+or disable synthesis/verification to simplify the review or save time.
+Choosing whether a low-risk task needs review is separate from executing it;
+selection does not imply a lightweight/find-only mode. A specifically requested
+reduced or diff-focused correction review follows its explicit scope and preserved
+limits; do not infer that permission. `find` is a stage; `codex-only` and
+`comprehensive` are profiles. A codex-only profile can run its full configured
+pipeline; do not hardcode comprehensive or change user/project provider choices.
+Normal engine conditions may skip work, such as verification with no findings;
+do not force artificial calls. Preserve existing task histories and round limits.
+
 ## Ownership, evidence and limits
 
 The initiating session owns review decisions, findings verification and continued

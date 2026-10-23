@@ -12,7 +12,7 @@ and reviewed snapshot in the task worktree or authorized archive. Keep the main
 checkout free of generated review/task files by selecting supported caller,
 workdir and tasks paths. Preflight is not a paid capability test.
 
-## One architectural pass
+## Specification review only: one architectural pass
 
 Use the selected package's documented single-reviewer composition (for example
 `--lenses` with only the architectural lens), `--no-synthesis` and `--no-verify`.
@@ -29,6 +29,20 @@ If the installed version cannot express this intent, report that limitation;
 do not silently run a multi-stage profile or modify revust source from agflow.
 A dedicated convenience mode is a separate possible revust change, not a
 prerequisite when existing composition can express the intent.
+
+## Implementation/code review
+
+Use the full effective configured profile, preserving its original reviewer
+roster/lenses, enabled stages, provider/model/effort, verification policy and
+applicable budgets. The architectural composition above is specification-only:
+do not use one bugs/impl lens, max_calls=1, `--no-synthesis` or `--no-verify`
+merely to simplify code review or save time. `find` is a stage, while
+`codex-only` and `comprehensive` are profiles; codex-only can execute a full
+configured pipeline. Do not hardcode comprehensive or change provider choices.
+Only an explicitly requested reduced/diff-focused correction review permits its
+specified narrower scope, within preserved limits. Honor normal engine conditions
+that skip unnecessary work (for example verification with no findings), without
+forcing calls. Preserve existing task histories and round limits.
 
 ## Execution and recovery
 

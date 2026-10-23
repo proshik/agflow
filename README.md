@@ -91,6 +91,14 @@ Independent code review is selected by material risk or explicit requirements.
 General skills describe intent; applicable user/project policy and a suitable
 adapter choose the tool. Revust is an optional adapter, not a universal dependency.
 
+Selected code review uses the full effective configured profile: original
+reviewer roster/lenses, enabled stages, provider/model/effort, verification policy
+and budgets. Specification-only single-pass limits do not apply; do not reduce
+to one bugs/impl lens, one call or disabled synthesis/verify for convenience.
+Reduced/diff-focused correction scope requires an explicit request.
+`find` is a stage; `codex-only` and `comprehensive` are profiles. Preserve
+user/project profile choices, normal engine skips, histories and round limits.
+
 Use native subagents for bounded investigation, checks or delegated parts inside
 the task. Check actual file sharing, permissions and result channels. Concurrent
 writers use separate trees; read-only helpers need no new tree. Helpers do not
