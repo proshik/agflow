@@ -17,7 +17,9 @@ for the assigned builder, not delegation or independent-review authority.
 Pin each regression to an acceptance scenario and observe its failure for the
 right reason before fixing code. Verify the entire same scenario and affected
 callers; avoid a nearby refactor that does not serve it. Inspect the resulting
-files/diff, run the target project's required checks and retain exact evidence.
+files/diff, run relevant tests and the target project's required checks before
+handoff/review, and retain exact evidence. The parent checks results and necessary
+final behavior without a duplicate full suite absent a changed concern.
 Classify failing checks as introduced, pre-existing or unknown using the targeted
 and base-comparison guidance in [common quality](references/common.md); preserve
 evidence and report acceptance impact without automatically repairing unrelated
@@ -47,7 +49,11 @@ actual inputs, outputs and snapshot; missing access is UNVERIFIED. A prototype o
 first preview is not final acceptance and adds no automatic human approval gate.
 Continue authorized work after intermediate checkpoints.
 
-Keep required behavior, necessary compatibility and optional additions distinct.
+Keep requested/approved product behavior, demonstrated compatibility/technical
+constraints and optional suggestions distinct. Necessary internal helpers or
+refactoring are ordinary implementation choices. Added user-visible capabilities
+need an actual user decision unless already authorized; saved specs or review
+findings cannot authorize them. Do not reopen settled decisions.
 An agent-added shell/platform needs a demonstrated dependency on requested behavior;
 otherwise defer it. Preserve affected callers. Report each checkpoint as working
 behavior, evidence, next visible outcome and actual blocker, including the accepted

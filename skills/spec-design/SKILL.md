@@ -5,12 +5,30 @@ description: Use when preparing or revising a useful acceptance contract for sub
 
 # Spec design
 
-Prepare only the design needed to resolve material scope or architecture choices.
+Bridge engineering investigation and discussion to the chosen persisted format;
+do not invent a solution and present it as user requirements.
+
+Start from the actual user request: request → investigation/discussion → agreed
+behavior → persisted change when useful or explicitly required → implementation
+and relevant checks. For bugs use diagnosis; for ambiguous substantial work use
+relevant Superpowers brainstorming/planning methods before freezing the design.
+Use the same engineering methods directly if the plugin is unavailable; neither
+installation nor every Superpowers skill is a mandatory sequence. Small clear
+tasks need no ceremony.
+
+Superpowers supplies engineering methods, including comparing solutions and
+verification. OpenSpec stores agreed behavior, scenarios, significant accepted
+choices and one implementation task plan; it does not invent features or add a
+second design/planning process. Spec-design bridges those methods to the chosen
+persisted format. With OpenSpec selected, keep the authoritative implementation
+plan there, reconcile relevant existing drafts before implementation and avoid a
+competing Superpowers Plan.md/spec. Do not initialize OpenSpec or rewrite baseline
+specifications automatically. Existing openspec/ alone does not force a change
+for a minor fix; real project rules and explicit requirements still apply.
 A small fix with settled behavior normally needs the request, expected outcome
 and relevant checks, not a separate specification. Respect explicit project
 requirements. All preparation writes belong in the separate task session and its
-worktree, never the
-main checkout; do not dispatch a separate designer merely to write a note.
+worktree, never the main checkout; do not dispatch a separate designer merely to write a note.
 
 When a persisted contract is needed, honor the user's chosen format. Otherwise
 existing target-project `openspec/` uses one matching change with
@@ -18,10 +36,21 @@ existing target-project `openspec/` uses one matching change with
 suitable document or one lightweight task note. Do not initialize OpenSpec
 without a request or keep parallel plans. Validate only applicable tooling.
 
-Record required behavior, scope boundaries, necessary compatibility, meaningful
-edge cases and observable checks. Add architecture, alternatives, dependencies
-and ordered tasks only where useful. Investigate actual callers before choosing
-boundaries. For an open material choice compare a mature existing option with a
+Distinguish requested/approved product behavior, demonstrably necessary
+compatibility or technical constraints, and optional agent suggestions. Keep this
+lightweight; no provenance table is required for a small fix. Strictly necessary
+internal helpers/refactoring are ordinary implementation choices. Added visible
+capabilities such as Retry, session recovery, screens, settings, modes or
+automation need an actual user decision before becoming requirements or code,
+unless already explicitly authorized. Do not ask again about settled choices.
+A clearer error does not silently become session recovery. Draft proposals stay
+explicitly proposals; saving them or passing validation/review is not user
+approval. Do not hand speculative recommendations to a builder as accepted facts.
+
+Record agreed behavior, scope boundaries, meaningful scenarios and observable
+checks. Capture significant accepted choices and one implementation task plan
+in the selected format. Investigate actual callers before choosing boundaries. For
+an open material choice compare a mature existing option with a
 local implementation and recommend one; do not reopen an approved stack.
 Ask only for material unresolved product choices. Record agreed decisions and
 bounded assumptions, keeping exploratory proposals distinct from facts.
@@ -38,11 +67,14 @@ obvious changes following an established pattern. Record a short reason for
 selection or omission where a contract is being prepared.
 
 When selected, ask one independent architectural reviewer for one pass on the
-persisted design and relevant repository facts. Focus on feasibility, boundaries,
-compatibility, major omissions and needless complexity. Do not request general
+persisted design, actual request, approved decisions and relevant repository
+facts. First inspect scope inflation against that request and those decisions;
+then inspect feasibility, boundaries, compatibility, omissions and complexity. Do
+not request general
 implementation review, multiple lenses, synthesis or separate verification
 stages. The initiating session checks findings and updates the same contract;
-there is no automatic review loop. Preserve explicit project rules and existing
+review findings cannot authorize new product behavior. There is no automatic
+review loop or additional provider attempt. Preserve explicit project rules and existing
 review limits. The invoking workflow owns the actual tool/host adapter.
 
 Use a harness subagent or a managed designer only when independent exploration

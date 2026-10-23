@@ -9,10 +9,13 @@ is UNVERIFIED. Do not install a review engine just to perform a small fix.
 
 Use one architectural reviewer and one pass when consequential design choices
 benefit from independent scrutiny. Give the exact persisted contract and relevant
-repository facts. Ask about feasibility, boundaries, compatibility, major missing
-scenarios and avoidable complexity. Exclude general code-review rosters,
+repository facts, actual request and approved decisions. First inspect scope
+inflation against that request and agreement, then feasibility, boundaries,
+compatibility, major missing scenarios and avoidable complexity. Exclude general code-review rosters,
 synthesis, separate verification and automatic retries/re-review. The parent
-checks evidence and resolves supported findings in the same contract.
+checks evidence and resolves supported findings in the same contract. Findings
+cannot independently authorize new product behavior; validation/review is not
+user approval of proposals.
 
 The execution intent is one reviewer, one stage, at most one provider attempt.
 An engine's small profile name alone is not proof of this shape. Inspect its

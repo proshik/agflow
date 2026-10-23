@@ -4,6 +4,7 @@ Portable instructions for the development workflow used with Claude, Codex and
 OpenCode. This repository contains five Markdown skills, shared user rules,
 setup instructions and an interactive diagram. Your harness reads the repository
 and performs installation or updates with its available tools and permissions.
+agflow is this distribution repository, not an executable tool, runtime or service.
 
 ## Install on another machine
 
@@ -57,13 +58,35 @@ For a small settled change or minor bug:
 No separate specification, designer, process registration or
 independent review is mandatory unless project/user rules require it. For
 substantial or uncertain changes, add only useful design, delegation and review.
-When persisted design is needed, use an existing matching OpenSpec change or a
-lightweight note in projects without OpenSpec. Do not initialize OpenSpec merely
-because a task was requested.
+Start from the actual user request: request → investigation/discussion → agreed
+behavior → persisted change when useful or explicitly required → implementation
+and relevant checks. For bugs use diagnosis; for ambiguous substantial work use
+relevant Superpowers brainstorming/planning methods before freezing the design.
+Use the same engineering methods directly if the plugin is unavailable; neither
+installation nor every Superpowers skill is a mandatory sequence. Small clear
+tasks need no ceremony.
+
+Superpowers supplies engineering methods, including comparing solutions and
+verification. OpenSpec stores agreed behavior, scenarios, significant accepted
+choices and one implementation task plan; it does not invent features or add a
+second design/planning process. Spec-design bridges those methods to the chosen
+persisted format. With OpenSpec selected, keep the authoritative implementation
+plan there, reconcile relevant existing drafts before implementation and avoid a
+competing Superpowers Plan.md/spec. Do not initialize OpenSpec or rewrite baseline
+specifications automatically. Existing openspec/ alone does not force a change
+for a minor fix; real project rules and explicit requirements still apply.
+
+Use spec-design to bridge those methods to the persisted format. Draft proposals
+remain proposals; saving or validating them and review do not approve new scope.
+Necessary internal implementation choices need no extra approval; optional visible
+features need a user decision unless already authorized. For example, a clearer
+error does not authorize session recovery. Preserve settled decisions.
 
 Specification review is optional. Consequential architecture, shared contracts,
 migrations and uncertain integration can justify **one architectural reviewer,
-one pass**, without synthesis, separate verification or automatic retries.
+one pass/attempt**, without synthesis, separate verification or automatic retries.
+First check scope inflation against the request/approved decisions, then
+feasibility, boundaries and compatibility. Findings do not authorize new behavior.
 Independent code review is selected by material risk or explicit requirements.
 General skills describe intent; applicable user/project policy and a suitable
 adapter choose the tool. Revust is an optional adapter, not a universal dependency.
@@ -77,7 +100,9 @@ Process must support the selected lighter route before registration; existing
 registered tasks retain their owner/history. See the
 [native entry guide](skills/development-workflow/references/native-entry.md).
 
-Keep real behavior checks proportional to the affected surface. Documentation
+The worker tests before handoff/review. The parent checks results and necessary
+final behavior without a full duplicate suite absent a changed concern. Keep
+real behavior checks proportional to the affected surface. Documentation
 changes use file/link/inventory and affected local-control checks; static checks
 do not prove live product or model behavior. Recheck affected evidence after
 corrections rather than repeating everything. Preserve requested scope: a clearer

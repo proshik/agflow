@@ -8,10 +8,11 @@ needs no settings service, role manifest or operational receipt framework.
 | --- | --- |
 | Isolation | Separate task worktree AND separate working session before any task write, including notes/specs; preserve the main checkout and pre-existing changes |
 | Process size | Small settled fix uses its assigned task session for implementation and targeted checks; substantial work adds justified design/delegation/review |
-| Contract | Request and expected outcome suffice for local work; if persisted design is needed, explicit format wins, otherwise existing openspec/ uses one matching change and absence uses one lightweight note |
+| Methods | Actual request first; diagnose bugs, investigate/discuss ambiguous substantial work using relevant Superpowers methods or apply them directly if unavailable; no mandatory installation/skill sequence |
+| Contract | Persist agreed behavior only when useful or required; explicit format wins, otherwise existing openspec/ uses one matching change and absence uses one lightweight note. Store scenarios, significant accepted choices and one implementation task plan; reconcile drafts without a competing plan. Proposals/validation/review are not approval |
 | Executor | Separate task working session; visible managed worker in Guild. Outside Guild, a native child must have separate conversation, explicit worktree binding, supervision/continuation and required human channels. Shared-cwd helpers do not qualify |
 | Model/effort | Explicit role selection, otherwise harness defaults; respect supported project choices |
-| Specification review | Conditional; one independent architectural reviewer, one pass, no synthesis, verification or automatic retry |
+| Specification review | Conditional; one independent architectural reviewer/pass/attempt; scope inflation first, then feasibility/boundaries/compatibility; no synthesis, verification or automatic retry |
 | Code review | Selected for material risk/substantial integration or explicit requirements; local low-risk fixes do not require it |
 | Review tool | Applicable explicit user/project route, otherwise an available suitable adapter; no engine required merely to implement |
 | Limits | At most 1 selected plan-review round and 2 selected code-review rounds, including initial reviews; ceilings, not required calls |

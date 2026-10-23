@@ -40,7 +40,11 @@ requires; do not perform a full host qualification for a read-only helper.
   scoped gap; continue read-only investigation without a root-write fallback.
 
 Assignments include the goal, worktree/branch, owned and excluded paths, relevant
-contract or request, checks and action limits. Add model/effort selections only
+contract or request, checks and action limits. Separate requested/approved
+behavior from demonstrated technical constraints and optional proposals; do not
+pass speculative recommendations as accepted facts. Necessary internal helpers
+are implementation choices; added visible capabilities need a user decision
+unless already authorized. Add model/effort selections only
 when requested/configured and supported. Configuration alone grants no permission.
 Use the tool's structured task text; Guild accepts literal task files. Verify
 actual start and result. Do not launch recursive worker hierarchies by default;

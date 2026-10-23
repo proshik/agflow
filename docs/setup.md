@@ -124,13 +124,26 @@ WSL homes or path conventions in one installation.
 
 ## Workflow policy consistency
 
+Start from the actual request, investigate/discuss uncertainties with relevant
+Superpowers engineering methods (or the same methods directly if unavailable),
+then persist agreed behavior only when useful or explicitly required. OpenSpec
+stores behavior, scenarios, significant accepted choices and one implementation
+plan; it is not another design process. Existing openspec/ alone does not force
+minor-fix artifacts. Do not initialize it or rewrite baselines automatically.
+Spec-design bridges methods to storage; reconcile drafts without a competing
+Superpowers Plan.md/spec. Proposals, validation and review are not user approval.
+Optional visible capabilities require an actual decision unless already
+explicitly authorized; necessary internal helpers/refactoring do not. Keep this
+lightweight and preserve settled choices. agflow is the distribution repository,
+not an executable tool, runtime or service.
+
 Verify bundle.json, shared rules and skills agree on mandatory task worktrees
 AND separate working sessions before any preparation writes, a small task-session
 route for local fixes and optional design, helpers and review. Missing required
 session capability blocks implementation even when helpers are
 available; optional Process registration remains unnecessary for small fixes.
 
-Specification review, when needed, is one architectural reviewer/pass with no
+Specification review, when needed, is one architectural reviewer/pass/attempt with no
 synthesis, verification or automatic retry. Review limits are ceilings for selected
 stages, not mandatory calls: one plan round and two code rounds including initial
 runs. Preserve existing histories, explicit limits and adapter/provider selections.
