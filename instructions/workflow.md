@@ -1,87 +1,83 @@
+<!-- agflow:begin -->
 # Portable development workflow
 
-Use the globally installed development-workflow skill for ordinary implementation,
-bugfix requests (one or several) and architecture-only work. The five shared
-skills live in ~/.agents/skills; Claude registrations point to that same source.
-They apply to Claude, Codex and OpenCode, with the initiating harness and actual
-host capabilities recorded rather than inferred from a skill's name.
+Use development-workflow for requested implementation, bugfixes and architecture
+work. The five shared skills live in ~/.agents/skills. Record actual harness/host
+capabilities when needed; a skill name does not prove tool availability.
+Questions and advice alone launch no workers, reviews or models.
 
-This standing workflow authorizes its bounded managed design/build sessions and
-parent-owned reviews for a requested development task, without requiring the
-word worktree or repeated phase approvals. Explicit task/project restrictions
-and host tool permissions still prevail. Older delegation-only memories and
-retired parallel-tasks instructions do not add another phase approval to this
-workflow. Questions/advice alone do not launch workers or reviews.
+Always create or reuse a separate task branch/worktree before writing any code,
+tests, specification, plan, note or generated task evidence. Keep the main
+checkout free of task changes and preserve pre-existing user work. Read-only
+investigation may use it. Worktree isolation does not require another session.
 
-Choose the contract from the actual target project: existing `openspec/` uses
-one matching OpenSpec change; absent uses one lightweight task contract. Do not
-initialize OpenSpec unless explicitly requested. Explicit user selection wins.
-Skip OpenSpec-only CLI/schema/delta/archive steps on the lightweight route;
-retain managed worktrees, parent revust plan/code review and live acceptance.
-Scale design/planning detail to complexity. Complex design uses an independent
-managed session with requirements/facts/approved decisions, excluding
-exploratory preferred answers. Implementation uses managed separate worktrees;
-Guild sessions are visible, and another host must qualify human question,
-approval and resume channels. The parent actively supervises assigned sessions,
-consumes completed reports, performs the next authorized checkpoint and records
-its outcome, next action and owner before continuing the same eligible session.
-Qualify worker checkout/atomic-report writes, required checks and task-required
-network with bounded harmless evidence under existing authority, not configuration
-alone; no mandatory full access or repeated phase approval. Current receipts are
-separate from history, updated on dispatch/review/report/limit transitions and
-before turn end, and reconciled with original IDs, archives and live state.
+For small settled local changes and minor bugs, use the short route: worktree →
+inspect/reproduce → implement → targeted checks → local commit under applicable
+authority. No separate specification, designer, managed session, process graph,
+plan review, independent code review or durable receipt framework is mandatory.
+Project-specific documentation/check requirements still apply. Classify by
+uncertainty and consequences, not file count or installed tools.
 
-Use Superpowers as optional task-specific methods, not a required sequence or
-installation prerequisite. Small clear tasks need no full brainstorming ceremony
-or separate design/plan files. Apply relevant engineering methods directly when
-skills are absent. No competing Plan.md/spec, reviewer-agent dispatch, repeated
-phase approval or publication menu. Follow
-engineering-quality and acceptance-testing for implementation and real API/UI/
-native/CLI acceptance. Required missing evidence remains UNVERIFIED.
+For substantial or uncertain work, add only justified design, delegation and
+review. When a persisted contract helps, explicit format wins; otherwise use one
+matching change in existing openspec/ or one lightweight note if absent. Never
+initialize OpenSpec automatically. Its presence alone does not require design
+ceremony for a small fix. Resolve material choices and preserve settled decisions.
+Keep requested scope distinct from optional recovery, platforms or generalization.
 
-New independent review runs only through installed revust in the initiating
-parent; read ~/.local/share/revust/REVIEW-ROUTING.md and its named skill. Preserve
-existing task history with separate limits per task: at most 1 plan-review
-round and at most 2 code-review rounds, including each initial review. One
-invocation includes finders, synthesis, verification and internal retries;
-another invocation consumes another round of the same kind, even after failure
-or stop. A confirmed pre-start refusal consumes no round; reconcile ambiguous
-starts. Do not transfer unused rounds between kinds or reset counts by changing
-IDs or tools. There is no default aggregate process-count ceiling; separately
-explicit user/task/provider limits still apply. Exhausted rounds require an
-explicit limit change before another review of that kind. Model evaluations
-need separate authorization; installing skills starts none. Keep the configured
-provider/profile selection and completed-view auto-close preference. After
-infrastructure failure, retry normally requires cause, a changed condition and bounded
-no-generation proof from the actual launcher/child route; missing proof remains
-UNVERIFIED. For the narrowly scoped user-authorized exception when free recovery
-proof is unavailable, follow the installed review-routing policy; allowance must
-still be reconciled and available. No default paid smoke, provider switch or reset.
-Unknown accounting withholds only the affected review; continue independent
-authorized work. Classify failing tests as introduced/pre-existing/unknown with
-practical targeted/base evidence; unrelated repairs do not expand scope.
+Specification review is conditional on consequential architectural choices,
+shared contracts, migrations or integration uncertainty. When selected, use one
+independent architectural reviewer, one pass, no synthesis, separate verification
+pipeline, automatic retry or re-review. The parent checks findings and updates
+the same contract. Independent code review is selected for material risk,
+substantial integration or explicit project/user requirements. An omitted
+unnecessary stage is skipped; missing required evidence remains UNVERIFIED.
 
-Prepare local branches and concrete MR/PR text. Push, publication, main merge,
-cleanup and deployment still require their applicable explicit authorization.
-Never answer another session's tool approval or transfer provider secrets.
+General skills specify review intent, not a mandatory review engine. Honor the
+applicable explicit user/project route; otherwise use an available suitable
+native reviewer or external adapter. A reviewer must be independent of the
+implementation context. External adapters must express the selected scope,
+stage shape and call limit; never silently expand to a comprehensive pipeline.
+Preserve configured models/profiles and existing task histories.
+Default ceilings, only for selected reviews, are 1 plan round and 2 code rounds,
+including initial invocations. Failed/stopped invocations count unless confirmed
+pre-provider refusals; reconcile ambiguous starts. New invocations need remaining
+allowance; changing tools/IDs never resets it. No round transfer or automatic
+additional review; explicit task/provider limits prevail. Evaluations require
+separate authority. Configuration and installation authorize no calls.
 
-Separate required scope, necessary compatibility and optional additions. Require
-a demonstrated dependency on requested behavior for agent-added shells/platforms;
-otherwise defer them and preserve affected callers. Assign the concrete accepted
-UI target and first useful working preview. Use small vertical checkpoints in the
-same task/session: working behavior, evidence, next visible outcome and blocker.
-Before broad code review, fill the actual empty input, execute the action, observe
-output and verify persistence where relevant, or exercise the affected API/CLI/native
-equivalent. Prototype/preview is not acceptance or an extra human approval gate.
-Parent stops scope drift; unmet agreement remains unfinished, new requests change scope.
+Consider actual harness-native subagents for bounded investigation, implementation
+and checks when they reduce total work. Check checkout binding, filesystem
+sharing, permissions, concurrency, results and needed human channels. Read-only
+helpers need no additional worktree. Writers use assigned task worktrees;
+concurrent writers use separate trees, otherwise sequence explicit ownership.
+Without suitable delegation, execute directly in the task worktree. Managed
+sessions are useful for independent long work or human interaction, not a
+prerequisite. In Guild use public host APIs for selected managed sessions.
+A native process graph is optional and must support the selected lighter route
+before registration. Existing runs keep their owner/history; no second controller.
 
-Distinguish managed workers (parent owns review/continuation) from user topic
-handoffs. Before creating a topic session, name the review/continuation owner and
-qualify a usable host-supported route and authority. Do not strip identity, assume
-task promotion, default to a human courier or suggest skipping review. If promotion
-is unsupported keep an eligible parent. Corrections record changed paths/behavior,
-invalidated evidence, retained evidence with rationale, necessary reruns/re-review
-and final reviewed identities. Preserve profiles, scope, histories and limits;
-no blanket reruns for unaffected cosmetic changes and no old clean result for an
-unreviewed snapshot. Defaults permit no plan re-review and one code re-review;
-required exhausted coverage remains UNVERIFIED unless explicitly changed.
+The parent owns scope, supervision, integration and continuation. Inspect results
+and execute the next authorized checkpoint; do not wait for user reminders or
+finish while assigned work can progress. Do not answer another session's tool
+approval. Native helper IDs/results suffice for bounded work; durable receipts
+and atomic reports are for managed recovery/shared resources that need them.
+Qualify only capabilities required by the actual assignment, using harmless
+bounded evidence under existing authority, without blanket access requests.
+
+Apply engineering-quality and acceptance-testing proportionally. Check real
+changed behavior early; docs-only work uses file/link/inventory and affected local
+controls. Tests/static validation do not prove live UI/API/model behavior.
+After corrections rerun affected checks, retaining justified unaffected evidence;
+no blanket full-suite/review repetition for cosmetic changes. Classify failures
+as introduced/pre-existing/unknown and do not repair unrelated issues by default.
+A requested clearer error does not automatically include retry/session recovery.
+
+Recover original dispatch/review IDs before repeating ambiguous work. External
+failure retries require cause, a changed condition and bounded free recovery
+proof where available; no default paid smoke or provider switch. If proof is
+unavailable, name the gap and obtain one specific retry decision with remaining
+allowance; explicit retry authority does not turn uncertainty into proof.
+Push, merge, publication, cleanup, deployment and global installation keep their
+applicable separate authorization. Installation never starts development.
+<!-- agflow:end -->

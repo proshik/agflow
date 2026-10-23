@@ -1,7 +1,8 @@
 # OpenSpec preparation
 
-Read this reference only when the target project already has `openspec/` or the
-user explicitly requests adopting OpenSpec. Without either condition, use the
+Read this reference when a selected persisted contract uses existing `openspec/`
+or the user explicitly requests adopting OpenSpec. A directory alone does not
+require specification work for a local fix. Write artifacts in the task worktree. Without either condition, use the
 lightweight contract in spec-design and skip all commands here. Inspect actual
 installed CLI version/help and target instructions/configuration. Reuse matching
 changes and relevant baseline specs. Invalid existing artifacts or missing CLI
@@ -39,17 +40,17 @@ competing artifact sequence. Preserve project naming/rules and task semantics.
 Artifact `done`/planning `isComplete` means documents exist, not implemented or
 accepted behavior. Inspect task evidence before marking execution complete.
 
-Before requesting or launching plan review, persist/reuse the narrow change,
+When architectural review is selected, before requesting or launching it, persist/reuse the narrow change,
 validate it and record actual accessible artifact paths/digests and source revision
-in the separate workflow receipt. Continue permitted CLI/setup investigation,
+in the contract handoff or a managed workflow receipt when needed. Continue permitted CLI/setup investigation,
 local initialization and artifact preparation while provider/worker dispatch is
 prohibited; pause at the first actual prohibited/unavailable operation. If CLI is
 unavailable, record its exact lookup/version failure and request that preparation
 prerequisite. An inline action descriptor does not make a contract review-ready.
 
-Verify the same files are accessible in the builder base. Root reviews the pinned
-artifacts before implementation and reuses accepted evidence only when digests
-still match; a route request alone cannot mark the contract accepted. If discovery
+Verify the same files are accessible in the builder base. The initiating session inspects the pinned
+artifacts and completes any selected architectural review before implementation;
+reused review evidence requires matching digests; a route request alone cannot mark the contract accepted. If discovery
 changes scope or architecture, update this change explicitly before dependent work
 rather than silently diverge.
 

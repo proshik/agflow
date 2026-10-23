@@ -19,8 +19,11 @@ diagram of the current process.
   bundled resource links and agreement between setup documents after changes.
   Structural checks are not behavioral qualification. Paid reviews/evaluations
   need their own authorization and must preserve existing aggregate budgets.
-- Use installed revust for authorized independent review; do not dispatch a
-  generic reviewer agent. Preserve explicit user limits and publication rules.
+- Select review by task risk and explicit user rules; specification review, when
+  needed, is one architectural pass. Use the applicable review adapter and preserve
+  existing histories, explicit limits and publication rules.
+- Make all task changes, including preparation, in a separate worktree. Small
+  fixes may run directly there; native subagents and managed sessions are optional.
 - Keep the HTML process diagram local and explanatory; its controls must not
   launch models, Git mutations or live reviews.
 - Push, remote creation, publication and deployment require explicit permission.

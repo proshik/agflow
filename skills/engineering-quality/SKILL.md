@@ -5,6 +5,10 @@ description: Use when implementing or correcting software against an accepted co
 
 # Engineering quality
 
+Use the request and expected outcome for a small fix; a separate design contract
+is not required. Work in the assigned task worktree. Select checks by affected
+behavior; do not add a report or independent review merely to apply this skill.
+
 Apply [common quality](references/common.md) to the accepted task, then read
 only the relevant surface: [backend/web](references/backend-web.md),
 [desktop](references/desktop.md) or [CLI](references/cli.md). These are methods

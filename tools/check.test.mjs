@@ -98,3 +98,18 @@ test('privacy and credential diagnostics redact values', t => {
   for (const expected of [/personal email/, /personal machine path/, /possible credential/]) assert.match(errors, expected);
   for (const value of [privateMail, privateHome, token]) assert.ok(!errors.includes(value));
 });
+
+// These are inventory policy fields, not prose-match behavioral evaluations.
+test('reject mandatory review defaults and multi-stage architectural review', t => {
+  const { root, files, write } = fixture(t);
+  const original = JSON.parse(fs.readFileSync(path.join(root, 'bundle.json')));
+  for (const [key, value] of [
+    ['plan_review_required', true], ['code_review_required', true],
+    ['plan_review_reviewers', 2], ['plan_review_stages', 3], ['plan_review_max_calls', 2],
+  ]) {
+    const manifest = structuredClone(original);
+    manifest.review_defaults[key] = value;
+    write('bundle.json', JSON.stringify(manifest));
+    assert.match(validate(root, files).join('\n'), /reviews must be conditional/, key);
+  }
+});

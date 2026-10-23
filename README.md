@@ -31,44 +31,54 @@ starts no installation, provider calls or configuration changes.
 [bundle.json](bundle.json) lists the expected skills and review defaults. The
 harness checks this inventory before writing. Existing rules outside managed
 blocks, provider profiles, credentials, permissions and unrelated files are
-preserved. Dependencies such as revust are checked and set up separately.
+preserved. Optional adapters such as revust are checked separately when selected.
 
 ## How the workflow works
 
-1. The initiating session reads the project rules, identifies the task and checks
-   the host's actual capabilities and permissions.
-2. Requirements and acceptance checks are recorded in one contract: an existing
-   OpenSpec change, or a lightweight task note for projects without OpenSpec.
-3. The parent reviews the contract through installed revust and assigns an
-   implementation session in a separate managed worktree.
-4. The implementation session changes the code, runs relevant checks and reports
-   the exact revision and evidence. The parent supervises and routes corrections
-   back to the same session.
-5. The parent reviews the implementation through revust and checks real API, UI,
-   native application or CLI behavior against the contract. Missing required
-   evidence remains UNVERIFIED.
-6. The result is a local branch and concrete MR/PR text. Push, publication, merge,
-   cleanup and deployment require their applicable explicit authorization.
+Always isolate task changes in a separate branch/worktree before writing code,
+tests, plans, specifications or notes. Keep the main checkout free of task edits
+so another task can start from it at any time. Preserve pre-existing user changes.
+A separate worktree does not require a separate agent session.
 
-In capable Guild, the initiating harness registers the Process before substantive
-design. The parent remains in its original checkout while the draft evolves;
-final requirements are supplied with the contract checkpoint. Native graph
-commands own subsequent reviews and assignments. Other qualified hosts retain
-the portable route. See the [native entry guide](skills/development-workflow/references/native-entry.md).
+For a small settled change or minor bug:
 
-The five skills cover development, contract preparation, orchestration,
-engineering quality and acceptance testing. Review defaults per task are up to
-1 plan-review round and, separately, up to 2 code-review rounds, including the
-initial review of each kind. Internal stages and retries belong to one round;
-a new invocation consumes another round. There is no default aggregate cap on
-process starts; separately explicit limits still apply. Accounting does not
-authorize infrastructure retries: apply causal diagnosis, changed conditions and
-bounded no-generation actual launcher/child proof by default, or the specific
-user-authorized exception when free recovery proof is unavailable, in
-[review execution policy](instructions/review-routing.md); missing proof is
-UNVERIFIED, with no default paid smoke, automatic provider switch or count reset.
-Superpowers methods are optional. Guild is a supported managed-session host; other hosts
-must qualify isolation, observation, human questions, approvals and resume.
+> Task worktree → inspect/reproduce → implement → targeted checks → local commit
+
+No separate specification, designer, managed session, process registration or
+independent review is mandatory unless project/user rules require it. For
+substantial or uncertain changes, add only useful design, delegation and review.
+When persisted design is needed, use an existing matching OpenSpec change or a
+lightweight note in projects without OpenSpec. Do not initialize OpenSpec merely
+because a task was requested.
+
+Specification review is optional. Consequential architecture, shared contracts,
+migrations and uncertain integration can justify **one architectural reviewer,
+one pass**, without synthesis, separate verification or automatic retries.
+Independent code review is selected by material risk or explicit requirements.
+General skills describe intent; applicable user/project policy and a suitable
+adapter choose the tool. Revust is an optional adapter, not a universal dependency.
+
+Use the current harness directly or useful native subagents in the task worktree.
+Check actual file sharing, permissions and result channels. Concurrent writers
+use separate trees; read-only helpers need no new tree. Managed visible sessions
+are useful for independent long work or human interaction, not every local fix.
+The parent owns continued work, integration and acceptance. An optional native
+Process must support the selected lighter route before registration; existing
+registered tasks retain their owner/history. See the
+[native entry guide](skills/development-workflow/references/native-entry.md).
+
+Keep real behavior checks proportional to the affected surface. Documentation
+changes use file/link/inventory and affected local-control checks; static checks
+do not prove live product or model behavior. Recheck affected evidence after
+corrections rather than repeating everything. Preserve requested scope: a clearer
+error does not automatically include a retry/recovery subsystem.
+
+Default review ceilings are up to 1 plan round and 2 code rounds, including initial
+runs, **only when those reviews are selected**. Architectural review has one
+reviewer/attempt. Preserve existing histories and tighter explicit limits; do not
+reset counts by changing engines or task IDs. No unrequested model evaluations.
+Push, merge, publication, cleanup, deployment and global installation retain their
+separate authorization requirements. See [review policy](instructions/review-routing.md).
 
 ## Update after this repository changes
 
@@ -102,7 +112,7 @@ authorization and budgets. See [setup requirements](docs/setup.md).
 ## Contributing and license
 
 Distributed under the [MIT license](LICENSE), copyright agflow contributors.
-Guild and revust are external prerequisites, not bundled products. No platform
+Guild and revust are optional external adapters, not bundled products. No platform
 or provider is qualified merely by installing these instructions.
 
 Developer validation uses Node.js 24+ with no packages to install:
@@ -117,22 +127,11 @@ CI limits, and [SECURITY.md](SECURITY.md) for reporting sensitive issues.
 
 ## Working checkpoints and handoffs
 
-The contract separates required behavior, necessary compatibility and optional
-additions. Extra shells/platforms need a demonstrated dependency on the request.
-Assignments identify the concrete UI target and first useful working preview.
-Small vertical checkpoints report working behavior, evidence, next visible outcome
-and blocker in the same session. Before full code review, exercise the real empty
-input/action/output and relevant persistence, or the affected API/CLI/native
-surface. A prototype/preview is not acceptance or an extra approval gate.
-
-Managed workers retain their parent as review/continuation owner. User topic
-handoffs require named owners and qualified usable host routes before session
-creation; unsupported promotion keeps an eligible parent, without identity
-stripping, default manual couriers or skipped reviews. Corrections map changed
-paths/behavior to invalidated and justified retained evidence, necessary reruns
-and final reviewed identities. Unmet requirements remain unfinished; new requests
-change scope. Structural checks cannot prove future model behavior.
-
-The defaults allow no plan re-review and one code re-review. Existing explicit
-task histories/limits remain authoritative. Required review after exhaustion is
-UNVERIFIED until the user explicitly changes the limit or acceptance requirement.
+Use the request and expected outcome for small direct work; use one persisted
+contract when substantive design helps. State required scope, necessary
+compatibility and optional additions. Reach useful working behavior early and
+check the affected API/UI/native/CLI surface, or local documentation controls.
+For helpers, a clear assignment, ID and checked result suffice. Durable receipts
+and atomic reports serve long-lived managed recovery/shared resources only.
+Keep the parent responsible for continuation and acceptance. Required missing
+checks remain UNVERIFIED; a deliberately unnecessary stage is skipped.

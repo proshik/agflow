@@ -1,135 +1,88 @@
 ---
 name: orchestration
-description: Use when coordinating assigned development workers, dependency handoffs, shared resources or parent-owned checkpoints across managed sessions. Not for a builder to delegate or for independent review execution.
+description: Use when delegating development to harness subagents or managed sessions, coordinating dependencies or shared resources. Not required for direct work in one task worktree or independent review alone.
 ---
 
 # Orchestration
 
-The initiating parent owns assignments, supervision, integration and acceptance.
-An assigned designer/builder reports in its existing session; it does not create
-or steer workers, independently review, or answer another session's approval.
-Use the accepted contract tasks (OpenSpec or lightweight) and actual authorization envelope. This helper
-supplies coordination, not new permission or another development plan.
+Delegate when it reduces total work or supplies useful independent exploration.
+The initiating session owns scope, integration, acceptance and continuation.
+A separate worktree is required for task changes, but a separate session is not.
+For a small task, direct execution in the task worktree is often simplest.
 
-## Dispatch and dependency boundaries
+## Choose from actual harness capabilities
 
-Before dispatch, verify the managed host can isolate a worktree, bind task/cwd,
-return stable identities, observe/resume the session and route real human
-questions and tool approvals. Guild requires visible sessions; outside Guild,
-non-visible sessions require independently qualified human channels. Unknown
-required capabilities withhold dependent dispatch. Do not substitute root
-implementation for a required unavailable worker.
+Inspect the tools available in this session, not the harness name or a presumed
+configuration. Consider native subagents first for bounded investigation,
+implementation and checks. Establish their checkout binding, filesystem sharing,
+permissions, available concurrency, result/continuation channels and whether
+questions or tool approvals can reach the user. Probe only what the assignment
+requires; do not perform a full host qualification for a read-only helper.
 
-Qualify actual worker checkout writes, atomic writes to the assigned report path,
-required check execution and task-required network access before dependent work.
-Use harmless bounded probes under existing authorization; record evidence and
-supported/unsupported/unknown capabilities. Configuration or permission labels
-alone are not proof. Missing required evidence is UNVERIFIED and blocks only
-dependent work. No mandatory full access, configuration change or repeated phase
-approval follows; request only a genuinely missing scoped permission.
+- Read-only helpers may inspect the existing checkout without another worktree.
+- A writing helper must use the assigned task worktree. Native agents may share
+  the parent's filesystem and cwd: pass exact paths and set cwd on commands.
+  Give concurrent writers separate worktrees; otherwise sequence them and
+  assign explicit file ownership. Do not assume spawn supplies isolation.
+- A managed session is useful for independent long-running work, separate
+  resource ownership, or direct human interaction. In Guild use the public
+  [host adapter](references/guild.md). On other hosts qualify the actual
+  observation, continuation and human channels before relying on them.
+- Without suitable delegation, execute directly in the task worktree unless an
+  explicit task requirement needs a separate worker. Only that dependent
+  assignment is blocked by a missing mandatory capability.
 
-For Guild, read [the public adapter](references/guild.md); for another host,
-map its public tools to those same capabilities and record observed support.
-No private Guild settings, Rust inspection or bootstrap patch is required.
+Assignments include the goal, worktree/branch, owned and excluded paths, relevant
+contract or request, checks and action limits. Add model/effort selections only
+when requested/configured and supported. Configuration alone grants no permission.
+Use the tool's structured task text; Guild accepts literal task files. Verify
+actual start and result. Do not launch recursive worker hierarchies by default;
+a child needs a concrete authorized assignment to delegate further. Approval
+for another session's protected tools remains the user's to grant.
 
-An assignment identifies checkout/ref, accessible contract paths/digests,
-accepted tasks, owned/excluded paths, prerequisite revisions, effective
-harness/model/effort, checks, resource grants, report location, action limits
-and next checkpoint. Verify the contract actually exists in the child's
-revision; uncommitted parent files do not travel automatically. Sequence coupled
-interfaces/migrations/generated artifacts. Integrate exact prerequisite and
-consumer revisions and check combined behavior before accepting either result.
+## Supervise and integrate
 
-## Active parent supervision
+Use native completion events or bounded waits; inspect returned artifacts and
+checks instead of trusting a done label. Stay active while assigned work or its
+next authorized parent action can progress. Consume results, perform the next
+selected check and continue the same eligible worker for corrections. Do not
+leave workers waiting for a user reminder or promise monitoring after turn end.
+A timeout neither completes nor cancels work. Route real human questions and
+permissions through supported channels and continue independent work.
 
-Keep an assigned-ID roster and each worker's last observation, pending action
-and report path. While authorized child work or a parent checkpoint can
-progress, remain active: observe every assigned ID fairly, consume completed
-turns and perform the next authorized action. Prefer host events/bounded waits;
-when unavailable, use bounded polling with a real delay, never a tight loop.
-Rotate through IDs rather than starving peers behind one worker.
+Sequence coupled interfaces and migrations; integrate exact prerequisite and
+consumer revisions and check combined behavior. Use separate worktrees for
+independent concurrent writers and verified exclusive ownership for shared
+resources. Timeout/crash does not release a resource without reconciliation.
+Preserve unrelated user changes and stop scope drift at useful working previews.
 
-A timeout is pending; it neither cancels nor completes anything. A `done`
-status means the turn ended. Read that exact session's result and durable report,
-check actual artifacts/revision, then perform the parent-owned review/evaluation,
-integration or acceptance checkpoint. A checkpoint report is work for the
-parent; do not wait for an unsolicited child turn or a user reminder. Record
-report consumption, checkpoint outcome, next action and owner in the current
-receipt before continuing or ending the turn; retain the report as evidence.
+## State, reviews and recovery
 
-After the checkpoint, continue the same idle/done session only after confirming
-current eligibility and checkout/conversation identity. Keep the builder for
-corrections. Do not send to working/waiting sessions. If a real question or tool
-approval blocks an action, identify the session and reason; keep that dependent
-action paused and continue independent authorized work. Relay only an actual
-correlated human decision through a supported channel; another session's tool
-approval remains the user's to grant. Timeout cannot supply either answer.
+For a bounded native helper, its ID, assignment, returned result and checked
+snapshot are enough. Do not require atomic report files, a new task controller,
+a managed visible tab or a durable receipt system solely because it is a helper.
+For long-lived managed sessions, interruptions and shared resources use
+[durable state](references/state.md). Keep receipts in the task worktree or an
+explicitly authorized retained location, never dirty the main checkout.
 
-End the parent turn only when authorized dependent work is finished or a real
-human/external dependency prevents remaining progress. Do not finalize merely
-to leave workers running, or promise a background monitoring loop after your
-execution ends. Report task acceptance separately from turn completion.
+The parent selects review intent and the applicable user/project tool adapter.
+A native helper is not an automatic substitute for an explicitly required
+independent review route. Helpers used as reviewers must be separate from the
+implementation context and must not approve their own changes. Review itself
+never authorizes another implementation session or model evaluation.
 
-For handoff/report fields and restart phases, read [durable state](references/state.md).
+Preserve original histories across all tools/branches: at most one plan review
+and two code review rounds by default, including initial invocations, only when
+those reviews are selected. Architectural plan review is one reviewer and one
+pass, with no synthesis/verification or automatic retry. A round limit is a
+ceiling, not a required stage. Additional rounds need an explicit limit change.
+Failed/stopped starts count unless confirmed pre-provider refusals; ambiguous
+starts require reconciliation. Changing IDs, providers or engines resets nothing.
+No default aggregate process cap applies; explicit call/provider limits prevail.
 
-## Recovery, resources and accounting
-
-On interruption, reconcile the assigned IDs, actual git/process state, reports
-and original review archives before resuming. Recover an ambiguous start by its
-original request/session/worktree IDs; missing/corrupt history is not absence.
-Do not replay a dispatch, change identity or stop a worker because telemetry is
-unknown. Preserve the resume phase for waiting/blocked/failed/cancelled states.
-
-For exclusive shared resources use a verified host lease or root-only atomic
-request/grant/done records outside disposable checkouts. Identify owner, attempt,
-resource and permitted operations. A worker reports actual stopped/released
-state; timeout/crash alone never transfers a grant. Reconcile live consumers
-before release. Coordination does not grant tool permission or destructive
-cleanup; independent resources need no artificial queue.
-
-Maintain the current root receipt using [durable state](references/state.md):
-update on dispatch, review, report consumption, limit changes and before turn end;
-keep history separately and reconcile original IDs/archives with live state.
-Use a root-owned atomic receipt and explicitly assigned worker reports, separate
-from contracts and engine archives. Retain identities, contract/code digests,
-phase/resume phase, question IDs/types/actual answer provenance, dependencies,
-leases, effective selections, evidence, limitations and next action; no secrets.
-Parent alone owns independent revust checkpoints and separate task-wide round
-counts: at most 1 plan-review round and at most 2 code-review rounds, including
-the initial review of each kind. Each dispatched invocation includes its finders,
-synthesis, verification and internal retries; another invocation consumes another
-round, even after failure or stop. A confirmed pre-start refusal does not consume
-a round; reconcile ambiguous starts. Share each count across coordinated branches,
-without transferring rounds between kinds. Record actual starts without a default
-process-count ceiling. Honor separately explicit user/task/provider limits.
-Unknown history or exhausted rounds withholds that review; more rounds require
-an explicit limit change. Continue independent authorized work. After infrastructure
-failure, retry normally requires cause, a changed condition and bounded no-generation proof
-from the actual launcher/child route. Missing proof is UNVERIFIED; no default paid
-smoke, automatic provider switch or round reset. Reconcile original IDs/archives
-before repeating. For a specific user-authorized retry without available free
-recovery proof, follow development-workflow and its bundled review guidance;
-recovery stays UNVERIFIED and allowance must remain available. Evaluations use a
-separately authorized ledger.
-Changing identity/profile/engine never resets counts. Missing review or live
-evidence is UNVERIFIED, not accepted.
-
-## Handoff modes and vertical checkpoints
-
-Use [handoff modes](references/state.md) explicitly: a managed worker remains
-under its eligible parent; a user topic handoff needs a named review and
-continuation owner and a qualified usable host-supported route before session
-creation. A task caller cannot become a parent by renaming or stripping identity.
-When promotion is unsupported, retain the eligible parent. Do not default to a
-manual human courier or suggest skipping required review.
-
-Assignments include required scope, necessary compatibility, optional additions,
-the accepted concrete UI target and first useful working preview. Parent stops
-scope drift: agent-added shells/platforms require a demonstrated dependency on
-requested behavior, while affected callers remain supported. Supervise small
-vertical checkpoints in the same contract/session; report working behavior,
-evidence, next visible outcome and blocker. Require basic real interaction before
-broad code review; preview is not acceptance. Continue authorized work without
-redundant approvals. Before corrections inspect the impact map of changed paths,
-invalidated/retained evidence with rationale, required reruns/re-review and final
-reviewed identities; preserve scope, profiles, histories and remaining rounds.
+Before repeating a failed external operation inspect the cause, changed condition
+and available bounded no-generation recovery evidence. Do not spend paid smoke
+calls or switch providers to guess. Retain a missing required qualification as
+UNVERIFIED; an explicit scoped retry still needs available allowance. Recover
+existing IDs before starting duplicates. Ordinary direct work requires no
+external-engine recovery ceremony when no engine is involved.

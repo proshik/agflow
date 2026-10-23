@@ -2,7 +2,8 @@
 
 Keep the authoritative five skills in skills/ with their resources. Installation
 and updates remain harness-driven through BOOTSTRAP.md. Preserve the diagram's
-controls and the separate limits of 1 plan and 2 code review rounds. Do not add
+controls, mandatory task worktrees, proportional stages and the separate ceilings
+of 1 selected plan and 2 selected code review rounds. Do not add
 an installer, provider profiles, credentials, review archives or local reports.
 Contributions are provided under the repository's [MIT license](LICENSE).
 

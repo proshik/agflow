@@ -1,109 +1,52 @@
-# Parent-owned revust checkpoints
+# Review intent and routing
 
-Only the initiating root performs new independent plan/code/skill review. Reuse
-the installed revust skill and applicable user review-routing instructions; no
-reviewer agent, builder review, guild-review wrapper or obligatory native begin.
-Explicit alternative requests and existing pinned native histories retain their
-actual permissions/limits; do not move history to escape them.
+Choose whether independent review is needed before choosing a tool. Existing
+explicit user/project routes and active task histories win over defaults.
+Skipping an unnecessary stage is not missing evidence; omitting required coverage
+is UNVERIFIED. Do not install a review engine just to perform a small fix.
 
-## Setup without provider calls
+## Specification review
 
-Resolve the actual installed revust skill from the available catalogue or its
-supported package registration, following the real path. Follow its packaged
-instructions to find the complete package, binary, launcher and helpers; do not
-pin a versioned cache/Cellar path or require a private Guild file.
+Use one architectural reviewer and one pass when consequential design choices
+benefit from independent scrutiny. Give the exact persisted contract and relevant
+repository facts. Ask about feasibility, boundaries, compatibility, major missing
+scenarios and avoidable complexity. Exclude general code-review rosters,
+synthesis, separate verification and automatic retries/re-review. The parent
+checks evidence and resolves supported findings in the same contract.
 
-Verify binary/version/package identity, required launcher/helper presence and
-selected provider prerequisites using the installed documented read-only setup
-and preflight commands. Inspect effective config in the actual caller directory:
-explicit profile wins, otherwise its configured default; examine roster/stages,
-models/efforts, retry/verification options and support. Do not derive providers
-from the builder harness/native profile or mutate configuration/profile/history.
-Preflight executable presence does not establish credentials or live capability;
-record unknown prerequisites honestly without starting a provider to guess.
-An existing complete usable local package is valid without reinstall/upgrade.
+The execution intent is one reviewer, one stage, at most one provider attempt.
+An engine's small profile name alone is not proof of this shape. Inspect its
+resolved roster, stage enablement, retries and call ceiling before launch.
+A failed pass is a reported gap, not permission to expand to a larger pipeline.
 
-If missing/unusable, qualify all of: supported platform, existing Homebrew,
-published trusted `proshik/tap/revust` formula/release/payload and actual tool/setup
-permissions. Only when those hold and no explicit install ban applies, install
-via `brew install proshik/tap/revust`, then validate complete binary/version/package,
-launcher/helpers and selected provider prerequisites again. Setup never supplies
-review/provider-call authority. An unpublished template is not a formula. If a
-component is absent/unqualified/denied, name it and withhold dependent review;
-do not install Homebrew, build arbitrary sources, publish a tap/release, force
-upgrade or alter providers as fallback. Formula unavailability does not invalidate
-an existing qualified package.
+## Code review and adapter selection
 
-## Exact scope and separate round limits
+Select independent code review for substantial changes, material integration
+risk or explicit requirements. Scope it to requested behavior and affected
+callers. Low-risk local fixes use final diff inspection and relevant tests unless
+project rules require independent review. Do not turn optional polish into a
+blocking new feature or keep cycling until no minor suggestion remains.
 
-Use the installed package's documented task-state/snapshot/dry-run operations to
-freeze exact contract or code paths, base/head/dirty scope, relevant unchanged
-helpers and prior findings. Preserve immutable originals and original task/run
-identities; a missing/corrupt expected archive requires reconciliation, not a
-fresh task. Keep provider configuration and root operational records separate
-from builder/native defaults. Never invent a dedicated Guild plan-review command.
+Use an available harness reviewer subagent or external review adapter when
+allowed by actual user/project policy. A reviewer must be independent of the
+implementation context. Native subagents are not a fallback around an explicitly
+pinned engine. If the selected external adapter is revust, follow the
+[revust adapter](revust.md); generic workflow skills do not require that engine.
+Preserve configured provider/model choices and existing round history.
 
-The root reconciles the task's original plan and code round histories separately
-before launch: at most 1 plan-review round and at most 2 code-review rounds,
-including the initial review of each kind. One invocation, with its finders,
-synthesis, verification and internal retries, is one round. A new invocation,
-including after a failed/stopped run, consumes another round of the same kind;
-a confirmed pre-start refusal does not. Recover ambiguous starts first. Unused
-rounds cannot transfer between kinds. Record actual starts as evidence, without
-a default aggregate process-count ceiling. Check any separately explicit
-user/task/provider limit against the planned batch. Unknown history or exhausted
-rounds withholds the affected launch; further rounds need an explicit limit
-change, not a new ID/engine/profile. Model evaluations have a separate authorized
-ledger; available review rounds are not evaluation authority.
+## Ownership, evidence and limits
 
-Use the installed revust launcher for initial/correction runs on the selected
-supported host. In Guild preserve actual GUILD_SESSION/GUILD_SOCKET and qualify
-terminal protocol/version; stale/unsupported host is a named setup gap, not
-permission for another terminal, identity stripping or silent headless fallback.
-An explicit supported alternative remains possible only within its authority.
+The initiating session owns review decisions, findings verification and continued
+implementation. Record scope, snapshot, reason for selection/omission and outcome
+at the scale of the task. A concise check record suffices outside a managed run.
+Default ceilings are one plan round and two code rounds, including initial runs;
+a ceiling authorizes no unselected stage. Preserve explicit tighter limits and
+existing counts across engines/identities. No automatic plan re-review is allowed.
+Changing a reviewed snapshot invalidates affected evidence, not all evidence.
 
-Recover lost acknowledgements using the same job/request/artifacts before any
-new launch. Keep stdout result separate from stderr: documented 0/1/2 indicate
-no findings/findings/tool failure, launcher 3 host failure; 1 is not a reason to
-retry. Inspect terminal result, expected/reported/degraded sources, verification
-and acceptance, observed models/usage and exact reviewed snapshot. Missing,
-incomplete or UNVERIFIED coverage is not clean acceptance. Preserve findings;
-root verifies them and sends supported corrections to the same eligible builder
-via orchestration, then checks the changed snapshot within the remaining rounds of that review kind.
-Closing/hiding presentation does not cancel a run or prove completion.
-
-After infrastructure failure, the default prerequisite for another review is a
-causal diagnosis, a changed condition and bounded no-generation evidence from the
-actual launcher/child route that the failed prerequisite now works. Package/config checks
-alone do not qualify that route. Use existing logs and supported free probes;
-missing proof remains UNVERIFIED and withholds the affected review. Do not use a
-paid smoke call by default, switch providers automatically or reset rounds.
-Reconcile the same request/job IDs and original archive before any repeat;
-remaining rounds are accounting, not retry authorization.
-
-If no supported free/no-generation probe can demonstrate recovery, keep recovery
-qualification UNVERIFIED, name the diagnosed cause and unavailable proof, and ask
-for one concrete user decision. Where applicable, offer waiting until a known
-provider retry/reset time (no invented ETA or automatic retry after waiting), or
-explicit authorization for one specific retry despite missing recovery proof and
-the stated risk of another paid failure. Such authorization covers only that
-retry: reconcile original job/archive/accounting, preserve profile and route,
-and launch only with remaining review allowance. Exhausted allowance additionally
-requires an explicit limit increase; unknown allowance requires reconciliation
-and, if exhausted, an explicit increase. Generic continue, elapsed time and
-approval of this documentation change provide neither retry permission nor budget.
-Waiting or authorization is not recovery evidence: keep recovery qualification
-UNVERIFIED until observed and judge any actual review outcome separately. This
-exception permits no blind retries, default paid smoke, provider switch, count
-reset or disabling unrelated gates.
-
-## Completed presentation
-
-Apply the destination review-routing presentation policy. For the configured
-automatic-close workflow, pass explicit `--auto-exit=1s` to the supported launcher
-so its fallback timeout does not override the user configuration. Honor an
-explicit request to keep the view open. Wait for the same run's terminal result
-and preserve its reports before closing any completed presentation through the
-supported host API. Closing a view never authorizes cancelling live review,
-deleting archives or rerunning a completed review. Recover a stuck host against
-the same job and artifacts; report host failures separately from engine results.
+Recover ambiguous starts by the original IDs before another dispatch. For an
+infrastructure failure require cause, a changed condition and bounded free proof
+of recovery where available; no default paid smoke or provider switch. If free
+proof is unavailable, name the remaining uncertainty and obtain specific retry
+authority and sufficient remaining allowance. A limit alone is not retry authority.
+Separate model evaluations, publishing and installation keep their own authority.

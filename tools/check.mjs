@@ -46,6 +46,9 @@ export function validate(root, files) {
   const defaults = manifest.review_defaults;
   if (defaults?.plan_review_rounds !== 1 || defaults?.code_review_rounds !== 2 ||
       defaults?.includes_initial_review !== true || defaults?.actual_processes != null || defaults?.correction_rounds != null) fail('bundle.json', 'review defaults must preserve separate 1/2 rounds without a process cap');
+  if (defaults?.plan_review_required !== false || defaults?.code_review_required !== false ||
+      defaults?.plan_review_reviewers !== 1 || defaults?.plan_review_stages !== 1 ||
+      defaults?.plan_review_max_calls !== 1) fail('bundle.json', 'reviews must be conditional with one architectural reviewer, stage and call');
   const inventory = manifest.publication_files;
   if (!Array.isArray(inventory) || !inventory.length ||
       inventory.some(p => !safePath(p) || privatePath.test(p)) ||

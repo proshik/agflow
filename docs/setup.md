@@ -7,17 +7,13 @@ Select the installed harnesses; install a missing harness through
 its current official instructions only when authorized. Do not install every
 harness merely because all three are supported by the instruction format.
 
-Git and an actually qualified managed-session host are needed for implementation.
-Inside Guild use its public `guild` API/CLI, preserve caller identity, verify
-terminal jobs and managed session capabilities. Outside Guild the current skills
-require a qualified adapter with isolation, observation, human questions, tool
-approvals and resume channels. Terminal presence alone is not qualification.
-Lacking an adapter is a named gap, not permission to bypass the managed builder
-or run a hidden unobservable session. Qualify actual worker checkout and atomic
-assigned-report writes, required check execution and task-required network access
-with bounded harmless probes under existing authority. Configuration alone is no
-proof; record missing evidence as UNVERIFIED and withhold dependent work only.
-No mandatory full access, configuration changes or repeated phase approvals follow.
+Git worktree support is required for task changes. The initiating harness may
+work directly in a task worktree; a separate managed-session host is optional.
+Use actual native subagent capabilities when useful, qualifying checkout binding,
+file sharing, permissions and result/human channels relevant to the assignment.
+For selected managed sessions qualify isolation, observation, human questions,
+approvals and resume. Missing an optional adapter does not block direct work.
+Keep preparation, task notes and generated evidence out of the main checkout.
 
 ## Installation destinations
 
@@ -31,7 +27,7 @@ Typical destinations are:
 | Codex global rules | Managed block in `~/.codex/AGENTS.md` |
 | Claude global rules | Managed block in `~/.claude/CLAUDE.md` |
 | OpenCode global rules | Managed block in `~/.config/opencode/AGENTS.md` |
-| Review routing | `~/.local/share/revust/REVIEW-ROUTING.md` |
+| Review routing (compatibility location; policy is engine-independent) | `~/.local/share/revust/REVIEW-ROUTING.md` |
 
 Inspect `CODEX_HOME`, `CLAUDE_CONFIG_DIR` and `XDG_CONFIG_HOME` where applicable;
 verify custom paths against the installed harness's supported discovery. Do not
@@ -39,12 +35,13 @@ copy source-machine paths. Keep skill resources together. Copies remain usable
 if this repository moves; linked registrations require their targets to remain
 available and must be recorded explicitly.
 
-Guild and revust are external dependencies; neither is bundled. Structural CI
+Guild and revust are optional external adapters; neither is bundled. Structural CI
 on an OS does not qualify its harnesses, providers or managed-session adapter.
 
-## revust
+## Optional revust adapter
 
-Install the complete trusted revust package, not a copied standalone skill file.
+Only when the selected review route needs it, install the complete trusted
+revust package, not a copied standalone skill file.
 Public upstreams are [revust](https://github.com/proshik/revust) and its
 [Homebrew tap](https://github.com/proshik/homebrew-tap). These addresses are
 intentional dependency coordinates. revust is distributed under its own MIT
@@ -107,37 +104,28 @@ retired installer. Restore only recorded destinations after inspecting later
 edits; a backup does not authorize a blind rollback.
 
 Installation copies instructions; qualifying the workflow host is separate.
-Qualify tooling and revust process ownership for the destination OS before using
-it for managed implementation or reviews. Do not mix Windows and WSL homes or
-path conventions in one installation.
+Qualify the selected tooling and process ownership for the destination OS before
+using that route for managed implementation or reviews. Do not mix Windows and
+WSL homes or path conventions in one installation.
 
 ## Workflow policy consistency
 
-Verify bundle.json and the installed managed rules agree: defaults are one
-specification/plan round and two code rounds, including initial reviews (no plan
-re-review, one code re-review). A new invocation after failure/stop counts;
-a confirmed pre-start refusal does not, and ambiguous starts need reconciliation.
-Never reset existing task histories/limits or transfer rounds between kinds.
-There is no default aggregate process cap. Preserve configured review profiles;
-exhausted required review stays UNVERIFIED pending an explicit user change.
-Verify execution entrypoints retain causal diagnosis, a changed condition and
-bounded no-generation actual launcher/child proof by default before retries;
-missing proof is UNVERIFIED, with no default paid smoke or automatic provider switch.
-For the specific user-authorized exception when free proof is unavailable, follow
-[review routing](../instructions/review-routing.md); recovery remains UNVERIFIED and
-allowance must be reconciled and available. Accounting alone does not authorize
-retry. Unknown accounting blocks the affected
-review only. Check actual worker checkout/atomic-report writes, required checks
-and task-required network qualification under existing authority, without blanket
-full access or repeated approvals. Current receipts stay separate from history,
-are updated on dispatch/review/report/limits and before turn end, and reconcile
-original IDs/archives with live state. Parents consume reports and record the next
-checkpoint/action/owner. Retain evidence-based introduced/pre-existing/unknown test
-failure classification without automatic unrelated repairs.
+Verify bundle.json, shared rules and skills agree on mandatory task worktrees
+before any preparation writes, a direct route for local fixes and optional design,
+delegation and review. Separate worktree isolation from session choice; do not
+require a managed host merely because native subagents are unavailable.
 
-Check that setup retains the five self-contained skills and their guidance for
-early real interaction before broad review, concrete UI target/working preview,
-scope boundaries, small vertical checkpoints, two handoff modes with qualified
-owners/routes before topic creation, and correction impact maps. Installation
-and structural checks do not qualify those future behaviors or authorize models.
-No new runtime scheduler, host promotion or global permission is supplied.
+Specification review, when needed, is one architectural reviewer/pass with no
+synthesis, verification or automatic retry. Review limits are ceilings for selected
+stages, not mandatory calls: one plan round and two code rounds including initial
+runs. Preserve existing histories, explicit limits and adapter/provider selections.
+Generic skills do not pin an engine. A selected adapter must express the exact
+intent; a conflicting existing route requires an explicit reconciliation proposal.
+
+Keep the five skills self-contained. Validate resources, setup/instruction
+agreement and local diagram controls. Qualification of model behavior or a live
+workflow requires separately authorized observations; structural checks provide
+neither that evidence nor permission for calls. Preserve meaningful acceptance,
+source-qualified checks, limited reruns, scope control, parent continuation and
+existing publication/cleanup boundaries without a mandatory report framework for
+simple direct work. Global setup changes remain previewable and backed up.
