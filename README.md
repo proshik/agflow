@@ -63,17 +63,22 @@ behavior → persisted change when useful or explicitly required → implementat
 and relevant checks. For bugs use diagnosis; for ambiguous substantial work use
 relevant Superpowers brainstorming/planning methods before freezing the design.
 Use the same engineering methods directly if the plugin is unavailable; neither
-installation nor every Superpowers skill is a mandatory sequence. Small clear
-tasks need no ceremony.
+installation nor every Superpowers skill is a mandatory sequence.
+Superpowers supplies task-relevant engineering methods in both short and
+substantial routes. Small settled local fixes and bounded UI trials (for example,
+trying an agreed button placement) need only the request, expected outcome and
+constraints, plus targeted verification; brainstorming, a separate plan and a
+specification are not mandatory unless explicit project rules require them.
+For substantial or ambiguous work, investigate/discuss and reach agreement
+through suitable methods before persisting the agreement.
 
-Superpowers supplies engineering methods, including comparing solutions and
-verification. OpenSpec stores agreed behavior, scenarios, significant accepted
+OpenSpec stores agreed behavior, scenarios, significant accepted
 choices and one implementation task plan; it does not invent features or add a
 second design/planning process. Spec-design bridges those methods to the chosen
 persisted format. With OpenSpec selected, keep the authoritative implementation
 plan there, reconcile relevant existing drafts before implementation and avoid a
-competing Superpowers Plan.md/spec. Do not initialize OpenSpec or rewrite baseline
-specifications automatically. Existing openspec/ alone does not force a change
+competing docs/superpowers specification or plan. Do not initialize OpenSpec or
+rewrite baseline specifications automatically. Existing openspec/ alone does not force a change
 for a minor fix; real project rules and explicit requirements still apply.
 
 Use spec-design to bridge those methods to the persisted format. Draft proposals

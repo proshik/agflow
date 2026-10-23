@@ -33,6 +33,9 @@ count or the mere presence of OpenSpec, Guild or subagent tools.
   commit when authorized. The request and a concise expected outcome suffice;
   do not require a separate specification, designer, process
   registration, plan review, independent code review or durable receipt system.
+  A bounded UI trial, such as trying an agreed button placement, can use this
+  route with the request, expected outcome/constraints and targeted verification;
+  brainstorming, a separate plan and a specification are not mandatory.
   Project-required documentation and checks still apply.
 - Substantial or uncertain work adds the artifacts, delegation and independent
   checks it needs. Investigate/discuss material uncertainties before freezing
@@ -69,8 +72,9 @@ their separate authorization requirements. Questions alone launch no workers.
    it, keep the matching change minimal and validate it in the task worktree.
    OpenSpec stores agreed behavior, scenarios, significant accepted choices and
    the one authoritative implementation task plan, not a second design process.
-   Reconcile relevant drafts; do not keep a competing Superpowers Plan.md/spec
-   or rewrite baselines automatically. Never pass suggestions as accepted facts.
+   Reconcile relevant drafts; do not keep a competing docs/superpowers
+   specification or plan, or rewrite baselines automatically. Never pass
+   suggestions as accepted facts.
 3. Specification review is conditional: use it for consequential architecture,
    shared-contract changes, migration/recovery design or material unresolved
    integration risk. Skip it for settled implementation details. When selected,
@@ -134,6 +138,7 @@ records only for dispatched sessions, shared resources or recovery that needs
 them. After corrections rerun affected checks and retain justified unaffected
 evidence; do not repeat all stages for a cosmetic edit. Required missing evidence
 remains UNVERIFIED. A deliberately unnecessary stage is skipped, not a blocker.
-Superpowers supplies task-relevant engineering methods, not a mandatory skill
-sequence or installation prerequisite. Apply the methods directly when absent;
+Superpowers supplies task-relevant engineering methods in both short and
+substantial routes, not a mandatory skill sequence or installation prerequisite.
+Apply the methods directly when absent;
 keep the implementation plan in the selected contract rather than a second plan.
