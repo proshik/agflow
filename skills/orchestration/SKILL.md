@@ -1,99 +1,66 @@
 ---
 name: orchestration
-description: Use when delegating development to harness subagents or managed sessions, coordinating dependencies or shared resources. Assigned workers reuse their task session; not for independent review alone.
+description: Use when delegating development work to managed sessions or subagents and supervising it. Covers assignments, supervision, parallel writers and Guild commands. Not for an independent review alone.
 ---
 
 # Orchestration
 
-Establish the mandatory separate task session; add helpers only when useful.
-The initiating session owns scope, integration, acceptance and continuation.
-Every task change requires both a separate task worktree and a separate working
-session, including minor bugs, documentation and preparation. The initiating
-parent owns scope, supervision, acceptance and continuation; it must not implement
-through paths into an empty worktree. In Guild the worker is a visible managed
-session. Outside Guild a harness-native child qualifies only with a real separate
-conversation, explicit worktree binding, supervision/continuation and required
-human question/approval channels. A helper sharing parent cwd/state does not
-qualify. Missing required session capability blocks implementation; report the
-scoped gap without a root fallback. The parent may assign the full request;
-preparation/design writes belong to the task session. Existing assigned workers
-reuse their own session and tree without nesting.
+The parent session owns scope, integration, acceptance and keeping the work
+moving. development-workflow defines when a separate task session is required;
+this skill covers how to run it.
 
-## Choose from actual harness capabilities
+## Choose the executor
 
-Inspect the tools available in this session, not the harness name or a presumed
-configuration. Consider native subagents first for bounded investigation,
-implementation and checks. Establish their checkout binding, filesystem sharing,
-permissions, available concurrency, result/continuation channels and whether
-questions or tool approvals can reach the user. Probe only what the assignment
-requires; do not perform a full host qualification for a read-only helper.
+Use what the current session can actually do, not what the harness name suggests.
 
-- Read-only helpers may inspect the existing checkout without another worktree.
-- A writing helper must use the assigned task worktree. Native agents may share
-  the parent's filesystem and cwd: pass exact paths and set cwd on commands.
-  Give concurrent writers separate worktrees; otherwise sequence them and
-  assign explicit file ownership. Do not assume spawn supplies isolation.
-- In Guild use the public [host adapter](references/guild.md) for a visible
-  managed worker, including for small fixes. Outside Guild a native child must
-  satisfy the distinct-session requirements above, not merely share cwd/state.
-- Missing required task-session capability blocks implementation. Report that
-  scoped gap; continue read-only investigation without a root-write fallback.
+- **Task session:** in Guild, a visible managed worker (commands below).
+  Elsewhere, a native child that meets development-workflow's session definition.
+- **Helpers:** native subagents for bounded investigation, checks or parts of a
+  task. Read-only helpers need no worktree. Writers work in the assigned
+  worktree; concurrent writers each get their own worktree, otherwise run them
+  one at a time with explicit file ownership. Subagents often share the parent's
+  cwd, so pass absolute paths.
+- An assigned worker starts further task sessions only when its assignment says so.
 
-Assignments include the goal, worktree/branch, owned and excluded paths, relevant
-contract or request, checks and action limits. Separate requested/approved
-behavior from demonstrated technical constraints and optional proposals; do not
-pass speculative recommendations as accepted facts. Necessary internal helpers
-are implementation choices; added visible capabilities need a user decision
-unless already authorized. Add model/effort selections only
-when requested/configured and supported. Configuration alone grants no permission.
-Use the tool's structured task text; Guild accepts literal task files. Verify
-actual start and result. Do not launch recursive worker hierarchies by default;
-a child needs a concrete authorized assignment to delegate further. Approval
-for another session's protected tools remains the user's to grant.
+## Assign
 
-## Supervise and integrate
+Every assignment states the goal, the worktree and branch, owned and excluded
+paths, the agreed request or contract, the checks to run and the limits (actions
+not allowed, review and call budgets). Mark proposals as proposals. Pass the
+assignment as a file (`--from-file`).
 
-Use native completion events or bounded waits; inspect returned artifacts and
-checks instead of trusting a done label. Stay active while assigned work or its
-next authorized parent action can progress. Consume results, perform the next
-selected check and continue the same eligible worker for corrections. Do not
-leave workers waiting for a user reminder or promise monitoring after turn end.
-A timeout neither completes nor cancels work. Route real human questions and
-permissions through supported channels and continue independent work.
+## Supervise
 
-Sequence coupled interfaces and migrations; integrate exact prerequisite and
-consumer revisions and check combined behavior. Use separate worktrees for
-independent concurrent writers and verified exclusive ownership for shared
-resources. Timeout/crash does not release a resource without reconciliation.
-Preserve unrelated user changes and stop scope drift at useful working previews.
+- Wait with bounded waits or completion events, then check the actual result:
+  diff, files and check output. A finished turn is not a finished task.
+- After each result, take the next agreed step (check, review, next assignment)
+  without waiting for a user reminder. Stay active while assigned work can
+  progress.
+- Send corrections to the same worker in the same worktree.
+- Sequence coupled changes (shared interfaces, migrations) and check the
+  combined behavior after integration.
+- Route a worker's questions and approval prompts to the user. Answering another
+  session's tool approval is the user's job, never yours.
+- Stop sessions or remove worktrees only when asked.
 
-## State, reviews and recovery
+## Guild commands
 
-For a bounded native helper, its ID, assignment, returned result and checked
-snapshot are enough. Do not require atomic report files, a new task controller,
-a managed visible tab or a durable receipt system solely because it is a helper.
-For long-lived managed sessions, interruptions and shared resources use
-[durable state](references/state.md). Keep receipts in the task worktree or an
-explicitly authorized retained location, never dirty the main checkout.
+Read `guild instructions parallel` and `guild instructions worktrees` once. Pass
+`--harness` explicitly; the default may not match the assignment.
 
-The parent selects review intent and the applicable user/project tool adapter.
-A native helper is not an automatic substitute for an explicitly required
-independent review route. Helpers used as reviewers must be separate from the
-implementation context and must not approve their own changes. Review itself
-never authorizes another implementation session or model evaluation.
+| Need | Command |
+| --- | --- |
+| New worktree with a worker | `guild worktree create NAME --from PROJECT --base REF --from-file TASK --harness HARNESS --json` |
+| Worker in an existing worktree | `guild session new --worktree PATH --from-file TASK --harness HARNESS --json` |
+| Sessions and their status | `guild agent list --json` |
+| Wait for a turn | `guild agent wait SESSION --timeout 30 --json` |
+| Read what it said | `guild agent read SESSION --last N --json` |
+| Send the next task or a correction | `guild agent send SESSION --from-file NEXT --json` |
+| Reopen a closed tab | `guild session resume SESSION --json` |
 
-Preserve original histories across all tools/branches: at most one plan review
-and two code review rounds by default, including initial invocations, only when
-those reviews are selected. Architectural plan review is one reviewer and one
-pass, with no synthesis/verification or automatic retry. A round limit is a
-ceiling, not a required stage. Additional rounds need an explicit limit change.
-Failed/stopped starts count unless confirmed pre-provider refusals; ambiguous
-starts require reconciliation. Changing IDs, providers or engines resets nothing.
-No default aggregate process cap applies; explicit call/provider limits prevail.
-
-Before repeating a failed external operation inspect the cause, changed condition
-and available bounded no-generation recovery evidence. Do not spend paid smoke
-calls or switch providers to guess. Retain a missing required qualification as
-UNVERIFIED; an explicit scoped retry still needs available allowance. Recover
-existing IDs before starting duplicates. Ordinary task-session work requires no
-external-engine recovery ceremony when no engine is involved.
+`worktree create` without a task gives isolation only; start a worker there
+before any task writes. Wait results: timeout or pending means check other
+workers and wait again (at most 60 s); `done` means read the transcript and
+inspect the checkout; `waiting` means the worker needs a human, so tell the user
+which tab and leave it alone; `closed` or `exited` (exit code 6) is not success,
+so read what remains before resuming.

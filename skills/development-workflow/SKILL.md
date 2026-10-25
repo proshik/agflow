@@ -1,144 +1,112 @@
 ---
 name: development-workflow
-description: Use for ordinary software implementation or bugfix requests, singular or plural, and architecture-only development requests. Not advice alone, independent review alone or permission to deploy/publish.
+description: Use for software implementation, bugfix and architecture requests. Covers task isolation, choosing how much process to use, persisting agreed behavior and selecting reviews. Not for advice-only questions or permission to deploy or publish.
 ---
 
 # Development workflow
 
-Keep the main checkout free of task changes. Before writing code, tests,
-contracts, plans or task notes, create or reuse a task branch in a separate
-worktree. Read-only investigation may start in the main checkout. Preserve
-pre-existing user changes; never clean, stash or commit them to obtain isolation.
-Every task change requires both a separate task worktree and a separate working
-session, including minor bugs, documentation and preparation. The initiating
-parent owns scope, supervision, acceptance and continuation; it must not implement
-through paths into an empty worktree. In Guild the worker is a visible managed
-session. Outside Guild a harness-native child qualifies only with a real separate
-conversation, explicit worktree binding, supervision/continuation and required
-human question/approval channels. A helper sharing parent cwd/state does not
-qualify. Missing required session capability blocks implementation; report the
-scoped gap without a root fallback. The parent may assign the full request;
-preparation/design writes belong to the task session. Existing assigned workers
-reuse their own session and tree without nesting.
+## Isolate every task
 
-## Choose the amount of process
+Before writing anything for a task (code, tests, specs, plans, notes), create or
+reuse a task branch in a separate worktree, and do the work in a separate working
+session bound to that worktree. A separate session has its own conversation, is
+bound to the task worktree, can be continued, and can reach the user with
+questions and approvals; in Guild it is a visible managed worker (see
+orchestration). Read-only investigation may use the main checkout.
 
-Read target-project rules and [effective policy](references/policy.md). Choose
-based on uncertainty, affected contracts and consequences of failure, not file
-count or the mere presence of OpenSpec, Guild or subagent tools.
+Keep the main checkout clean and leave the user's existing changes alone: never
+stash, clean or commit them. If the harness cannot provide a separate session,
+report that and stop before implementing; the parent does not write the change
+itself. A worker already assigned to a task reuses its own session and worktree.
 
-- A small local change or minor bug with settled behavior uses the short route:
-  task worktree + separate working session → reproduce/inspect → change → targeted
-  verification → local
-  commit when authorized. The request and a concise expected outcome suffice;
-  do not require a separate specification, designer, process
-  registration, plan review, independent code review or durable receipt system.
-  A bounded UI trial, such as trying an agreed button placement, can use this
-  route with the request, expected outcome/constraints and targeted verification;
-  brainstorming, a separate plan and a specification are not mandatory.
-  Project-required documentation and checks still apply.
-- Substantial or uncertain work adds the artifacts, delegation and independent
-  checks it needs. Investigate/discuss material uncertainties before freezing
-  design; use spec-design to persist the resulting agreement when useful. Explain
-  the material reason for extra stages briefly. Do not
-  add a stage merely because a tool is available.
+## Pick the route
 
-For this workflow, an ordinary development request authorizes task worktree
-creation, a separate working session and relevant local implementation/checks,
-subject to explicit action
-limits and host permissions. Local commits follow applicable project/user rules;
-push, merge, publication, cleanup, deployment and global installation retain
-their separate authorization requirements. Questions alone launch no workers.
+Decide by uncertainty and consequences, not by file count or installed tools.
+Project rules that require docs, specs or checks apply on either route.
 
-## Execute in the task worktree
+**Short route** for a small change with clear expected behavior:
+reproduce or inspect → fix → targeted checks → local commit. The request and the
+expected outcome are the contract; no spec, plan or independent review.
 
-1. Start with the actual request and affected callers. Diagnose bugs; for
-   ambiguous substantial work apply relevant Superpowers brainstorming/planning
-   methods, or the same methods directly if unavailable, before freezing design.
-   Compare solutions and clarify material uncertainties without ceremony for
-   small clear tasks. Preserve settled decisions. Distinguish requested/approved
-   product behavior, demonstrated compatibility/technical constraints and optional
-   suggestions. Necessary internal helpers/refactoring are normal implementation
-   choices; added visible Retry/recovery, screens, settings, modes or automation
-   require a user decision unless already authorized. A clearer error is not
-   session recovery. Proposals, saved text and validation/review do not approve
-   new scope.
-2. After investigation/discussion and agreement, use a persisted contract only
-   when useful or explicitly required. Spec-design bridges methods to storage,
-   without inventing requirements. Honor the explicit format; otherwise an existing
-   target `openspec/` selects one matching change, and its absence selects one
-   lightweight note. Do not initialize OpenSpec automatically. A directory alone
-   does not force specification work for a local fix. When project rules require
-   it, keep the matching change minimal and validate it in the task worktree.
-   OpenSpec stores agreed behavior, scenarios, significant accepted choices and
-   the one authoritative implementation task plan, not a second design process.
-   Reconcile relevant drafts; do not keep a competing docs/superpowers
-   specification or plan, or rewrite baselines automatically. Never pass
-   suggestions as accepted facts.
-3. Specification review is conditional: use it for consequential architecture,
-   shared-contract changes, migration/recovery design or material unresolved
-   integration risk. Skip it for settled implementation details. When selected,
-   request **one architectural reviewer, one pass/attempt**. First check scope
-   inflation against the actual request/approved decisions, then feasibility,
-   boundaries and compatibility; findings cannot authorize new product behavior.
-   Do not request a general code-review
-   roster, synthesis, verification pipeline or automatic re-review. See
-   [review intent and routing](references/review.md). Architecture-only work
-   ends at design_ready after its selected checks, without a builder launch.
-4. The parent uses orchestration to assign the full request to a separate task
-   session before preparation or implementation writes. The assigned worker
-   implements in its own worktree/session and reuses both for corrections.
-   Native subagents may help with bounded investigation, checks and delegated
-   parts; they do not replace the required session. If that session cannot be
-   provided, report the scoped capability gap and withhold implementation.
-5. The worker applies engineering-quality and acceptance-testing and runs
-   relevant checks before handoff or review. The parent checks results and
-   necessary final behavior, without duplicating the full suite absent a changed
-   concern.
-   Reach a useful working behavior early. For a bug, retain its reproduction and
-   relevant regression evidence. For docs-only changes use file/link/inventory
-   and affected local-control checks, not fabricated product/model evaluations.
-6. Select independent code review for material risk, substantial cross-component
-   changes or explicit project/user requirements. A small low-risk fix needs
-   targeted checks and self-inspection; no automatic paid review. Use the chosen
-   review scope and actual local route. Once selected, use the full effective
-   configured code-review profile: original roster/lenses, enabled stages,
-   provider/model/effort, verification policy and budgets. Specification-only
-   single-pass limits do not apply; do not reduce to one bugs/impl lens, a one-call
-   cap or disabled synthesis/verify for convenience. A reduced/diff-focused
-   correction review needs explicit scope; preserve histories and round limits.
-   Honor normal engine skips, without forcing calls. See the profile/stage
-   distinction in [review routing](references/review.md), and inspect
-   supported findings. Do not turn every minor suggestion into a broader design.
-7. Inspect the final diff and behavior, record meaningful checks and limitations,
-   and leave a concrete local branch/commit. Prepare MR/PR text when requested
-   or useful for actual delivery, not as a mandatory artifact for every fix.
+**Full route** for large, risky or unclear work:
 
-## Delegation and optional host automation
+1. Investigate and discuss. Diagnose bugs; for design use Superpowers
+   brainstorming and planning when available, or the same methods directly.
+   Compare options and ask the user about material choices.
+2. Agree the behavior with the user. For UI work, agree a concrete visual and
+   interaction target (mockup, reference screen or precise description) and the
+   states that matter.
+3. Persist the agreement (below), select a review if warranted, then implement
+   with engineering-quality. Architecture-only requests end once the agreed
+   design is persisted and any selected review is resolved.
 
-Use orchestration to establish the required task session and when coordinating
-helpers or shared resources. Assigned workers do not create nested task sessions.
-Keep the initiating session responsible for results, integration and continuation.
-Assignments specify the task worktree, owned files, expected outcome, checks and
-limits. Supply further state only when recovery or dependencies actually need it.
-Native subagents sharing files must use distinct worktrees for concurrent writes
-or run sequentially with explicit ownership. Read-only helpers need no new tree.
-Do not give another agent permission to answer the user's tool approvals.
+## Keep to the agreed scope
 
-A capable host may offer a managed Process, but its presence does not select it.
-Use [native entry](references/native-entry.md) only when the selected task needs
-that automation and its graph can represent the selected optional stages and
-worktree ownership. Check capabilities before registration; do not start a graph
-that forces omitted reviews or writes preparation in the main checkout. Existing
-registered runs retain their actual identities, history and limits; never start
-a second controller or strip caller identity to bypass an incompatible run.
+Build what the user asked for. Internal helpers and refactoring it needs are your
+call. User-visible additions such as retry, recovery, new screens, settings,
+modes or automation need the user's decision: propose them, then wait. A proposal
+stays a proposal until the user agrees; saving, validating or reviewing a
+document does not approve it. Keep decisions the user has already made.
 
-Use a concise progress/check result for small task-session work. Maintain durable coordination
-records only for dispatched sessions, shared resources or recovery that needs
-them. After corrections rerun affected checks and retain justified unaffected
-evidence; do not repeat all stages for a cosmetic edit. Required missing evidence
-remains UNVERIFIED. A deliberately unnecessary stage is skipped, not a blocker.
-Superpowers supplies task-relevant engineering methods in both short and
-substantial routes, not a mandatory skill sequence or installation prerequisite.
-Apply the methods directly when absent;
-keep the implementation plan in the selected contract rather than a second plan.
+## Persist the agreement
+
+Use the format the user asked for. Otherwise, if the project already has
+`openspec/`, use one matching change there; if not, write one lightweight note in
+the task worktree (request, agreed behavior, scenarios, decisions, task plan).
+Keep a single plan: no competing docs/superpowers plan or spec beside it.
+Initialize OpenSpec only when the user asks. A small fix needs no OpenSpec change
+unless project rules require one.
+
+OpenSpec basics (confirm with the installed `openspec --help`):
+
+```sh
+openspec list --json
+openspec new change CHANGE_ID
+openspec status --change CHANGE_ID --json
+openspec instructions ARTIFACT --change CHANGE_ID --json
+openspec validate CHANGE_ID --strict --no-interactive
+```
+
+Follow `status` and `instructions` for artifact order. Read relevant baseline
+specs and leave them as they are. `done`/`isComplete` means the documents exist,
+not that the behavior works; archive only after the agreed scope is implemented
+and verified. When asked to adopt OpenSpec, check which files
+`openspec init --tools none` would touch before running it.
+
+## Select reviews
+
+Run an independent review when there is real risk (consequential architecture,
+shared contracts, migrations, uncertain integration) or the user or project
+requires one; otherwise inspect the diff and run targeted checks. The reviewer is
+independent of the implementation context: a reviewer subagent or an external
+tool, with an explicit user or project route taking precedence.
+
+- **Spec review:** one architectural reviewer, one pass. It checks scope
+  inflation against the request and agreed decisions first, then feasibility,
+  boundaries and compatibility. The parent verifies the findings and updates the
+  same contract.
+- **Code review:** the full configured profile, with its reviewers, lenses,
+  stages, model, effort, verification and budgets. Narrow it only when the user
+  asks for a reduced correction review.
+- **Limits:** 1 spec-review round and 2 code-review rounds, counting the first.
+  A failed or stopped run counts unless it was refused before any provider
+  started. Switching tools or IDs keeps the counts.
+- **Failed external call:** find the cause and what changed before retrying. Ask
+  the user before paid smoke tests, extra attempts or switching provider or model.
+
+**revust.** When the route selects revust, follow its installed skill.
+For spec review, run only the architectural lens (`--lenses`, using the actual
+lens name), `--no-synthesis`, `--no-verify`, zero finder retries and
+`max_calls=1`, set through supported flags or a scoped policy rather than by
+editing the user's profiles. Dry-run first and confirm one reviewer and one call;
+if the installed version cannot express this, report it. For code review, run
+the configured profile unchanged (`find` is a stage; `codex-only` and
+`comprehensive` are profiles). Exit code 1 means findings were reported. Use
+`--auto-exit=1s` for finished review views.
+
+## Finish
+
+Inspect the final diff and behavior, report checks as engineering-quality
+describes, and leave a local branch and commit where project rules allow.
+Push, merge, publish, deploy, clean up or install globally only with the user's
+explicit permission. Use orchestration when delegating.
