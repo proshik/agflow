@@ -5,7 +5,6 @@ __pycache__/
 .env.*
 !.env.example
 .local/
-!CLAUDE.md
 
 # Local configuration, recovery evidence and generated reports
 .guild/
