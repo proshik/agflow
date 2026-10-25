@@ -14,6 +14,11 @@ bound to the task worktree, can be continued, and can reach the user with
 questions and approvals; in Guild it is a visible managed worker (see
 orchestration). Read-only investigation may use the main checkout.
 
+A development request is the assignment: it authorizes creating the task
+worktree, starting the separate working session and running local implementation
+and checks there, without asking again. Push, merge, publishing and other
+outward actions still need explicit permission.
+
 Keep the main checkout clean and leave the user's existing changes alone: never
 stash, clean or commit them. If the harness cannot provide a separate session,
 report that and stop before implementing; the parent does not write the change
