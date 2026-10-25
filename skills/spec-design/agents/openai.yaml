@@ -1,6 +1,0 @@
-interface:
-  display_name: "Spec design"
-  short_description: "Persist agreed behavior in the chosen format"
-  default_prompt: "Use $spec-design to bridge investigation and agreed behavior to existing OpenSpec or a lightweight note, keeping proposals distinct and one implementation plan."
-policy:
-  allow_implicit_invocation: true

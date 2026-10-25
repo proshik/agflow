@@ -1,6 +1,6 @@
 interface:
   display_name: "Engineering quality"
-  short_description: "Complete fixes with meaningful regression evidence"
-  default_prompt: "Use $engineering-quality to implement the accepted task and verify affected callers."
+  short_description: "Build changes and verify real behavior"
+  default_prompt: "Use $engineering-quality to implement the agreed change and verify it on the real surface."
 policy:
   allow_implicit_invocation: true

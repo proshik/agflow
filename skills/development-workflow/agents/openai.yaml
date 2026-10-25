@@ -1,6 +1,6 @@
 interface:
   display_name: "Development workflow"
-  short_description: "Run tasks in a separate worktree and session"
-  default_prompt: "Use $development-workflow to carry this development request through its authorized checks."
+  short_description: "Isolate tasks, size the process, agree scope, select reviews"
+  default_prompt: "Use $development-workflow to carry this development request from agreement to a checked local commit."
 policy:
   allow_implicit_invocation: true

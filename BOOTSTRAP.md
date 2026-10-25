@@ -1,146 +1,49 @@
 # Install or update through your harness
 
-The harness performs this procedure using its available filesystem, Git and
-configuration tools. This repository supplies Markdown skills and instructions;
-there is no bundled installer. Setup does not launch a development-workflow
-designer, builder, review or model evaluation.
+The harness performs this procedure with its own filesystem and Git tools; there
+is no installer. Setup starts no workers, reviews or model calls. An install or
+update request authorizes the local setup described here; tool approvals remain
+the user's.
 
-Read AGENTS.md, README.md, docs/setup.md, bundle.json,
-instructions/workflow.md and instructions/review-routing.md first. Follow the
-user's selected harnesses, destination choices and actual host permissions.
-An installation or update request authorizes the described local setup; do not
-ask for the same authorization again. Tool approvals still belong to the user.
+Read README.md, [docs/setup.md](docs/setup.md), bundle.json and
+instructions/workflow.md first.
 
-## Inspect and prepare
+## Steps
 
-1. Identify the OS, actual home, installed harnesses and effective configuration
+1. **Inspect.** Find the OS, home directory, installed harnesses and their config
    directories, including custom locations. For an update, reuse the recorded
-   harness selections and destinations; do not silently switch to defaults or
-   add every supported harness. Inspect existing files and skill registrations.
-2. For a requested repository update, inspect `git status --short`, branch and
-   configured upstream, then use `git pull --ff-only` when safe. Preserve local
-   changes. Stop on unresolved divergence or missing upstream rather than reset,
-   stash or discard work automatically. Read the updated instructions before
-   preparing destination changes.
-3. Check the complete source inventory before writing: every skill in bundle.json
-   must have a readable SKILL.md, its bundled references and agent metadata must
-   be present, and relative resource links must resolve. Compare the manifest
-   with skills/. A missing source is an error, never an empty successful install.
-4. Read the previous installation record and backups, if any. A record is
-   evidence of managed paths and last installed hashes, not authority over every
-   file under a skill root. Preserve records for unselected harnesses and custom
-   destinations. Inspect symlink targets before changing registrations; never
-   write through a link or remove its target blindly.
-5. Prepare and show a concrete plan: destinations, managed rule changes,
-   additions, updates, obsolete files, conflicts, backups and prerequisite gaps.
-   Preserve user-owned changes. If a record is missing or incomplete, compare
-   files and recovery evidence; do not infer ownership merely from a filename.
-   Exact matches can be recorded after comparison. Different unowned files need
-   an explicit replacement decision. Malformed or duplicate managed markers are
-   errors; preserve the file and report the affected path.
+   harnesses and destinations instead of defaults.
+2. **Update the checkout** (updates only). Check `git status`, the branch and its
+   upstream, then run `git pull --ff-only`. On local changes or divergence, stop
+   and report; never reset, stash or discard work.
+3. **Check the source.** Run `node tools/check.mjs` when Node.js is available;
+   otherwise confirm that every skill in bundle.json has `SKILL.md` and
+   `agents/openai.yaml`. A missing source file is an error.
+4. **Plan and show.** List destinations, files to add, update and remove
+   (including the obsolete files in docs/setup.md), conflicts, backups and
+   missing prerequisites. A destination file that differs from its recorded
+   installed hash was changed by the user: keep it and ask. Malformed or
+   duplicate managed markers stop work on that file.
+5. **Back up.** Before writing, save the recovery record and byte-exact copies of
+   every file you will change or remove, outside Git.
+6. **Apply.** Copy each skill directory from `skills/`. In each selected global
+   instruction file, replace only the text between `<!-- agflow:begin -->` and
+   `<!-- agflow:end -->` with instructions/workflow.md, or append the block if
+   absent, keeping all other bytes. Re-read each file right before replacing it
+   and rebuild that step if it changed. Write through a temporary sibling file
+   and rename. Inspect symlinks before writing; never write through one blindly.
+7. **Remove obsolete files** only when they still match their recorded installed
+   hash. Never delete a skill directory that contains other files.
+8. **Record.** Save the updated record, keeping entries for harnesses not touched
+   this time. A repeated install with nothing to change writes nothing.
+9. **Verify.** Compare installed bytes and managed blocks with the source. Check
+   skill discovery through the harness's read-only catalogue where one exists;
+   otherwise report discovery as UNVERIFIED. Report project-local skills that
+   shadow these names and user-owned instructions that still mention removed
+   files, without editing them.
+10. **Report** installed, preserved and removed paths, the source revision,
+    backup and record paths, conflicts and remaining gaps.
 
-## Apply and retain recovery evidence
-
-6. Before changing destinations, save a durable recovery record and byte-exact
-   backups of existing files and the previous installation record outside Git.
-   Record the source revision and dirty-file hashes, selected harnesses, resolved
-   destinations, per-file hashes, planned operations and backup locations. Use
-   UTF-8 for text and hashes of original bytes for comparison. Never record
-   credentials, provider configuration or conversation history in the record.
-7. Copy each selected skill with its bundled resources from skills/. Merge
-   instructions/workflow.md only between `<!-- agflow:begin -->` and
-   `<!-- agflow:end -->` in each selected global instruction file; append one
-   block if absent. Preserve all surrounding bytes. Install the review route
-   only after resolving differences with an existing user-owned route.
-8. Use the same original destination snapshot for merging, conflict decisions,
-   backups and pre-write comparison. Re-read immediately before replacing a
-   file; if it changed, stop and rebuild that operation from the current content.
-   Write through temporary sibling files and atomic replacement where supported.
-   Do not claim these checks lock out other writers; if concurrent editing cannot
-   be coordinated, leave that destination pending rather than overwrite it.
-9. Reconcile paths from the previous record with the new inventory for the
-   selected destinations. List removed or renamed managed files explicitly.
-   With update authority, back up and remove only unchanged previously managed
-   obsolete files. Preserve modified or unowned files and report conflicts.
-   Never delete a whole skill directory containing unrelated files. Keep
-   unselected installations and their ownership records intact.
-10. Verify writes and record each completed operation durably. Atomically save
-    the updated installation record, retaining unselected destinations and
-    unresolved operations. Even if every destination already matches, create or
-    repair the record from verified evidence. A repeated unchanged installation
-    with a complete record needs no writes or new backups.
-
-## Verify and report
-
-11. Compare installed bytes and managed blocks with the source inventory. Check
-    for missing resources, unresolved conflicts and obsolete managed paths; a
-    check of current source files alone is insufficient. Reload/restart selected
-    harnesses as needed and inspect read-only skill discovery if available. Do
-    not launch a model to test discovery; unavailable discovery stays UNVERIFIED.
-12. Follow docs/setup.md for prerequisites of the selected optional adapters.
-    Inspect project-local policy that shadows global skills and report conflicts;
-    do not modify unrelated projects. Preserve provider profiles and credentials.
-    Superpowers is optional; OpenSpec is needed only where already adopted or
-    explicitly requested. Setup does not authorize paid calls or dependency
-    upgrades merely to obtain a green check.
-13. Report installed and preserved paths, source revision, backup/record paths,
-    conflicts and remaining prerequisite or discovery gaps. Missing required
-    selected-route prerequisites mean that route is incomplete; absent optional
-    adapters do not block work in a qualified task session. Missing required
-    task-session capability blocks implementation without a root fallback. File comparison is not workflow acceptance.
-    No push, remote creation, publication, deployment or paid pilot is implied.
-
-If interrupted, reconcile actual destinations with the recovery record and
-backups before resuming. Do not replay unknown operations. Restore only specific
-recorded files after checking later user edits. Existing installer-generated
-`~/.local/state/agflow/install.json` and backups can be read as migration evidence;
-preserve their original bytes and do not require the retired installer to resume.
-
-## Workflow policy consistency
-
-Start from the actual request, investigate/discuss uncertainties with relevant
-Superpowers engineering methods (or the same methods directly if unavailable),
-then persist agreed behavior only when useful or explicitly required. OpenSpec
-stores behavior, scenarios, significant accepted choices and one implementation
-plan; it is not another design process. Existing openspec/ alone does not force
-minor-fix artifacts. Do not initialize it or rewrite baselines automatically.
-Spec-design bridges methods to storage; reconcile drafts without a competing
-Superpowers Plan.md/spec. Proposals, validation and review are not user approval.
-Optional visible capabilities require an actual decision unless already
-explicitly authorized; necessary internal helpers/refactoring do not. Keep this
-lightweight and preserve settled choices. agflow is the distribution repository,
-not an executable tool, runtime or service.
-
-Verify bundle.json, skills, managed rules and docs/setup.md agree: all task writes
-start in both a separate task worktree and a separate working session, including
-plans/specs, documentation and minor bugs. In Guild use a visible managed worker;
-outside Guild a native child qualifies only with a separate conversation, explicit
-worktree binding, supervision/continuation and required human channels. Shared-cwd
-helpers do not qualify. The parent may assign the full request; preparation writes
-belong to the worker, which reuses its own session/tree without nesting. Missing
-required session capability blocks implementation without a root fallback. Small
-settled fixes need only implementation and targeted checks in that session.
-Design and native process graphs are selected by need.
-Harness-native subagents may perform bounded work with actual checkout/permission
-and result-channel support; concurrent writers need separate trees.
-
-Specification review is conditional and uses one architectural reviewer/pass/attempt,
-without synthesis, verification or automatic retry. Independent code review is
-selected by risk or explicit rules. Generic skills specify intent; adapters map
-it to available tools and preserve explicit local routes. Default 1/2 plan/code
-round ceilings apply only to selected reviews and never reset existing histories.
-No installation, structural validation or configuration authorizes model calls.
-
-Selected code review uses the full effective configured profile: original
-reviewer roster/lenses, enabled stages, provider/model/effort, verification policy
-and budgets. Specification-only single-pass limits do not apply; do not reduce
-to one bugs/impl lens, one call or disabled synthesis/verify for convenience.
-Reduced/diff-focused correction scope requires an explicit request.
-`find` is a stage; `codex-only` and `comprehensive` are profiles. Preserve
-user/project profile choices, normal engine skips, histories and round limits.
-
-Check resource links, inventory and local diagram controls. Preserve backed-up
-configuration, existing providers, user-owned routes and publication boundaries.
-Missing required evidence remains UNVERIFIED; an unnecessary skipped stage is
-not a gap. Do not expand small tasks into managed receipt/report systems or
-paid evaluations to validate installation.
+If interrupted, compare the actual destinations with the record and backups
+before resuming, and restore only specific recorded files after checking for
+later user edits.
