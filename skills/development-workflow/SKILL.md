@@ -12,7 +12,8 @@ reuse a task branch in a separate worktree, and do the work in a separate workin
 session bound to that worktree. A separate session has its own conversation, is
 bound to the task worktree, can be continued, and can reach the user with
 questions and approvals; in Guild it is a visible managed worker (see
-orchestration). Read-only investigation may use the main checkout.
+orchestration). Give each independent task (for example, each tracker issue)
+its own worktree and session. Read-only investigation may use the main checkout.
 
 A development request is the assignment: it authorizes creating the task
 worktree, starting the separate working session and running local implementation
@@ -47,11 +48,15 @@ expected outcome are the contract; no spec, plan or independent review.
 
 ## Keep to the agreed scope
 
-Build what the user asked for. Internal helpers and refactoring it needs are your
-call. User-visible additions such as retry, recovery, new screens, settings,
-modes or automation need the user's decision: propose them, then wait. A proposal
-stays a proposal until the user agrees; saving, validating or reviewing a
-document does not approve it. Keep decisions the user has already made.
+Build what the user asked for. Make the smallest change that does the job;
+internal helpers and refactoring it needs are your call. Before adding a new
+subsystem, engine, framework or heavy dependency, ask and state its cost (size,
+dependencies, time). User-visible additions such as retry, recovery, new
+screens, settings, modes or automation need the user's decision: propose them,
+then wait. A proposal stays a proposal until the user agrees; saving, validating
+or reviewing a document does not approve it. Keep decisions the user has already
+made. When the user is testing or wrapping up, finish what they asked instead of
+proposing new capabilities.
 
 ## Persist the agreement
 

@@ -62,10 +62,14 @@ leave unrelated repairs to a separate decision.
 
 ## Report
 
+Report to the user in plain language: what changed, whether it works, what was
+not checked and why, and what you need from them. Leave out internal labels
+(round numbers, receipts, PIDs, file lists, tool names) unless asked.
+
 Give each scenario PASS, FAIL or UNVERIFIED with what you ran and what you saw.
-Say plainly what you could not check and why (access, credentials, window,
-budget). A "done" message, green unit tests or static validation are not PASS
-for live behavior.
+A "done" message, green unit tests or static validation are not PASS for live
+behavior. Say "done" only when every required check passed; otherwise say what
+is done and what is still unchecked.
 
 After a correction, re-run only the checks it affects and say which earlier
 results still hold.

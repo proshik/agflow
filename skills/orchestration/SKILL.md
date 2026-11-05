@@ -39,8 +39,10 @@ assignment as a file (`--from-file`).
 - Send corrections to the same worker in the same worktree.
 - Sequence coupled changes (shared interfaces, migrations) and check the
   combined behavior after integration.
-- Route a worker's questions and approval prompts to the user. Answering another
-  session's tool approval is the user's job, never yours.
+- Route a worker's questions and approval prompts to the user. When the user
+  says they do not understand a question, rephrase it and wait; do not pick an
+  option for them. Answering another session's tool approval is the user's job,
+  never yours.
 - Stop sessions or remove worktrees only when asked.
 
 ## Guild commands
