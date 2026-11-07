@@ -4,5 +4,13 @@
     "development-workflow",
     "orchestration",
     "engineering-quality"
-  ]
+  ],
+  "optional": {
+    "gitlab": [
+      "review-mr",
+      "fix-review",
+      "fix-conflicts",
+      "merge-retro"
+    ]
+  }
 }

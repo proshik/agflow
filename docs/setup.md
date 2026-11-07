@@ -10,12 +10,14 @@ that are already present unless the user asks for more.
   child session as defined in the development-workflow skill.
 - Optional: Superpowers (engineering methods), OpenSpec (only in projects that
   already use it), revust (only when the review route selects it).
+- For the optional `gitlab` set: GitLab API access through an MCP server or a
+  CLI such as `glab`, and an issue-tracker tool if issues are updated.
 
 ## Destinations
 
 | Content | Destination |
 | --- | --- |
-| The three skill directories | `~/.agents/skills/` |
+| Core skill directories and those of selected optional sets | `~/.agents/skills/` |
 | Claude skill registrations | Same-content copies in `~/.claude/skills/` |
 | Codex global rules | Managed block in `~/.codex/AGENTS.md` |
 | Claude global rules | Managed block in `~/.claude/CLAUDE.md` |
@@ -55,10 +57,18 @@ Project-local skills can shadow these global names, and older user-owned routes
 (Superpowers, parallel-tasks, guild-review) can conflict. Show their location and
 a proposed change instead of removing them.
 
+Users often keep their own skills named `review-mr`, `fix-review`,
+`fix-conflicts` or `merge-retro`. When a selected set meets such a copy in any
+skill destination (including the Claude copies) that the recovery record does
+not list, show its location and the difference with a proposed change, and
+never overwrite it silently. Project-specific rules from those copies belong in
+the user's memory or project instructions.
+
 ## Recovery record
 
 Keep the installation record and backups outside Git, for example under
-`~/.local/state/agflow/`: selected harnesses, destinations, source revision,
-per-file hashes, backup locations and incomplete operations. A legacy
+`~/.local/state/agflow/`: selected harnesses, destinations, installed skill
+sets (core plus any optional ones), source revision, per-file hashes, backup
+locations and incomplete operations. A legacy
 `install.json` from the retired installer can serve as evidence of earlier
 installs.

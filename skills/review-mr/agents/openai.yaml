@@ -1,0 +1,6 @@
+interface:
+  display_name: "Review MR"
+  short_description: "Review a GitLab MR and draft comments before publication"
+  default_prompt: "Use $review-mr to review this merge request and show the exact comment drafts before anything is published."
+policy:
+  allow_implicit_invocation: true

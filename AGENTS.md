@@ -1,8 +1,9 @@
 # agflow
 
-This repository distributes three portable skills (development-workflow,
-orchestration, engineering-quality) and a short global instruction block. It is
-a distribution repository, not an executable tool or service.
+This repository distributes three core skills (development-workflow,
+orchestration, engineering-quality), an optional `gitlab` set (review-mr,
+fix-review, fix-conflicts, merge-retro) and a short global instruction block. It
+is a distribution repository, not an executable tool or service.
 
 ## Working here
 
