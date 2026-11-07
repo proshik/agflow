@@ -38,7 +38,8 @@ instructions/workflow.md first.
    `<!-- agflow:begin -->` and `<!-- agflow:end -->` with
    instructions/workflow.md, or append the block if absent, keeping all other
    bytes. Re-read each file right before replacing it and rebuild that step if
-   it changed. Write through a temporary sibling file and rename. Inspect symlinks before writing; never write through one blindly.
+   it changed. Write through a temporary sibling file and rename. Inspect
+   symlinks before writing; never write through one blindly.
 8. **Remove obsolete files** only when they still match their recorded installed
    hash, then remove skill subdirectories that became empty. Never delete a
    directory that contains other files.
