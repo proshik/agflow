@@ -10,7 +10,13 @@ if [ "$#" -lt 4 ]; then
   exit 2
 fi
 base="$1" head="$2" path="$3"; shift 3
-hunks=$(git diff --no-color --no-ext-diff -U0 "$base" "$head" -- "$path" | grep '^@@' || true)
+for L in "$@"; do
+  if ! [[ "$L" =~ ^[1-9][0-9]*$ ]]; then
+    echo "anchor-check.sh: LINE must be a positive integer, got '$L'" >&2
+    exit 2
+  fi
+done
+hunks=$(git diff --no-color --no-ext-diff -U0 --inter-hunk-context=0 "$base" "$head" -- "$path" | grep '^@@' || true)
 for L in "$@"; do
   hit=$(awk -v L="$L" '{split($3,a,","); s=substr(a[1],2)+0; n=(a[2]==""?1:a[2]+0);
         if (L+0>=s && L+0<s+n) {print; exit}}' <<<"$hunks")

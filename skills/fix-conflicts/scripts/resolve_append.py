@@ -23,15 +23,14 @@ path = sys.argv[1]
 with open(path, encoding="utf-8") as f:
     lines = f.read().split("\n")
 starts = [i for i, l in enumerate(lines) if l.startswith("<<<<<<< ")]
-if len(starts) != 1:
-    sys.exit(f"{path}: expected exactly one conflict hunk, found {len(starts)}")
-s = starts[0]
-if any(l.startswith("||||||| ") for l in lines[s:]):
+mids = [i for i, l in enumerate(lines) if l == "======="]
+ends = [i for i, l in enumerate(lines) if l.startswith(">>>>>>> ")]
+if any(l.startswith("||||||| ") for l in lines):
     sys.exit(f"{path}: diff3 conflict style is not supported; use the merge style")
-m = next((i for i in range(s, len(lines)) if lines[i] == "======="), None)
-e = next((i for i in range(m or s, len(lines)) if lines[i].startswith(">>>>>>> ")), None)
-if m is None or e is None:
-    sys.exit(f"{path}: incomplete conflict markers")
+if not (len(starts) == len(mids) == len(ends) == 1 and starts[0] < mids[0] < ends[0]):
+    sys.exit(f"{path}: expected exactly one '<<<<<<< ', one '=======' and one '>>>>>>> ' "
+             f"line in that order, found {len(starts)}, {len(mids)} and {len(ends)}")
+s, m, e = starts[0], mids[0], ends[0]
 
 pre, ours, theirs, tail = lines[:s], lines[s + 1 : m], lines[m + 1 : e], lines[e + 1 :]
 tail_body = tail[:-1] if tail and tail[-1] == "" else tail
