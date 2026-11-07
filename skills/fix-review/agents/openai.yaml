@@ -1,0 +1,6 @@
+interface:
+  display_name: "Fix review"
+  short_description: "Verify and fix review comments on your GitLab MR"
+  default_prompt: "Use $fix-review to verify each review thread on this merge request and prepare fixes and reply drafts."
+policy:
+  allow_implicit_invocation: true

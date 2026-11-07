@@ -1,0 +1,6 @@
+interface:
+  display_name: "Merge retro"
+  short_description: "Review merged GitLab MRs and their findings"
+  default_prompt: "Use $merge-retro to collect the facts of these merged merge requests and summarise what review, tests and process showed."
+policy:
+  allow_implicit_invocation: true

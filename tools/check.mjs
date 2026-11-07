@@ -11,11 +11,18 @@ const fail = (file, why) => errors.push(`${file}: ${why}`);
 const read = f => { try { return fs.readFileSync(path.join(root, f), 'utf8'); } catch { fail(f, 'missing'); return ''; } };
 const machinePath = /(?:\/Users\/|\/home\/)[\w.-]+|[A-Z]:\\Users\\/;
 const email = /[\w.%+-]+@[\w-]+(?:\.[\w-]+)*\.[a-z]{2,}\b/i;
+// Optional, git-ignored list of private words: one case-insensitive entry per line.
+const denyPath = path.join(root, '.local', 'denylist.txt');
+const denylist = fs.existsSync(denyPath)
+  ? fs.readFileSync(denyPath, 'utf8').split(/\r?\n/).map(l => l.trim().toLowerCase()).filter(l => l && !l.startsWith('#'))
+  : [];
 
 for (const f of files) {
   const text = read(f);
   if (machinePath.test(text)) fail(f, 'machine path');
   if (email.test(text)) fail(f, 'email address');
+  const lower = text.toLowerCase();
+  for (const entry of denylist) if (lower.includes(entry)) fail(f, `denylisted entry "${entry}"`);
   if (!f.endsWith('.md')) continue;
   for (const [, raw] of text.matchAll(/\]\(([^\s)]+)\)/g)) {
     if (/^(?:[a-z][\w+.-]*:|#)/i.test(raw)) continue;
@@ -26,9 +33,13 @@ for (const f of files) {
   }
 }
 
-const skills = JSON.parse(read('bundle.json') || '{}').skills || [];
+const bundle = JSON.parse(read('bundle.json') || '{}');
+const sets = [bundle.skills, ...Object.values(bundle.optional || {})];
+if (!sets.every(set => Array.isArray(set) && set.every(n => typeof n === 'string'))) fail('bundle.json', 'skills and each optional set must be lists of names');
+const skills = sets.filter(Array.isArray).flat();
+if (new Set(skills).size !== skills.length) fail('bundle.json', 'a skill is listed more than once');
 const dirs = fs.readdirSync(path.join(root, 'skills')).filter(d => fs.statSync(path.join(root, 'skills', d)).isDirectory());
-if ([...skills].sort().join() !== dirs.sort().join()) fail('bundle.json', 'skills list differs from skills/ directories');
+if ([...new Set(skills)].sort().join() !== dirs.sort().join()) fail('bundle.json', 'core and optional skills differ from skills/ directories');
 for (const name of dirs) {
   const front = /^---\n([\s\S]*?)\n---\n/.exec(read(`skills/${name}/SKILL.md`))?.[1].split('\n') || [];
   if (front.length !== 2 || front[0] !== `name: ${name}` || !/^description: \S/.test(front[1]) ||
