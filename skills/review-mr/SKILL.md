@@ -33,9 +33,10 @@ through an available MCP server or CLI after checking its schema.
 - Look for concrete broken scenarios and violated invariants. Compare with the
   target branch and check every caller of a changed helper.
 - Classify each problem: introduced by the MR, pre-existing in the target
-  branch, or local to your environment. Ask whether it reproduces on a fresh
-  environment built from the target; if not, it belongs in your report to the
-  user, not in the MR.
+  branch, or local to your environment. A problem that does not reproduce on a
+  fresh environment built from the MR head is local and belongs in your report
+  to the user, not in the MR; the target branch is the control that tells
+  introduced from pre-existing.
 - Size checks to the scenario and run nothing the project forbids. Mark missing
   evidence as missing; a similar passing test does not prove the claim.
 - Run an automated independent review only when the user asks for one or their

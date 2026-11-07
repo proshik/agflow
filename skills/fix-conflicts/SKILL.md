@@ -63,8 +63,11 @@ skill covers how.
 
 ## Hand off and push
 
-- Show the verified diff, the test results and the push command:
-  `git push origin LOCAL_BRANCH:refs/heads/SOURCE_BRANCH`.
+- Show the verified diff, the test results and the push command
+  `git push SOURCE_REMOTE LOCAL_BRANCH:refs/heads/SOURCE_BRANCH`. The source
+  remote is the one whose push URL is the MR's source project
+  (`source_project_id`, which differs from `target_project_id` for a fork);
+  check it with `git remote -v`.
 - Before an authorized push, refetch source and target and confirm they match
   what you checked, and that the local branch fast-forwards the remote source.
   If the remote moved, check the new commits and integrate them in the same

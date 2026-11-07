@@ -68,7 +68,7 @@ the user's memory or project instructions.
 
 Keep the installation record and backups outside Git, for example under
 `~/.local/state/agflow/`: selected harnesses, destinations, installed skill
-sets (core plus any optional ones), source revision, per-file hashes, backup
-locations and incomplete operations. A legacy
-`install.json` from the retired installer can serve as evidence of earlier
-installs.
+sets (core plus any optional ones), skills of a set skipped per destination
+because a user-owned copy was kept, source revision, per-file hashes, backup
+locations and incomplete operations. A legacy `install.json` from the retired
+installer can serve as evidence of earlier installs.

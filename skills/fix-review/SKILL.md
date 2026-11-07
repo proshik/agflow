@@ -66,9 +66,12 @@ drafts.
 - Check replies and the MR description draft against the final diff and the
   checks actually run, including every service that has to be deployed. A CI
   configuration does not prove that a stage ran or blocks the merge.
-- Show the verdicts, the exact drafts and the push command that names the MR
-  source branch: `git push origin LOCAL_BRANCH:refs/heads/SOURCE_BRANCH`.
-  Check `git branch -vv` first; never push to the target branch.
+- Show the verdicts, the exact drafts and the push command
+  `git push SOURCE_REMOTE LOCAL_BRANCH:refs/heads/SOURCE_BRANCH`. The source
+  remote is the one whose push URL is the MR's source project
+  (`source_project_id`, which differs from `target_project_id` for a fork);
+  check it with `git remote -v` and `git branch -vv`, and never push to the
+  target branch.
 - After an authorized publication, use fresh full discussion IDs; if the head
   moved, re-check conclusions and anchors. Read back what was posted. Leave the
   reviewer's threads open; resolving them is the reviewer's call.

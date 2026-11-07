@@ -37,20 +37,22 @@ instructions/workflow.md first.
    selected global instruction file, replace only the text between
    `<!-- agflow:begin -->` and `<!-- agflow:end -->` with
    instructions/workflow.md, or append the block if absent, keeping all other
-   bytes. Re-read each file right before replacing it
-   and rebuild that step if it changed. Write through a temporary sibling file
-   and rename. Inspect symlinks before writing; never write through one blindly.
+   bytes. Re-read each file right before replacing it and rebuild that step if
+   it changed. Write through a temporary sibling file and rename. Inspect symlinks before writing; never write through one blindly.
 8. **Remove obsolete files** only when they still match their recorded installed
-   hash. Never delete a skill directory that contains other files.
-9. **Record.** Save the updated record with the installed sets, keeping entries
-   for harnesses not touched this time. A repeated install with nothing to
-   change writes nothing.
+   hash, then remove skill subdirectories that became empty. Never delete a
+   directory that contains other files.
+9. **Record.** Save the updated record with the installed sets and, per
+   destination, the skills of a selected set skipped because a user-owned copy
+   was kept, keeping entries for harnesses not touched this time. A repeated
+   install with nothing to change writes nothing.
 10. **Verify.** Compare installed bytes and managed blocks with the source.
     Check skill discovery through the harness's read-only catalogue where one
     exists; otherwise report discovery as UNVERIFIED. Report project-local
     skills that shadow these names and user-owned instructions that still
     mention removed files, without editing them.
-11. **Report** installed, preserved and removed paths, the installed sets, the
+11. **Report** installed, preserved and removed paths, the installed sets and
+    any skills skipped per destination (that set is incomplete there), the
     source revision, backup and record paths, conflicts and remaining gaps.
 
 If interrupted, compare the actual destinations with the record and backups
