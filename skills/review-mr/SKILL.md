@@ -38,6 +38,9 @@ through an available MCP server or CLI after checking its schema.
   user, not in the MR.
 - Size checks to the scenario and run nothing the project forbids. Mark missing
   evidence as missing; a similar passing test does not prove the claim.
+- Run an automated independent review only when the user asks for one or their
+  configured route selects it, as development-workflow's "Select reviews"
+  describes; a review of someone else's MR uses a code-review round.
 - Verify every automated review finding in the code before you use it.
 
 Summarise as: scenario | evidence | severity and regression | fix in this MR /
