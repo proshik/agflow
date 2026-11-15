@@ -5,9 +5,11 @@ description: Use when delegating development work to managed sessions or subagen
 
 # Orchestration
 
-The parent session owns scope, integration, acceptance and keeping the work
-moving. development-workflow defines when a separate task session is required;
-this skill covers how to run it.
+The parent session owns scope, assignments, shared resources (environments,
+locks, capacity), the links between tasks and keeping the work moving. A task
+session runs its own task to the end: implementation, checks, the required
+review and the publication its assignment allows. development-workflow defines
+when a separate task session is required; this skill covers how to run it.
 
 ## Choose the executor
 
@@ -31,18 +33,23 @@ assignment as a file (`--from-file`).
 
 ## Supervise
 
-- Wait with bounded waits or completion events, then check the actual result:
-  diff, files and check output. A finished turn is not a finished task.
-- After each result, take the next agreed step (check, review, next assignment)
-  without waiting for a user reminder. Stay active while assigned work can
-  progress.
+- Wait with bounded waits or completion events, then read the report and check
+  the facts it names (commits, review result, publication). A finished turn is
+  not a finished task.
+- After each result, take the next parent step (shared resource, link to
+  another task, next assignment) without waiting for a user reminder. Do not
+  redo a worker's review or acceptance; confirm that its required review ran.
+  Stay active while assigned work can progress.
 - Send corrections to the same worker in the same worktree.
 - Sequence coupled changes (shared interfaces, migrations) and check the
   combined behavior after integration.
-- Route a worker's questions and approval prompts to the user. When the user
-  says they do not understand a question, rephrase it and wait; do not pick an
-  option for them. Answering another session's tool approval is the user's job,
-  never yours.
+- A worker asks the user its own questions in its own tab; tell the user which
+  tab is waiting. Route a helper's questions to the user. When the user says
+  they do not understand a question, rephrase it and wait; do not pick an option
+  for them. Answering another session's tool approval is the user's job, never
+  yours.
+- A worker reports problems with shared resources to the parent instead of
+  fixing them.
 - Stop sessions or remove worktrees only when asked.
 
 ## Guild commands

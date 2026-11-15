@@ -12,6 +12,9 @@ description: Use while implementing, fixing and verifying software. Covers regre
 - For a bug, first write a regression test that reproduces the user-visible
   failure and fails for the right reason. Test public behavior, not source text
   or mocks.
+- When the code reaches a database, a permission check or an external service,
+  at least one test goes through the real one (for example a containerized
+  database), not a stub built on the code's own assumptions.
 - When you change shared code (helper, client, constructor, interface), find
   every caller with a full search or LSP and check each one.
 - Fix the whole scenario, including sibling failure and cancellation paths with

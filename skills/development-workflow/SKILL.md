@@ -89,12 +89,14 @@ Run an independent review when there is real risk (consequential architecture,
 shared contracts, migrations, uncertain integration) or the user or project
 requires one; otherwise inspect the diff and run targeted checks. The reviewer is
 independent of the implementation context: a reviewer subagent or an external
-tool, with an explicit user or project route taking precedence.
+tool, with an explicit user or project route taking precedence. A request to
+push or open an MR does not waive a required review; only the user's explicit
+"no review" does.
 
 - **Spec review:** one architectural reviewer, one pass. It checks scope
   inflation against the request and agreed decisions first, then feasibility,
-  boundaries and compatibility. The parent verifies the findings and updates the
-  same contract.
+  boundaries and compatibility. The session that owns the task verifies the
+  findings and updates the same contract.
 - **Code review:** the full configured profile, with its reviewers, lenses,
   stages, model, effort, verification and budgets. Narrow it only when the user
   asks for a reduced correction review.
