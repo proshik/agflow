@@ -6,10 +6,12 @@ description: Use when delegating development work to managed sessions or subagen
 # Orchestration
 
 The parent session owns scope, assignments, shared resources (environments,
-locks, capacity), the links between tasks and keeping the work moving. A task
-session runs its own task to the end: implementation, checks, the required
-review and the publication its assignment allows. development-workflow defines
-when a separate task session is required; this skill covers how to run it.
+locks, capacity), the links between tasks, integration and publication on the
+user's word, and keeping the work moving. A task session runs implementation,
+checks, the required review, rebases and fixes for review comments in its
+worktree, and publishes only when its assignment says so. development-workflow
+defines when a separate task session is required; this skill covers how to run
+it.
 
 ## Choose the executor
 
@@ -28,8 +30,14 @@ Use what the current session can actually do, not what the harness name suggests
 
 Every assignment states the goal, the worktree and branch, owned and excluded
 paths, the agreed request or contract, the checks to run and the limits (actions
-not allowed, review and call budgets). Mark proposals as proposals. Pass the
-assignment as a file (`--from-file`).
+not allowed, review and call budgets) and who integrates and publishes. Mark
+proposals as proposals. Pass the
+assignment as a file (`--from-file`). Before starting the worker, copy into the
+worktree the ignored local files the task needs (review configuration, local
+settings).
+
+Run at most two or three workers at a time and integrate finished work before
+starting more. A note or a backlog entry gets no worktree of its own.
 
 ## Supervise
 
@@ -37,9 +45,12 @@ assignment as a file (`--from-file`).
   the facts it names (commits, review result, publication). A finished turn is
   not a finished task.
 - After each result, take the next parent step (shared resource, link to
-  another task, next assignment) without waiting for a user reminder. Do not
-  redo a worker's review or acceptance; confirm that its required review ran.
-  Stay active while assigned work can progress.
+  another task, integration, next assignment) without waiting for a user
+  reminder. Stay active while assigned work can progress.
+- The user may also direct a worker in its own tab. Check the branch state
+  before integrating or sending a step, so the same step does not run twice.
+- When asked for status, give one line per tab: the task name, what it is
+  doing and whether it waits for the user.
 - Send corrections to the same worker in the same worktree.
 - Sequence coupled changes (shared interfaces, migrations) and check the
   combined behavior after integration.

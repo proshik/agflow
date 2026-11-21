@@ -91,7 +91,8 @@ requires one; otherwise inspect the diff and run targeted checks. The reviewer i
 independent of the implementation context: a reviewer subagent or an external
 tool, with an explicit user or project route taking precedence. A request to
 push or open an MR does not waive a required review; only the user's explicit
-"no review" does.
+"no review" does. Whoever publishes first confirms that the review covered the
+final change.
 
 - **Spec review:** one architectural reviewer, one pass. It checks scope
   inflation against the request and agreed decisions first, then feasibility,
@@ -113,7 +114,8 @@ lens name), `--no-synthesis`, `--no-verify`, zero finder retries and
 editing the user's profiles. Dry-run first and confirm one reviewer and one call;
 if the installed version cannot express this, report it. For code review, run
 the configured profile unchanged (`find` is a stage; `codex-only` and
-`comprehensive` are profiles). Exit code 1 means findings were reported. Use
+`comprehensive` are profiles); in a new worktree, confirm the effective profile
+with a dry run before the first round. Exit code 1 means findings were reported. Use
 `--auto-exit=1s` for finished review views.
 
 ## Finish
