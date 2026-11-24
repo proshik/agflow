@@ -10,8 +10,7 @@ locks, capacity), the links between tasks, integration and publication on the
 user's word, and keeping the work moving. A task session runs implementation,
 checks, the required review, rebases and fixes for review comments in its
 worktree, and publishes only when its assignment says so. development-workflow
-defines when a separate task session is required; this skill covers how to run
-it.
+defines which executor a task gets; this skill covers how to run it.
 
 ## Choose the executor
 
@@ -19,11 +18,18 @@ Use what the current session can actually do, not what the harness name suggests
 
 - **Task session:** in Guild, a visible managed worker (commands below).
   Elsewhere, a native child that meets development-workflow's session definition.
-- **Helpers:** native subagents for bounded investigation, checks or parts of a
-  task. Read-only helpers need no worktree. Writers work in the assigned
-  worktree; concurrent writers each get their own worktree, otherwise run them
-  one at a time with explicit file ownership. Subagents often share the parent's
-  cwd, so pass absolute paths.
+- **Subagents:** the harness's own subagents, for a bounded task that
+  development-workflow gives to a subagent, and for investigation, review, checks
+  or parts of a larger task. The harness decides how many run, in the
+  foreground or background, and of which type. Read-only subagents need no
+  worktree. A writer works only in the task worktree: the harness's own
+  isolation where it has one, otherwise a worktree the parent creates and names
+  by absolute path, since subagents often share the parent's cwd. Concurrent
+  writers each get their own worktree, otherwise run them one at a time with
+  explicit file ownership.
+- Give a subagent the same assignment fields as a session, check its diff and
+  commit as you would a session's report, and bound the wait; tell the user
+  about a subagent that stops reporting.
 - An assigned worker starts further task sessions only when its assignment says so.
 
 ## Assign
@@ -78,8 +84,8 @@ Read `guild instructions parallel` and `guild instructions worktrees` once. Pass
 | Send the next task or a correction | `guild agent send SESSION --from-file NEXT --json` |
 | Reopen a closed tab | `guild session resume SESSION --json` |
 
-`worktree create` without a task gives isolation only; start a worker there
-before any task writes. Wait results: timeout or pending means check other
+`worktree create` without a task gives isolation only; a session or a subagent
+does the task writes there. Wait results: timeout or pending means check other
 workers and wait again (at most 60 s); `done` means read the transcript and
 inspect the checkout; `waiting` means the worker needs a human, so tell the user
 which tab and leave it alone; `closed` or `exited` (exit code 6) is not success,

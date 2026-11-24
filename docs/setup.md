@@ -6,8 +6,9 @@ that are already present unless the user asks for more.
 ## Prerequisites
 
 - Git with worktree support.
-- A harness that can run a separate working session per task: Guild, or a native
-  child session as defined in the development-workflow skill.
+- A harness that can run harness subagents or a separate working session per
+  task: Guild, or a native child session as defined in the development-workflow
+  skill.
 - Optional: Superpowers (engineering methods), OpenSpec (only in projects that
   already use it), revust (only when the review route selects it).
 - For the optional `gitlab` set: GitLab API access through an MCP server or a

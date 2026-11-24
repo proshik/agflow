@@ -8,22 +8,33 @@ description: Use for software implementation, bugfix and architecture requests. 
 ## Isolate every task
 
 Before writing anything for a task (code, tests, specs, plans, notes), create or
-reuse a task branch in a separate worktree, and do the work in a separate working
-session bound to that worktree. A separate session has its own conversation, is
-bound to the task worktree, can be continued, and can reach the user with
-questions and approvals; in Guild it is a visible managed worker (see
-orchestration). Give each independent task (for example, each tracker issue)
-its own worktree and session. Read-only investigation may use the main checkout.
+reuse a task branch in a separate worktree. Give each independent task (for
+example, each tracker issue) its own worktree. Read-only investigation may use
+the main checkout.
+
+The work in that worktree is done by one of two executors (see orchestration):
+
+- **Harness subagent** for a bounded task whose decisions are already made: no
+  questions to the user along the way, one pass, a report and a local commit as
+  the result. Typical cases: a small fix, a docs edit, release preparation.
+  When it reaches a question, it returns with the question instead of guessing,
+  and the task moves to a session.
+- **Separate working session** when the task needs a dialogue with the user,
+  runs long, goes through several review rounds, uses a shared environment or
+  publishes, or when the user wants to direct it in its own tab. A session has
+  its own conversation, is bound to the task worktree, can be continued and can
+  reach the user with questions and approvals; in Guild it is a visible managed
+  worker.
 
 A development request is the assignment: it authorizes creating the task
-worktree, starting the separate working session and running local implementation
-and checks there, without asking again. Push, merge, publishing and other
-outward actions still need explicit permission.
+worktree, starting the executor and running local implementation and checks
+there, without asking again. Push, merge, publishing and other outward actions
+still need explicit permission.
 
 Keep the main checkout clean and leave the user's existing changes alone: never
-stash, clean or commit them. If the harness cannot provide a separate session,
-report that and stop before implementing; the parent does not write the change
-itself. A worker already assigned to a task reuses its own session and worktree.
+stash, clean or commit them. If the harness can provide neither executor, report
+that and stop before implementing; the parent does not write the change itself.
+A worker already assigned to a task reuses its own session and worktree.
 
 ## Pick the route
 
