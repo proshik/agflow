@@ -30,7 +30,7 @@ Open the existing checkout and ask:
 
 | Path | Contents |
 | --- | --- |
-| [skills/development-workflow](skills/development-workflow/SKILL.md) | Task isolation, short vs full route, scope, persisting agreements (the project's task place, OpenSpec or a note) and lasting rules, review selection and revust flags |
+| [skills/development-workflow](skills/development-workflow/SKILL.md) | Task isolation, short vs full route, scope, persisting agreements where the project keeps them, lasting rules, review selection and revust flags |
 | [skills/orchestration](skills/orchestration/SKILL.md) | Assignments, supervision, parallel writers, Guild commands |
 | [skills/engineering-quality](skills/engineering-quality/SKILL.md) | Building, real-behavior checks per surface, failure classification, reporting |
 | [skills/review-mr](skills/review-mr/SKILL.md) | Optional `gitlab` set: reviewing someone else's MR, comment drafts, inline anchors, re-review |

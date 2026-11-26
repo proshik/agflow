@@ -71,39 +71,16 @@ proposing new capabilities.
 
 ## Persist the agreement
 
-Keep the agreement and its single plan in one place, the first that applies:
-the format the user asked for; the place the project's instructions name for a
-task's agreement and plan (a task file, a spec-and-plan folder); one matching
-OpenSpec change, if the project already works in OpenSpec; otherwise one
-lightweight note in the task worktree (request, agreed behavior, scenarios,
-decisions, task plan).
-Write no competing plan or spec beside it.
+Keep the agreement and its one plan where the user asked, or where the
+project's instructions put a task's agreement (a task file, a spec-and-plan
+folder, an OpenSpec change — then follow that tool's own instructions).
+Otherwise write one lightweight note in the task worktree: request, agreed
+behavior, scenarios, decisions, plan. No second plan or spec beside it, and
+no new tool introduced for it.
 
-Make the plan's last step the lasting rules: record rules that outlive the task
-in the project's place for lasting decisions (a decisions log, ADRs), as a new
-entry or an amended one, or state that none arose. If the project has no such
-place, list the candidate rules in the report and let the user decide where they
-go.
-
-Initialize OpenSpec only when the user asks. A small fix needs no spec or plan
-unless project rules require one.
-
-In a project that works in OpenSpec, the basics (confirm with the installed
-`openspec --help`):
-
-```sh
-openspec list --json
-openspec new change CHANGE_ID
-openspec status --change CHANGE_ID --json
-openspec instructions ARTIFACT --change CHANGE_ID --json
-openspec validate CHANGE_ID --strict --no-interactive
-```
-
-Follow `status` and `instructions` for artifact order. Read relevant baseline
-specs and leave them as they are. `done`/`isComplete` means the documents exist,
-not that the behavior works; archive only after the agreed scope is implemented
-and verified. When asked to adopt OpenSpec, check which files
-`openspec init --tools none` would touch before running it.
+The plan's last step is the lasting rules: record rules that outlive the task
+in the project's decisions log or ADRs, or state that none arose. If the
+project has no such place, list them in the report.
 
 ## Select reviews
 
