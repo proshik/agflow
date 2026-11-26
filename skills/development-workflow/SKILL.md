@@ -71,14 +71,25 @@ proposing new capabilities.
 
 ## Persist the agreement
 
-Use the format the user asked for. Otherwise, if the project already has
-`openspec/`, use one matching change there; if not, write one lightweight note in
-the task worktree (request, agreed behavior, scenarios, decisions, task plan).
-Keep a single plan: no competing docs/superpowers plan or spec beside it.
-Initialize OpenSpec only when the user asks. A small fix needs no OpenSpec change
+Keep the agreement and its single plan in one place, the first that applies:
+the format the user asked for; the place the project's instructions name for a
+task's agreement and plan (a task file, a spec-and-plan folder); one matching
+OpenSpec change, if the project already works in OpenSpec; otherwise one
+lightweight note in the task worktree (request, agreed behavior, scenarios,
+decisions, task plan).
+Write no competing plan or spec beside it.
+
+Make the plan's last step the lasting rules: record rules that outlive the task
+in the project's place for lasting decisions (a decisions log, ADRs), as a new
+entry or an amended one, or state that none arose. If the project has no such
+place, list the candidate rules in the report and let the user decide where they
+go.
+
+Initialize OpenSpec only when the user asks. A small fix needs no spec or plan
 unless project rules require one.
 
-OpenSpec basics (confirm with the installed `openspec --help`):
+In a project that works in OpenSpec, the basics (confirm with the installed
+`openspec --help`):
 
 ```sh
 openspec list --json
