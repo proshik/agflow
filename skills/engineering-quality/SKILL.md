@@ -20,7 +20,9 @@ description: Use while implementing, fixing and verifying software. Covers regre
   the same cause; leave unrelated refactoring out.
 - When a mature library or service solves the problem, compare it with a local
   implementation (behavior, maintenance, license, compatibility, cost), recommend
-  one and ask the user before writing code. Keep a stack that is already chosen.
+  one and ask the user before writing code; when the user handed the decisions
+  to you, choose and record the choice with its reasons. Keep a stack that is
+  already chosen.
 - Give every process, thread, subscription, socket and temp file you start an
   owner that releases it on success, failure and cancellation. A timeout stops
   the work, not just the waiting. Leave user objects and other workers'

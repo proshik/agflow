@@ -66,7 +66,8 @@ expected outcome are the contract; no spec, plan or independent review.
 Build what the user asked for. Make the smallest change that does the job;
 internal helpers and refactoring it needs are your call. Before adding a new
 subsystem, engine, framework or heavy dependency, ask and state its cost (size,
-dependencies, time). User-visible additions such as retry, recovery, new
+dependencies, time), or, when the decisions are delegated, decide and record
+the choice with its reasons. User-visible additions such as retry, recovery, new
 screens, settings, modes or automation need the user's decision: propose them
 and wait, or, when the decisions are delegated, decide and record them as yours.
 A proposal stays a proposal until the user agrees; saving, validating or
