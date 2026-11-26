@@ -10,8 +10,8 @@ it changes nothing in their branch and starts no implementation work. If the
 user separately asks for code changes, apply development-workflow to that
 request. Comments on the user's own MR belong to fix-review.
 
-Follow the project's instructions and the user's memory. Use the GitLab API
-through an available MCP server or CLI after checking its schema.
+Use the GitLab API through an available MCP server or CLI after checking its
+schema.
 
 ## Collect the context
 
@@ -30,15 +30,14 @@ through an available MCP server or CLI after checking its schema.
 
 ## Hunt for defects
 
-- Look for concrete broken scenarios and violated invariants. Compare with the
-  target branch and check every caller of a changed helper.
+- Compare with the target branch and check every caller of a changed helper.
 - Classify each problem: introduced by the MR, pre-existing in the target
   branch, or local to your environment. A problem that does not reproduce on a
   fresh environment built from the MR head is local and belongs in your report
   to the user, not in the MR; the target branch is the control that tells
   introduced from pre-existing.
-- Size checks to the scenario and run nothing the project forbids. Mark missing
-  evidence as missing; a similar passing test does not prove the claim.
+- Mark missing evidence as missing; a similar passing test does not prove the
+  claim.
 - Run an automated independent review only when the user asks for one or their
   configured route selects it, as development-workflow's "Select reviews"
   describes; a review of someone else's MR uses a code-review round.

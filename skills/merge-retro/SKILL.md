@@ -5,10 +5,9 @@ description: Use after GitLab merge requests are merged to review what happened.
 
 # Retrospective on merged MRs
 
-Follow the project's instructions and the user's memory; check the schema of
-any GitLab or issue-tracker tool before use. A retrospective runs in the current
-session and changes nothing by itself; fixes it uncovers go through
-development-workflow.
+Check the schema of any GitLab or issue-tracker tool before use. A
+retrospective runs in the current session and changes nothing by itself; fixes
+it uncovers go through development-workflow.
 
 ## Collect the facts, in this order
 
@@ -60,6 +59,3 @@ back. When only analysis was asked, propose the updates.
 - Remove a worktree with the mechanism that created it, without `--force`; the
   branch stays. Show ignored files that would be deleted and wait for
   permission. A refusal over an active session or a dirty tree stands.
-
-Report the updated issues, saved evidence, removed worktrees and remaining
-blockers.

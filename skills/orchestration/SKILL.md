@@ -20,9 +20,8 @@ Use what the current session can actually do, not what the harness name suggests
   Elsewhere, a native child that meets development-workflow's session definition.
 - **Subagents:** the harness's own subagents, for a bounded task that
   development-workflow gives to a subagent, and for investigation, review, checks
-  or parts of a larger task. The harness decides how many run, in the
-  foreground or background, and of which type. Read-only subagents need no
-  worktree. A writer works only in the task worktree: the harness's own
+  or parts of a larger task. Read-only subagents need no worktree. A writer
+  works only in a task worktree of the current project: the harness's own
   isolation where it has one, otherwise a worktree the parent creates and names
   by absolute path, since subagents often share the parent's cwd. Concurrent
   writers each get their own worktree, otherwise run them one at a time with
@@ -87,6 +86,6 @@ Read `guild instructions parallel` and `guild instructions worktrees` once. Pass
 `worktree create` without a task gives isolation only; a session or a subagent
 does the task writes there. Wait results: timeout or pending means check other
 workers and wait again (at most 60 s); `done` means read the transcript and
-inspect the checkout; `waiting` means the worker needs a human, so tell the user
-which tab and leave it alone; `closed` or `exited` (exit code 6) is not success,
-so read what remains before resuming.
+inspect the checkout; `waiting` means the worker waits for the user (see
+Supervise); `closed` or `exited` (exit code 6) is not success, so read what
+remains before resuming.

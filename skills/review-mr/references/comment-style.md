@@ -20,7 +20,6 @@ is unclear and ends with a direct question.
 
 - Line numbers, traces, the history of the investigation, confidence scores and
   the names of tools or agents that found the problem.
-- Problems of your local environment only.
 - AI attribution, session links and internal review rounds.
 
 ## Minor notes: one shared comment per MR

@@ -5,10 +5,9 @@ description: Use to resolve conflicts between your own GitLab merge requests and
 
 # Resolve conflicts in your MRs
 
-Follow the project's instructions and the user's memory. Use the GitLab API
-through an available MCP server or CLI after checking its schema. Resolving a
-conflict changes the MR branch, so do it through development-workflow; this
-skill covers how.
+Use the GitLab API through an available MCP server or CLI after checking its
+schema. Resolving a conflict changes the MR branch, so do it through
+development-workflow; this skill covers how.
 
 ## Establish the versions
 
@@ -49,7 +48,6 @@ skill covers how.
 
 ## Check the merge
 
-- No conflict markers remain.
 - Diff the result against **both** parents and check what git joined without a
   conflict: callers of shared functions, SQL and data ownership, test mocks,
   defaults, prompts, translations and new dependencies.

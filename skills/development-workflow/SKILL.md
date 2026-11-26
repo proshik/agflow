@@ -14,11 +14,12 @@ the main checkout.
 
 The work in that worktree is done by one of two executors (see orchestration):
 
-- **Harness subagent** for a bounded task whose decisions are already made: no
-  questions to the user along the way, one pass, a report and a local commit as
-  the result. Typical cases: a small fix, a docs edit, release preparation.
-  When it reaches a question, it returns with the question instead of guessing,
-  and the task moves to a session.
+- **Harness subagent** for a bounded task in the current project whose
+  decisions are already made: no questions to the user along the way, one pass,
+  a report and a local commit as the result. Typical cases: a small fix, a docs
+  edit, release preparation. When it reaches a question, it returns with the
+  question instead of guessing, and the task moves to a session. A task in
+  another repository goes to a session in that repository.
 - **Separate working session** when the task needs a dialogue with the user,
   runs long, goes through several review rounds, uses a shared environment or
   publishes, or when the user wants to direct it in its own tab. A session has
@@ -28,8 +29,7 @@ The work in that worktree is done by one of two executors (see orchestration):
 
 A development request is the assignment: it authorizes creating the task
 worktree, starting the executor and running local implementation and checks
-there, without asking again. Push, merge, publishing and other outward actions
-still need explicit permission.
+there, without asking again.
 
 Keep the main checkout clean and leave the user's existing changes alone: never
 stash, clean or commit them. If the harness can provide neither executor, report
@@ -49,7 +49,11 @@ expected outcome are the contract; no spec, plan or independent review.
 
 1. Investigate and discuss. Diagnose bugs; for design use Superpowers
    brainstorming and planning when available, or the same methods directly.
-   Compare options and ask the user about material choices.
+   Compare options and ask the user about material choices, unless they handed
+   the decisions to you (a goal, "decide yourself", "until it is done, without
+   me"): then make the choices and the agreement in step 2 yourself, record them
+   as yours and reversible, and continue. Permissions (push, publish, secrets,
+   paid calls) and irreversible actions still stop for the user.
 2. Agree the behavior with the user. For UI work, agree a concrete visual and
    interaction target (mockup, reference screen or precise description) and the
    states that matter.
@@ -63,9 +67,10 @@ Build what the user asked for. Make the smallest change that does the job;
 internal helpers and refactoring it needs are your call. Before adding a new
 subsystem, engine, framework or heavy dependency, ask and state its cost (size,
 dependencies, time). User-visible additions such as retry, recovery, new
-screens, settings, modes or automation need the user's decision: propose them,
-then wait. A proposal stays a proposal until the user agrees; saving, validating
-or reviewing a document does not approve it. Keep decisions the user has already
+screens, settings, modes or automation need the user's decision: propose them
+and wait, or, when the decisions are delegated, decide and record them as yours.
+A proposal stays a proposal until the user agrees; saving, validating or
+reviewing a document does not approve it. Keep decisions the user has already
 made. When the user is testing or wrapping up, finish what they asked instead of
 proposing new capabilities.
 
@@ -122,4 +127,4 @@ with a dry run before the first round. Exit code 1 means findings were reported.
 Inspect the final diff and behavior, report checks as engineering-quality
 describes, and leave a local branch and commit where project rules allow.
 Push, merge, publish, deploy, clean up or install globally only with the user's
-explicit permission. Use orchestration when delegating.
+explicit permission.

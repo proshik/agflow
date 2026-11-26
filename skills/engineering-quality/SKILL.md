@@ -7,8 +7,6 @@ description: Use while implementing, fixing and verifying software. Covers regre
 
 ## Build
 
-- Follow the project's instructions, existing patterns, components and design
-  tokens.
 - For a bug, first write a regression test that reproduces the user-visible
   failure and fails for the right reason. Test public behavior, not source text
   or mocks.
@@ -27,7 +25,6 @@ description: Use while implementing, fixing and verifying software. Covers regre
   owner that releases it on success, failure and cancellation. A timeout stops
   the work, not just the waiting. Leave user objects and other workers'
   resources alone.
-- Keep actionable context in errors and secrets out of logs.
 - When the code contradicts the agreed contract, update the contract with the
   parent or user before dependent work.
 
@@ -66,9 +63,8 @@ leave unrelated repairs to a separate decision.
 
 ## Report
 
-Report to the user in plain language: what changed, whether it works, what was
-not checked and why, and what you need from them. Leave out internal labels
-(round numbers, receipts, PIDs, file lists, tool names) unless asked.
+Leave out internal labels (round numbers, receipts, PIDs, file lists, tool
+names) unless asked.
 
 Give each scenario PASS, FAIL or UNVERIFIED with what you ran and what you saw.
 A "done" message, green unit tests or static validation are not PASS for live

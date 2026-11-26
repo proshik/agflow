@@ -5,18 +5,16 @@ description: Use to work through review comments on your own GitLab merge reques
 
 # Work through review comments on your MR
 
-Follow the project's instructions and the user's memory. Use the GitLab API
-through an available MCP server or CLI after checking its schema. A request to
-look at the comments is an analysis in the current session that changes and
-publishes nothing. A request to fix them is a development request: make the fix
-through development-workflow.
+Use the GitLab API through an available MCP server or CLI after checking its
+schema. A request to look at the comments is an analysis in the current session
+that changes and publishes nothing. A request to fix them is a development
+request: make the fix through development-workflow.
 
 ## Collect the threads
 
-Find the project and the MR from the link, number or remote; ask only when the
-scope is ambiguous. Fetch the current user, all unresolved discussions with
-full IDs, authors, positions and pagination, the source and target SHA, the
-description and the linked issue.
+Find the project and the MR from the link, number or remote. Fetch the current
+user, all unresolved discussions with full IDs, authors, positions and
+pagination, the source and target SHA, the description and the linked issue.
 
 ## Verify each thread
 
@@ -75,6 +73,3 @@ drafts.
 - After an authorized publication, use fresh full discussion IDs; if the head
   moved, re-check conclusions and anchors. Read back what was posted. Leave the
   reviewer's threads open; resolving them is the reviewer's call.
-
-Report the MR, branch and local commits, checks run and unavailable, reply
-drafts, publication state and what is left to the user.
